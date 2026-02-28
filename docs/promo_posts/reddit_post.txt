@@ -1,0 +1,27 @@
+﻿Title:
+[Free] ComfyUI Colab Pack for popular models (T4-friendly, GGUF-first, auto quant by VRAM)
+
+Body:
+Hey everyone,
+
+I just open-sourced my Free ComfyUI Colab Pack for popular models.
+Main goal: make testing and using strong models easier on Colab Free T4, without painful setup.
+
+What is inside:
+- model-specific Colab notebooks
+- ready workflows per model
+- GGUF-first approach for lower VRAM pressure
+- auto quant selection by VRAM budget
+- HF + Civitai token prompts
+- stable Cloudflare tunnel launch logic
+
+I spent a lot of time building and maintaining these notebooks as open source.
+If this project helps you, stars, issues, and PRs are very welcome.
+
+If you want to support development, even $1 helps a lot and goes to GPU server costs and food.
+Donate info is in the repo.
+
+Repo:
+https://github.com/ekkonwork/free-comfyui-colab-pack
+
+Issues welcome <3
