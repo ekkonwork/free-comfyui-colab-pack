@@ -25,7 +25,7 @@ Note: this repo is private right now, so Colab links require GitHub access to th
 ### Flux SRPO
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/flux_srpo/comfy_flux_srpo.ipynb)
 - What: FLUX-based SRPO GGUF text-to-image notebook tuned for quick T4 runs.
-- Model creators/sources: FLUX family by Black Forest Labs, SRPO GGUF pack by `befox`.
+- Model creators/sources: FLUX.1 family by Black Forest Labs, SRPO model by Tencent Hunyuan (`tencent/SRPO`), GGUF conversion pack by `befox`.
 - Workflow: `workflows/flux_srpo/flux_schnell_full_text_to_image.json`
 - Preview image: coming soon.
 
@@ -39,28 +39,28 @@ Note: this repo is private right now, so Colab links require GitHub access to th
 ### Z-Image Base
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_base/comfy_zimage_base.ipynb)
 - What: Z-Image base GGUF setup for quality-oriented generation.
-- Model creators/sources: Z-Image package by `Comfy-Org`, GGUF ports by `unsloth`.
+- Model creators/sources: original Z-Image by `Tongyi-MAI` (`Tongyi-MAI/Z-Image`), GGUF ports by `unsloth`, ComfyUI split assets used from `Comfy-Org/z_image`.
 - Workflow: `workflows/zimage_base/zimage_base_test_workflow.json`
 - Preview image: coming soon.
 
 ### Z-Image Turbo
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_turbo/comfy_zimage_turbo.ipynb)
 - What: fast Z-Image Turbo GGUF notebook for speed-first generation.
-- Model creators/sources: Z-Image package by `Comfy-Org`, Turbo GGUF by `unsloth`.
+- Model creators/sources: original Z-Image Turbo by `Tongyi-MAI` (`Tongyi-MAI/Z-Image-Turbo`), GGUF ports by `unsloth`, ComfyUI split assets used from `Comfy-Org/z_image`.
 - Workflow: `workflows/zimage_turbo/zimage_turbo_test_workflow.json`
 - Preview image: coming soon.
 
 ### Z-Image Turbo + Base
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_turbo_base/comfy_zimage_turbo_base.ipynb)
 - What: combo notebook with Turbo + Base variants in one setup.
-- Model creators/sources: Z-Image package by `Comfy-Org`, GGUF variants by `unsloth`.
+- Model creators/sources: original Z-Image models by `Tongyi-MAI` (`Tongyi-MAI/Z-Image` and `Tongyi-MAI/Z-Image-Turbo`), GGUF variants by `unsloth`, ComfyUI split assets used from `Comfy-Org/z_image`.
 - Workflows: `workflows/zimage_turbo_base/`
 - Preview image: coming soon.
 
 ### Z-Image Turbo + SeedVR2 Upscaler
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_seedvr2/comfy_zimage_seedvr2.ipynb)
 - What: two-stage pipeline (Z-Image generation + SeedVR2 upscaling).
-- Model creators/sources: Z-Image package by `Comfy-Org`, SeedVR2 node/files by `numz` and GGUF pack by `cmeka`.
+- Model creators/sources: original Z-Image Turbo by `Tongyi-MAI` (`Tongyi-MAI/Z-Image-Turbo`) with GGUF ports by `unsloth`, SeedVR2 node/files by `numz` and GGUF pack by `cmeka`.
 - Workflows: `workflows/zimage_seedvr2/`
 - Preview image: coming soon.
 
