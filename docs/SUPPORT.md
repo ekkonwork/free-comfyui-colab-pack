@@ -1,27 +1,40 @@
 ﻿# Support and Contact
 
-## Donate
-I invested a lot of effort into this notebook pack. Donations help me continue development and maintenance.
+## Support
+I invested a lot of effort into this notebook pack. If it saves you time or helps your work, support means a lot.
 
-Support helps cover:
+Your support goes to:
 - GPU server costs
-- ongoing testing and updates
-- food while building and maintaining this project
+- ongoing model testing and notebook updates
+- food while maintaining this project
 
-Donation links (replace with your real links):
-- Ko-fi: https://ko-fi.com/YOUR_NAME
-- Boosty: https://boosty.to/YOUR_NAME
-- DonationAlerts: https://www.donationalerts.com/r/YOUR_NAME
-- Patreon: https://patreon.com/YOUR_NAME
-- Crypto (USDT TRC20): YOUR_WALLET
+## Donate
+[![Donate](assets/Donate_Banner.webp)](https://boosty.to/ekkonwork/donate)
+
+[![Donate on Boosty](https://img.shields.io/badge/Donate-Boosty-F15F2C?style=for-the-badge)](https://boosty.to/ekkonwork/donate)
+
+- Boosty (donate): `https://boosty.to/ekkonwork/donate`
+
+### Crypto Donations (Telegram Wallet)
+[![Donate via Telegram Wallet](https://img.shields.io/badge/Donate-Telegram%20Wallet-2AABEE?style=for-the-badge&logo=telegram&logoColor=white)](#crypto-donations-telegram-wallet)
+[![Open Telegram Wallet](https://img.shields.io/badge/Open-Wallet-26A17B?style=for-the-badge)](https://t.me/wallet)
+
+![Telegram Wallet QR](assets/telegram_wallet_qr.png)
+
+Wallet addresses:
+- TON: `UQAMPvqduXVWyax325-zqk81rTwNG1bRhCvXPyIs7eeIxEVp`
+- USDT (TON): `UQAMPvqduXVWyax325-zqk81rTwNG1bRhCvXPyIs7eeIxEVp`
+- Memo/Tag: check Wallet receive screen before sending.
 
 ## Hire Me
-I do paid work for:
-- Custom ComfyUI + Colab notebook packs
-- VRAM optimization and quant strategy
-- Workflow migration to API/headless execution
-- Smoke/regression tooling for model packs
+[![Hire Me](assets/Hire_Me_banner.webp)](https://www.linkedin.com/in/mikhail-kuznetsov-14304433b)
 
-Contact (replace with your real contact):
-- Email: your.email@example.com
-- Telegram: @your_handle
+[![Hire Me on LinkedIn](https://img.shields.io/badge/Hire%20Me-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mikhail-kuznetsov-14304433b)
+
+- English: `B2` (text-first communication).
+- Hiring (full-time/long-term): prefer written communication; for live calls, Russian-speaking teams are preferred.
+- Project work: open to worldwide async collaboration.
+- Email: `ekkonwork@gmail.com`
+- Telegram: `@Mikhail_ML_ComfyUI`
+- LinkedIn: `https://www.linkedin.com/in/mikhail-kuznetsov-14304433b`
+- Boosty: `https://boosty.to/ekkonwork/donate`

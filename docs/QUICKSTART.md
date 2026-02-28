@@ -15,6 +15,12 @@
 7. Run launch cell and open the generated Cloudflare URL.
 8. Import workflow JSON from `workflows/<model>/`.
 
+## Paused Models
+- `notebooks/_paused/ltx2_gguf/`
+- `notebooks/_paused/wan22_14b_combo/`
+
+These are intentionally excluded from active testing for now.
+
 ## Tips
 - If tunnel URL is not reachable, rerun only launch cell.
 - Keep default quant settings unless you know your VRAM headroom.
