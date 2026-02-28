@@ -2,6 +2,7 @@
 
 ## Support
 I invested a lot of effort into this notebook pack. If it saves you time or helps your work, support means a lot.
+I spend a lot of time on open-source projects. Even a $1 donation helps and goes directly to GPU servers and food.
 
 Your support goes to:
 - GPU server costs
