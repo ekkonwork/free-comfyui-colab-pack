@@ -19,22 +19,77 @@ If this project helps you, support really matters. Donations directly help me pa
 - Low-VRAM defaults for Colab T4 (memory-aware settings).
 - Ready-to-use per-model workflow JSON files in this repo.
 
-## Active Models
-- Flux SRPO
-- Z-Image-Base
-- Z-Image-Turbo
-- Z-Image-Turbo + Z-Image-Base
-- Z-Image-Turbo + SeedVR2 Upscaler
-- Qwen Image 2512
-- Qwen Image Edit 2511
-- Flux.2 Klein 9B GGUF
-- Chroma1 HD GGUF
+## Notebook Catalog
+Note: this repo is private right now, so Colab links require GitHub access to this repo.
+
+### Flux SRPO
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/flux_srpo/comfy_flux_srpo.ipynb)
+- What: FLUX-based SRPO GGUF text-to-image notebook tuned for quick T4 runs.
+- Model creators/sources: FLUX family by Black Forest Labs, SRPO GGUF pack by `befox`.
+- Workflow: `workflows/flux_srpo/flux_schnell_full_text_to_image.json`
+- Preview image: coming soon.
+
+### Flux2 Klein 9B GGUF
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/flux2_klein9b_gguf/comfy_flux2_klein9b_gguf.ipynb)
+- What: Flux.2 Klein 9B base/distilled GGUF notebook for T2I and edit flows.
+- Model creators/sources: FLUX.2 family by Black Forest Labs, GGUF releases by `unsloth`, VAE package by `Comfy-Org`.
+- Workflows: `workflows/flux2_klein9b_gguf/`
+- Preview image: coming soon.
+
+### Z-Image Base
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_base/comfy_zimage_base.ipynb)
+- What: Z-Image base GGUF setup for quality-oriented generation.
+- Model creators/sources: Z-Image package by `Comfy-Org`, GGUF ports by `unsloth`.
+- Workflow: `workflows/zimage_base/zimage_base_test_workflow.json`
+- Preview image: coming soon.
+
+### Z-Image Turbo
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_turbo/comfy_zimage_turbo.ipynb)
+- What: fast Z-Image Turbo GGUF notebook for speed-first generation.
+- Model creators/sources: Z-Image package by `Comfy-Org`, Turbo GGUF by `unsloth`.
+- Workflow: `workflows/zimage_turbo/zimage_turbo_test_workflow.json`
+- Preview image: coming soon.
+
+### Z-Image Turbo + Base
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_turbo_base/comfy_zimage_turbo_base.ipynb)
+- What: combo notebook with Turbo + Base variants in one setup.
+- Model creators/sources: Z-Image package by `Comfy-Org`, GGUF variants by `unsloth`.
+- Workflows: `workflows/zimage_turbo_base/`
+- Preview image: coming soon.
+
+### Z-Image Turbo + SeedVR2 Upscaler
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_seedvr2/comfy_zimage_seedvr2.ipynb)
+- What: two-stage pipeline (Z-Image generation + SeedVR2 upscaling).
+- Model creators/sources: Z-Image package by `Comfy-Org`, SeedVR2 node/files by `numz` and GGUF pack by `cmeka`.
+- Workflows: `workflows/zimage_seedvr2/`
+- Preview image: coming soon.
+
+### Qwen Image 2512
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/qwen_image_2512/comfy_qwen_image_2512.ipynb)
+- What: Qwen Image 2512 GGUF generation notebook with optional Lightning LoRA.
+- Model creators/sources: Qwen family by Alibaba/Qwen team, GGUF packs by `unsloth` and `ggml-org`, Lightning LoRA by `lightx2v`.
+- Workflow: `workflows/qwen_image_2512/qwen_image_test_workflow.json`
+- Preview image: coming soon.
+
+### Qwen Image Edit 2511
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/qwen_image_edit_2511/comfy_qwen_image_edit_2511.ipynb)
+- What: Qwen Image Edit 2511 notebook for image editing use cases.
+- Model creators/sources: Qwen family by Alibaba/Qwen team, GGUF packs by `unsloth` and `ggml-org`, Lightning LoRA by `lightx2v`.
+- Workflow: `workflows/qwen_image_edit_2511/qwen_image_edit_test_workflow_v2.json`
+- Preview image: coming soon.
+
+### Chroma1 HD GGUF
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/chroma1_hd_gguf/comfy_chroma1_hd_gguf.ipynb)
+- What: Chroma1-HD text-to-image GGUF notebook.
+- Model creators/sources: Chroma1-HD by `lodestones`, GGUF package by `silveroxides`.
+- Workflow: `workflows/chroma1_hd_gguf/ComfyUI_Chroma1-HD_T2I-workflow.json`
+- Preview image: coming soon.
 
 ## Paused (Not In Active Testing)
-- Wan 2.2 14B combo
-- LTX2 GGUF
+- `notebooks/_paused/ltx2_gguf/`
+- `notebooks/_paused/wan22_14b_combo/`
 
-These models are kept in `_paused` folders and can return to active list after validation.
+These are kept in repo and can be returned to active catalog after validation.
 
 ## Repository Layout
 ```text
@@ -57,15 +112,26 @@ free-comfyui-colab-pack/
 If these notebooks save you time, please support development:
 
 [![Donate](docs/assets/Donate_Banner.webp)](https://boosty.to/ekkonwork/donate)
-
 [![Donate on Boosty](https://img.shields.io/badge/Donate-Boosty-F15F2C?style=for-the-badge)](https://boosty.to/ekkonwork/donate)
+
+### Crypto Donations (Telegram Wallet)
+[![Donate via Telegram Wallet](https://img.shields.io/badge/Donate-Telegram%20Wallet-2AABEE?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/wallet)
+
+![Telegram Wallet QR](docs/assets/telegram_wallet_qr.png)
+
+Wallet addresses:
+- TON: `UQAMPvqduXVWyax325-zqk81rTwNG1bRhCvXPyIs7eeIxEVp`
+- USDT (TON): `UQAMPvqduXVWyax325-zqk81rTwNG1bRhCvXPyIs7eeIxEVp`
+- Memo/Tag: check Wallet receive screen before sending.
 
 See full support info in `docs/SUPPORT.md`.
 
 ## Hire Me
 [![Hire Me](docs/assets/Hire_Me_banner.webp)](https://www.linkedin.com/in/mikhail-kuznetsov-14304433b)
-
 [![Hire Me on LinkedIn](https://img.shields.io/badge/Hire%20Me-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mikhail-kuznetsov-14304433b)
+
+- Email: `ekkonwork@gmail.com`
+- Telegram: `@Mikhail_ML_ComfyUI`
 
 ## Notes
 - Respect model licenses and terms.
