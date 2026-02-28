@@ -15,3 +15,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Local promo drafts (do not commit)
+docs/promo_posts/
