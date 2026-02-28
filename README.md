@@ -1,5 +1,8 @@
 ﻿# Free ComfyUI Colab Pack
 
+![Free ComfyUI Colab Pack Banner](docs/assets/free_comfyui_colab_pack_banner.png)
+
+
 [![Donate on Boosty](https://img.shields.io/badge/Donate-Boosty-F15F2C?style=for-the-badge)](https://boosty.to/ekkonwork/donate)
 [![Hire Me on LinkedIn](https://img.shields.io/badge/Hire%20Me-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mikhail-kuznetsov-14304433b)
 
