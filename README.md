@@ -20,8 +20,6 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 - Ready-to-use per-model workflow JSON files in this repo.
 
 ## Notebook Catalog
-Note: this repo is private right now, so Colab links require GitHub access to this repo.
-
 ### Flux SRPO
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/flux_srpo/comfy_flux_srpo.ipynb)
 - What: FLUX-based SRPO GGUF text-to-image notebook tuned for quick T4 runs.
