@@ -8,7 +8,7 @@ Free Google Colab notebooks for popular ComfyUI workflows on low VRAM GPUs (focu
 ## Why this project
 I put a lot of time and effort into these notebooks. They are tuned, tested, and maintained so people can run popular models for free in Colab.
 
-If this project helps you, support really matters. Donations directly help me pay for GPU servers and food while I keep improving and testing this pack.
+I spend a lot of time on open-source projects. If this project helps you, even $1 really helps and goes directly to GPU servers and food while I keep improving and testing this pack.
 
 ## Killer Features
 - Auto quant selection by VRAM budget (rare in public Colab packs).
@@ -110,6 +110,8 @@ free-comfyui-colab-pack/
 
 ## Support
 If these notebooks save you time, please support development:
+
+I spend a lot of time on open-source projects. Even a $1 donation helps and goes directly to GPU servers and food.
 
 [![Donate](docs/assets/Donate_Banner.webp)](https://boosty.to/ekkonwork/donate)
 [![Donate on Boosty](https://img.shields.io/badge/Donate-Boosty-F15F2C?style=for-the-badge)](https://boosty.to/ekkonwork/donate)
