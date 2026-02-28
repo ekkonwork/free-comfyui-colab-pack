@@ -1,13 +1,14 @@
 ﻿# Free ComfyUI Colab Pack
 
-Free Google Colab notebooks for popular ComfyUI workflows on low VRAM GPUs (focused on Colab Free T4).
+[![Donate on Boosty](https://img.shields.io/badge/Donate-Boosty-F15F2C?style=for-the-badge)](https://boosty.to/ekkonwork/donate)
+[![Hire Me on LinkedIn](https://img.shields.io/badge/Hire%20Me-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mikhail-kuznetsov-14304433b)
 
-This pack is built for people who want to run strong image/video models without setting up a full local server.
+Free Google Colab notebooks for popular ComfyUI workflows on low VRAM GPUs (focused on Colab Free T4).
 
 ## Why this project
 I put a lot of time and effort into these notebooks. They are tuned, tested, and maintained so people can run popular models for free in Colab.
 
-If this project helps you, support really matters. Donations help me pay for GPU servers and food while I keep improving these notebooks.
+If this project helps you, support really matters. Donations directly help me pay for GPU servers and food while I keep improving and testing this pack.
 
 ## Killer Features
 - Auto quant selection by VRAM budget (rare in public Colab packs).
@@ -18,7 +19,7 @@ If this project helps you, support really matters. Donations help me pay for GPU
 - Low-VRAM defaults for Colab T4 (memory-aware settings).
 - Ready-to-use per-model workflow JSON files in this repo.
 
-## Included Models
+## Active Models
 - Flux SRPO
 - Z-Image-Base
 - Z-Image-Turbo
@@ -28,14 +29,20 @@ If this project helps you, support really matters. Donations help me pay for GPU
 - Qwen Image Edit 2511
 - Flux.2 Klein 9B GGUF
 - Chroma1 HD GGUF
+
+## Paused (Not In Active Testing)
 - Wan 2.2 14B combo
 - LTX2 GGUF
+
+These models are kept in `_paused` folders and can return to active list after validation.
 
 ## Repository Layout
 ```text
 free-comfyui-colab-pack/
   notebooks/<model>/comfy_<model>.ipynb
+  notebooks/_paused/<model>/comfy_<model>.ipynb
   workflows/<model>/*.json
+  workflows/_paused/<model>/*.json
   docs/
 ```
 
@@ -43,28 +50,23 @@ free-comfyui-colab-pack/
 1. Open a notebook from `notebooks/<model>/` in Colab.
 2. Run cells top-to-bottom.
 3. Enter Hugging Face token when asked.
-4. Enter Civitai token when asked (optional, but recommended for LoRA downloads).
+4. Enter Civitai token when asked (recommended for LoRA downloads).
 5. Open generated Cloudflare link and load workflow from `workflows/<model>/`.
 
-## Donate
-If these notebooks save you time or money, please support development.
+## Support
+If these notebooks save you time, please support development:
 
-Your donation helps keep this project alive and directly goes to:
-- GPU server costs
-- model testing time
-- food while maintaining the pack
+[![Donate](docs/assets/Donate_Banner.webp)](https://boosty.to/ekkonwork/donate)
 
-See `docs/SUPPORT.md` for donation links.
+[![Donate on Boosty](https://img.shields.io/badge/Donate-Boosty-F15F2C?style=for-the-badge)](https://boosty.to/ekkonwork/donate)
+
+See full support info in `docs/SUPPORT.md`.
 
 ## Hire Me
-Available for paid work:
-- Custom ComfyUI/Colab notebook builds
-- Workflow optimization for low VRAM GPUs
-- End-to-end smoke/regression setup for model packs
+[![Hire Me](docs/assets/Hire_Me_banner.webp)](https://www.linkedin.com/in/mikhail-kuznetsov-14304433b)
 
-Contact details are in `docs/SUPPORT.md`.
+[![Hire Me on LinkedIn](https://img.shields.io/badge/Hire%20Me-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mikhail-kuznetsov-14304433b)
 
 ## Notes
 - Respect model licenses and terms.
 - Cloudflare tunnels can still be unstable in Colab due to external network conditions.
-- This repository currently does not include promo images/examples (planned later).
