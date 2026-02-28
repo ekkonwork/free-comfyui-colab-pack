@@ -8,7 +8,7 @@ Free Google Colab notebooks for popular ComfyUI workflows on low VRAM GPUs (focu
 ## Why this project
 I put a lot of time and effort into these notebooks. They are tuned, tested, and maintained so people can run popular models for free in Colab.
 
-I spend a lot of time on open-source projects. If this project helps you, even $1 really helps and goes directly to GPU servers and food while I keep improving and testing this pack.
+The goal is simple: fast, practical, and stable model access in Colab without heavy local setup.
 
 ## Killer Features
 - Auto quant selection by VRAM budget (rare in public Colab packs).
