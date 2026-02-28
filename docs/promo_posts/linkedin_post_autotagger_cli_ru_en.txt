@@ -1,0 +1,44 @@
+﻿Title:
+Qwen3 VL AutoTagger CLI: standalone metadata tagging pipeline for stock images (EN/RU)
+
+Post:
+EN:
+I also maintain a standalone project: Qwen3 VL AutoTagger CLI.
+It generates stock-style title + keywords and can embed XMP metadata directly into output images.
+
+Highlights:
+- works without ComfyUI
+- single image or batch folder processing
+- optional XMP embedding via exiftool
+- metadata JSONL export for pipelines
+- optional 4-bit mode on CUDA
+- Colab notebook included
+
+If you work with stock pipelines or large image batches, this tool can save real time.
+Stars, issues, and feedback are welcome.
+If you want to support development, even $1 helps and goes to GPU costs and food.
+
+Repo:
+https://github.com/ekkonwork/qwen3-vl-autotagger-cli
+
+RU:
+Также поддерживаю отдельный проект: Qwen3 VL AutoTagger CLI.
+Он генерирует title + keywords в стиле стоков и может сразу вшивать XMP-метаданные в изображения.
+
+Ключевые возможности:
+- работает без ComfyUI
+- обработка одного файла или целой папки
+- опциональная запись XMP через exiftool
+- экспорт отчета в JSONL
+- опциональный 4-bit режим на CUDA
+- есть готовый Colab ноутбук
+
+Если вы работаете со стоками или большими батчами изображений, инструмент сильно экономит время.
+Буду рад звездам, issues и обратной связи.
+Если хотите поддержать разработку, даже $1 очень помогает: это идет на GPU и еду.
+
+Hashtags EN:
+#Qwen #ComputerVision #ImageTagging #Metadata #OpenSource #Python #MachineLearning #StockContent
+
+Hashtags RU:
+#Кьювен #КомпьютерноеЗрение #Метаданные #Опенсорс #Питон #МашинноеОбучение #Стоки #Автоматизация
