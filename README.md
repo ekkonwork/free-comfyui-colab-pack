@@ -1,4 +1,4 @@
-﻿# Free ComfyUI Colab Pack
+# Free ComfyUI Colab Pack
 
 ![Free ComfyUI Colab Pack Banner](docs/assets/free_comfyui_colab_pack_banner.png)
 
@@ -20,7 +20,7 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 - Built-in Hugging Face + Civitai token prompts.
 - Stable Cloudflare tunnel launch logic with retries and health checks.
 - Low-VRAM defaults for Colab T4 (memory-aware settings).
-- Ready-to-use per-model workflow JSON files in this repo.
+- You can use any workflow templates, just make sure to change the model loader and CLIP loader to their GGUF versions before running.
 
 ## Notebook Catalog
 ### Flux SRPO
