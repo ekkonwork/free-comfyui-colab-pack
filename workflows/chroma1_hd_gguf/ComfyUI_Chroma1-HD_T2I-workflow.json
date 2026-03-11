@@ -298,7 +298,7 @@
     },
     {
       "id": 731,
-      "type": "UnetLoaderGGUF",
+      "type": "UNETLoader",
       "pos": [
         -2256,
         744
@@ -340,13 +340,13 @@
         ]
       },
       "widgets_values": [
-        "chroma-unlocked-v29.5-Q5_0.gguf",
+        "Chroma1-HD-fp8_scaled_rev2.safetensors",
         "default"
       ]
     },
     {
       "id": 733,
-      "type": "CLIPLoaderGGUF",
+      "type": "CLIPLoader",
       "pos": [
         -2256,
         864
@@ -388,7 +388,7 @@
         ]
       },
       "widgets_values": [
-        "flan-t5-xxl-Q8_0.gguf",
+        "t5xxl_flan_latest_float8_e4m3fn_scaled_stochastic.safetensors",
         "chroma",
         "default"
       ]
