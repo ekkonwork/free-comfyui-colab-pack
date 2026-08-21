@@ -5,6 +5,7 @@
 | Model | Notebook | Workflows |
 |---|---|---|
 | chroma1_hd_gguf | `notebooks/chroma1_hd_gguf/comfy_chroma1_hd_gguf.ipynb` | 1 |
+| anima | `notebooks/anima/comfy_anima_colab.ipynb` | 6 variants (T2I, ControlNet, inpaint × WAI/Aesthetic) |
 | flux_srpo | `notebooks/flux_srpo/comfy_flux_srpo.ipynb` | 1 |
 | flux2_klein9b_gguf | `notebooks/flux2_klein9b_gguf/comfy_flux2_klein9b_gguf.ipynb` | 4 |
 | qwen_image_2512 | `notebooks/qwen_image_2512/comfy_qwen_image_2512.ipynb` | 1 |

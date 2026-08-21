@@ -86,6 +86,13 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 - Workflow: `workflows/chroma1_hd_gguf/ComfyUI_Chroma1-HD_T2I-workflow.json`
 - Preview image: coming soon.
 
+### Anima + WAI-Anima
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/anima/comfy_anima_colab.ipynb)
+- What: native Anima Aesthetic v1.1 and WAI-Anima v1.0 workflows for T2I, ControlNet and inpainting.
+- Includes: ComfyUI-Manager, Anima-LLLite, ControlNet preprocessors, Lora Manager and the exact workflow variants from the v45 archive.
+- Models: both Anima checkpoints are downloaded; the notebook writes WAI and Aesthetic workflow variants so either model can be selected.
+- Workflow: `workflows/anima/` in the companion workflow collection.
+
 ## Paused (Not In Active Testing)
 - `notebooks/_paused/ltx2_gguf/`
 - `notebooks/_paused/wan22_14b_combo/`
