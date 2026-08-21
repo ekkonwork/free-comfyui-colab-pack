@@ -19,6 +19,8 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 - Match-only Lenovo UltraReal LoRA download by base-model tag.
 - Built-in Hugging Face + Civitai token prompts.
 - Stable Cloudflare tunnel launch logic with retries and health checks.
+- Optional ultra-low-VRAM launch mode for large images (`--novram`, smart-memory off, cache disabled, forced upcast attention).
+- Workflow Models Downloader custom node is installed alongside ComfyUI-Manager.
 - Low-VRAM defaults for Colab T4 (memory-aware settings).
 - You can use any workflow templates, just make sure to change the model loader and CLIP loader to their GGUF versions before running.
 
@@ -113,6 +115,8 @@ free-comfyui-colab-pack/
 3. Enter Hugging Face token when asked.
 4. Enter Civitai token when asked (recommended for LoRA downloads).
 5. Open generated Cloudflare link and load workflow from `workflows/<model>/`.
+
+For 1K+ images on free Colab, set `LOW_VRAM_STABLE = True` in the launch cell. This trades speed for stability.
 
 ## Support
 If these notebooks save you time, please support development:
