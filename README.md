@@ -93,7 +93,7 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 - What: native Anima Aesthetic v1.1 and WAI-Anima v1.0 workflows for T2I, ControlNet and inpainting.
 - Includes: ComfyUI-Manager, Anima-LLLite, ControlNet preprocessors, Lora Manager and the exact workflow variants from the v45 archive.
 - Models: both Anima checkpoints are downloaded; the notebook writes WAI and Aesthetic workflow variants so either model can be selected.
-- Workflow: `workflows/anima/` in the companion workflow collection.
+- Workflow files are kept in the private companion repository and loaded by its separate loader notebook.
 
 ## Paused (Not In Active Testing)
 - `notebooks/_paused/ltx2_gguf/`
