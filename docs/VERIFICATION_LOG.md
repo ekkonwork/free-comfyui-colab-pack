@@ -95,3 +95,9 @@
   - `anima`/`universal` → `--lowvram` fine (no large GGUF budget).
   - Optional tuning (not applied, user can add): `--reserve-vram 1.0` if other tabs, `--use-sage-attention` for speed (requires sageattention installed).
 
+
+## 2026-08-24 — New notebooks: Anima Illustrious Compare + 3 SDXL singles
+- Created 4 notebooks exactly per existing templates (tokens → install → download → Cloudflare launch → bore fallback): `anima_illustrious_compare` (compare 4 models, embedded MANIFEST from private `models.json`, Cloudflare not LocalTunnel), `rouwei_v080_epsilon`, `nova_anime_xl_il_v190`, `janku_v777` (each SDXL single checkpoint, VAE baked in, civitai download via `CIVITAI_API_TOKEN`).
+- All share template's `HF_TOKEN`/`CIVITAI_API_TOKEN` handling, `ComfyUI-Manager` + `GGUF` + `KJNodes` + `Anima-LLLite` + `controlnet_aux`, `LOW_VRAM_STABLE=False` (`--lowvram`), Cloudflare + bore fallback.
+- README: added catalog entries + Demo Gallery with **external hotlinks only** to Civitai CDN (`image.civitai.com/width=320/...`) with attribution links back to model pages, no image copies in repo. Licenses noted: Anima Non-Commercial, RouWei Illustrious, Nova non-commercial, JANKU NoobAI-XL 1.0. No copyrighted images redistributed.
+
