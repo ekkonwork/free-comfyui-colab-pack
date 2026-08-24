@@ -33,3 +33,9 @@
 ### Next
 - Продолжить батч 2: полный clean-прогон `zimage_*` + `anima` с реальным скачиванием маленького тестового файла через `aria2c` и проверкой `ComfyUI` импорта нод (`import custom_nodes.*`).
 
+
+## 2026-08-24 — Batch 2 (after push, clean re-check klein9b)
+
+- **klein9b clean re-check**: `rm -rf /content/ComfyUI` → `apt-get update` → `apt-get install aria2 ffmpeg || true` → `aria2c` теперь `/usr/bin/aria2c` (OK), `ffmpeg` OK, `cloudflared` fallback. `git clone ComfyUI` OK, `aria2c` тест скачивания `clip_l.safetensors` (235M) → `OK 99MiB/s` → файл 235M. Фикс подтвержден.
+- Метод пуша: `gh api PUT /contents` (fine-grained PAT, `git push` via HTTPS давал 403, но Contents API работает). 10 ноутбуков + лог запушены как 11 отдельных коммитов (последний `1bdbc4a`).
+
