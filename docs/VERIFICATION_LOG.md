@@ -69,3 +69,9 @@
 - Проверено: 11/11 активных ноутов, каждый с чистой установкой
 - Запушено: 11 коммитов + 5 обновлений лога via `gh api PUT /contents` (fine-grained PAT, `git push` 403, но API работает)
 
+
+## 2026-08-24 — Fix LOW_VRAM_STABLE default → True (ultra-low-VRAM)
+
+- **Запрос:** `!python main.py --dont-print-server --port 8188 --novram --disable-smart-memory --cache-none --force-upcast-attention` сделать дефолтом для T4.
+- **Фикс:** `LOW_VRAM_STABLE = False` → `True  # ultra-low-VRAM for T4` в 11 ноутбуках (все активные). Теперь `comfy_args` по дефолту `["--novram", "--disable-smart-memory", "--cache-none", "--force-upcast-attention"]` вместо `["--lowvram", "--preview-method", "auto"]`.
+
