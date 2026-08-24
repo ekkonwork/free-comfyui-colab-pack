@@ -95,6 +95,48 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 - Models: both Anima checkpoints are downloaded; the notebook writes WAI and Aesthetic workflow variants so either model can be selected.
 - Workflow files are kept in the private companion repository and loaded by its separate loader notebook.
 
+
+### Anima Illustrious Compare (Anima + 3 Illustrious)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/anima_illustrious_compare/comfy_anima_illustrious_compare.ipynb)
+- What: единый compare-ноутбук для 4 моделей — Anima Aesthetic v1.1 (diffusion model) + RouWei v0.8.0 epsilon + Nova Anime XL IL v19.0 + JANKU v7.77 — с 10 сложными промптами (gravity_workshop, mirror_train, ... museum_giant), seed 424242. Ставит единый Qwen VAE/text-enc + LLLite patch.
+- Models: `diffusion_models/anima/anima_aestheticV11.safetensors` + 3× `checkpoints/*.safetensors` (VAE baked in для SDXL), см. `compare/models.json` style manifest внутри ноутбука.
+- Workflows: встроенный `graph_for` (UNETLoader/CLIPLoader/VAELoader для anima, CheckpointLoaderSimple для SDXL) + queue 40 jobs.
+- Demo: см. галерею ниже (внешние превью с Civitai, с атрибуцией — не редистрибьюция).
+
+### RouWei v0.8.0 epsilon (Illustrious)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/rouwei_v080_epsilon/comfy_rouwei_v080_epsilon.ipynb)
+- What: SDXL checkpoint RouWei v0.8.0 epsilon — лучший prompt adherence среди anime SDXL на релиз, 50k+ артистов, без watermark, epsilon (CFG 7, 20-28 steps euler_a).
+- Model creators/sources: `Minthy/RouWei` (fine-tune Illustrious v0.1), Civitai `950531/1832460`.
+- Workflow: CheckpointLoaderSimple, VAE baked in.
+- Preview: ниже (Civitai превью, CC — линк на оригинал).
+
+### Nova Anime XL IL v19.0 (Illustrious)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/nova_anime_xl_il_v190/comfy_nova_anime_xl_il_v190.ipynb)
+- What: Nova Anime XL IL v19 — anime/2.5D/3D SDXL, серия из 20+ версий, Pony/Illustrious hybrid.
+- Model creators/sources: Nova Anime team, Civitai `376130/2940478`.
+- Workflow: CheckpointLoaderSimple.
+- Preview: ниже.
+
+### JANKU v7.77 (Illustrious + RouWei)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/janku_v777/comfy_janku_v777.ipynb)
+- What: JANKU v7.77 — Illustrious XL merge с Chenkin/NoobAI/RouWei, LoRA-free, улучшенная анатомия/NSFW, 1536 без upscale.
+- Model creators/sources: JANKU (janxd), Civitai `1277670/2786084`, base `NoobAI-XL 1.0 License`.
+- Workflow: CheckpointLoaderSimple, VAE baked in.
+- Preview: ниже.
+
+### Demo Gallery (внешние превью — не редистрибьюция, только линки с атрибуцией)
+
+> **Авторские права:** все превью — собственность авторов моделей на Civitai/HuggingFace. Изображения здесь **не копируются** в репозиторий, а линкуются внешними URL с прямой ссылкой на источник. Лицензии: Anima — [CircleStone Labs Non-Commercial](https://huggingface.co/circlestone-labs/Anima/blob/main/LICENSE.md), RouWei — Illustrious, Nova — non-commercial без эдита, JANKU — [NoobAI-XL 1.0](https://huggingface.co/Laxhar/noobai-XL-1.0/blob/main/README.md#model-license). При генерации соблюдайте лицензии.
+
+| Модель | Что умеет (из описания) | Превью (клик — источник) |
+|---|---|---|
+| **Anima Aesthetic v1.1**<br/>`kirazuri-anima` [[Civitai 2495369](https://civitai.com/models/2495369/kirazuri-anima)] | High-res 1536, aesthetic bias (`very aesthetic`), improved character/outfit separation, fix small details | [![Anima preview](https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/8b3ecb37-f3cd-4cc3-8214-497e33952024/width=320/136180088.jpeg)](https://civitai.com/models/2495369/kirazuri-anima) |
+| **RouWei v0.8.0 epsilon**<br/>[[Civitai 950531](https://civitai.com/models/950531/rouwei)] | 50k артистов, лучший prompt adherence, без bleed, natural text + tags, `by artist` в отдельном CLIP чанке | [![RouWei preview](https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/1adb75a9-9bcb-4250-9e83-9ddb4a5abffa/width=320/81195856.jpeg)](https://civitai.com/models/950531/rouwei) |
+| **Nova Anime XL v19**<br/>[[Civitai 376130](https://civitai.com/models/376130/nova-anime-xl)] | Anime/2.5D/3D, 20+ версий, Pony→Illustrious, 4k/aesthetic теги | [![Nova preview](https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c2ac76e4-8bcb-48c0-abde-a8594288bfef/width=320/130519340.jpeg)](https://civitai.com/models/376130/nova-anime-xl) |
+| **JANKU v7.77**<br/>[[Civitai 1277670](https://civitai.com/models/1277670/janku-trained-chenkin-and-noobai-rouwei-illustrious-xl)] | LoRA-free, NSFW анатомия, 35k стилей `by artist`, 1536 без upscale | [![JANKU preview](https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/573cab67-bc20-4bdc-ae8d-d5caa1ba42d4/width=320/124686956.jpeg)](https://civitai.com/models/1277670/janku-trained-chenkin-and-noobai-rouwei-illustrious-xl) |
+
+*Все превью — внешние hotlink с Civitai CDN (`image.civitai.com`), не хранятся в репо. При недоступности CDN открой ссылку на Civitai.*
+
 ## Paused (Not In Active Testing)
 - `notebooks/_paused/ltx2_gguf/`
 - `notebooks/_paused/wan22_14b_combo/`
