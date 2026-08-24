@@ -39,3 +39,11 @@
 - **klein9b clean re-check**: `rm -rf /content/ComfyUI` → `apt-get update` → `apt-get install aria2 ffmpeg || true` → `aria2c` теперь `/usr/bin/aria2c` (OK), `ffmpeg` OK, `cloudflared` fallback. `git clone ComfyUI` OK, `aria2c` тест скачивания `clip_l.safetensors` (235M) → `OK 99MiB/s` → файл 235M. Фикс подтвержден.
 - Метод пуша: `gh api PUT /contents` (fine-grained PAT, `git push` via HTTPS давал 403, но Contents API работает). 10 ноутбуков + лог запушены как 11 отдельных коммитов (последний `1bdbc4a`).
 
+
+## 2026-08-24 — Batch 3 (universal, chroma, zimage_base clean)
+
+- **universal**: `rm -rf /content/ComfyUI` → `aria2c` OK, `ComfyUI` clone OK, 6 нод (`Manager`, `Model-Manager`, `GGUF`, `KJNodes`, `rgthree`, `Workflow-Downloader`) — NODES block present, `pip -r` OK. Launch на CPU пропускается (ожидаемо `Torch CUDA`).
+- **chroma1_hd_gguf**: то же, `aria2c` OK, `ComfyUI` OK, NODES OK. HEAD `Chroma1-HD-Q5_0`/`flan-t5-Q8_0` 200.
+- **zimage_base**: то же, `aria2c` OK, NODES OK, HEAD `z-image-Q4_K_M`/`Qwen3-4B-Q4_K_M` 200.
+- Все 3 проверены с нуля (чистая установка).
+
