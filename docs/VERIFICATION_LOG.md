@@ -47,3 +47,11 @@
 - **zimage_base**: то же, `aria2c` OK, NODES OK, HEAD `z-image-Q4_K_M`/`Qwen3-4B-Q4_K_M` 200.
 - Все 3 проверены с нуля (чистая установка).
 
+
+## 2026-08-24 — Batch 4 (flux_srpo, qwen_image_2512, qwen_image_edit_2511 clean)
+
+- **flux_srpo**: `aria2c` OK, `ComfyUI` OK, NODES OK, HEAD `srpo-Q2_K`/`t5-v1_1-xxl-Q4_K_M` 200.
+- **qwen_image_2512**: `aria2c` OK, NODES OK, HEAD `qwen-image-2512-Q2_K`/`Qwen2.5-VL-Q4_K_M`/`mmproj-Q8_0` 200.
+- **qwen_image_edit_2511**: `aria2c` OK, NODES OK, HEAD `qwen-image-edit-2511-Q2_K` 200.
+- Все 3 с нуля (`rm -rf /content/ComfyUI`).
+
