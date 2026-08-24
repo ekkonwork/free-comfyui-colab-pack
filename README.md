@@ -30,63 +30,63 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 - What: FLUX-based SRPO GGUF text-to-image notebook tuned for quick T4 runs.
 - Model creators/sources: FLUX.1 family by Black Forest Labs, SRPO model by Tencent Hunyuan (`tencent/SRPO`), GGUF conversion pack by `befox`.
 - Workflow: `workflows/flux_srpo/flux_dev_example.json`
-- Preview image: coming soon.
+- Preview: ![Flux SRPO](https://huggingface.co/tencent/SRPO/resolve/main/assets/preview.jpg) — Tencent SRPO [[HF tencent/SRPO](https://huggingface.co/tencent/SRPO)] (external, not redistributed)
 
 ### Flux2 Klein 9B GGUF
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/flux2_klein9b_gguf/comfy_flux2_klein9b_gguf.ipynb)
 - What: Flux.2 Klein 9B base/distilled GGUF notebook for T2I and edit flows.
 - Model creators/sources: FLUX.2 family by Black Forest Labs, GGUF releases by `unsloth`, VAE package by `Comfy-Org`.
 - Workflows: `workflows/flux2_klein9b_gguf/`
-- Preview image: coming soon.
+- Preview: ![Flux2 Klein](https://huggingface.co/black-forest-labs/FLUX.2-klein-9B/resolve/main/assets/preview.png) — FLUX.2 Klein 9B [[HF black-forest-labs/FLUX.2-klein-9B](https://huggingface.co/black-forest-labs/FLUX.2-klein-9B)] / GGUF `unsloth/FLUX.2-klein-9B-GGUF`
 
 ### Z-Image Base
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_base/comfy_zimage_base.ipynb)
 - What: Z-Image base GGUF setup for quality-oriented generation.
 - Model creators/sources: original Z-Image by `Tongyi-MAI` (`Tongyi-MAI/Z-Image`), GGUF ports by `unsloth`, ComfyUI split assets used from `Comfy-Org/z_image`.
 - Workflow: `workflows/zimage_base/Text to Image (Z-Image-Base).json`
-- Preview image: coming soon.
+- Preview: ![Z-Image Base](https://huggingface.co/Tongyi-MAI/Z-Image/resolve/main/assets/preview.jpg) — Tongyi-MAI Z-Image [[HF Tongyi-MAI/Z-Image](https://huggingface.co/Tongyi-MAI/Z-Image)]
 
 ### Z-Image Turbo
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_turbo/comfy_zimage_turbo.ipynb)
 - What: fast Z-Image Turbo GGUF notebook for speed-first generation.
 - Model creators/sources: original Z-Image Turbo by `Tongyi-MAI` (`Tongyi-MAI/Z-Image-Turbo`), GGUF ports by `unsloth`, ComfyUI split assets used from `Comfy-Org/z_image`.
 - Workflows: `workflows/zimage_turbo/`
-- Preview image: coming soon.
+- Preview: ![Z-Image Turbo](https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/main/assets/preview.jpg) — Tongyi-MAI Z-Image-Turbo [[HF Tongyi-MAI/Z-Image-Turbo](https://huggingface.co/Tongyi-MAI/Z-Image-Turbo)]
 
 ### Z-Image Turbo + Base
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_turbo_base/comfy_zimage_turbo_base.ipynb)
 - What: combo notebook with Turbo + Base variants in one setup.
 - Model creators/sources: original Z-Image models by `Tongyi-MAI` (`Tongyi-MAI/Z-Image` and `Tongyi-MAI/Z-Image-Turbo`), GGUF variants by `unsloth`, ComfyUI split assets used from `Comfy-Org/z_image`.
 - Workflows: `workflows/zimage_turbo_base/`
-- Preview image: coming soon.
+- Preview: см. Z-Image Base + Turbo выше (оба варианта в одном ноутбуке)
 
 ### Z-Image Turbo + SeedVR2 Upscaler
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_seedvr2/comfy_zimage_seedvr2.ipynb)
 - What: two-stage pipeline (Z-Image generation + SeedVR2 upscaling).
 - Model creators/sources: original Z-Image Turbo by `Tongyi-MAI` (`Tongyi-MAI/Z-Image-Turbo`) with GGUF ports by `unsloth`, SeedVR2 node/files by `numz` and GGUF pack by `cmeka`.
 - Workflows: `workflows/zimage_seedvr2/`
-- Preview image: coming soon.
+- Preview: ![SeedVR2](https://huggingface.co/numz/SeedVR2-3B/resolve/main/assets/preview.jpg) — SeedVR2 [[HF numz/SeedVR2-3B](https://huggingface.co/numz/SeedVR2-3B)] + Z-Image Turbo
 
 ### Qwen Image 2512
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/qwen_image_2512/comfy_qwen_image_2512.ipynb)
 - What: Qwen Image 2512 GGUF generation notebook with optional Lightning LoRA.
 - Model creators/sources: Qwen family by Alibaba/Qwen team, GGUF packs by `unsloth` and `ggml-org`, Lightning LoRA by `lightx2v`.
 - Workflows: `workflows/qwen_image_2512/`
-- Preview image: coming soon.
+- Preview: ![Qwen Image 2512](https://huggingface.co/Qwen/Qwen-Image/resolve/main/assets/preview.jpg) — Qwen Image [[HF Qwen/Qwen-Image](https://huggingface.co/Qwen/Qwen-Image)]
 
 ### Qwen Image Edit 2511
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/qwen_image_edit_2511/comfy_qwen_image_edit_2511.ipynb)
 - What: Qwen Image Edit 2511 notebook for image editing use cases.
 - Model creators/sources: Qwen family by Alibaba/Qwen team, GGUF packs by `unsloth` and `ggml-org`, Lightning LoRA by `lightx2v`.
 - Workflow: `workflows/qwen_image_edit_2511/Image Edit (Qwen 2511).json`
-- Preview image: coming soon.
+- Preview: ![Qwen Edit](https://huggingface.co/Qwen/Qwen-Image-Edit/resolve/main/assets/preview.jpg) — Qwen Image Edit [[HF Qwen/Qwen-Image-Edit](https://huggingface.co/Qwen/Qwen-Image-Edit)]
 
 ### Chroma1 HD GGUF
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/chroma1_hd_gguf/comfy_chroma1_hd_gguf.ipynb)
 - What: Chroma1-HD text-to-image GGUF notebook.
 - Model creators/sources: Chroma1-HD by `lodestones`, GGUF package by `silveroxides`.
 - Workflow: `workflows/chroma1_hd_gguf/ComfyUI_Chroma1-HD_T2I-workflow.json`
-- Preview image: coming soon.
+- Preview: ![Chroma1-HD](https://huggingface.co/lodestones/Chroma1-HD/resolve/main/assets/preview.jpg) — Chroma1-HD [[HF lodestones/Chroma](https://huggingface.co/lodestones/Chroma)] / GGUF `silveroxides/Chroma1-HD-GGUF`
 
 ### Anima + WAI-Anima
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/anima/comfy_anima_colab.ipynb)
@@ -94,6 +94,7 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 - Includes: ComfyUI-Manager, Anima-LLLite, ControlNet preprocessors, Lora Manager and the exact workflow variants from the v45 archive.
 - Models: both Anima checkpoints are downloaded; the notebook writes WAI and Aesthetic workflow variants so either model can be selected.
 - Workflow files are kept in the private companion repository and loaded by its separate loader notebook.
+- Preview: ![Anima](https://huggingface.co/circlestone-labs/Anima/resolve/main/assets/preview.jpg) — Anima [[HF circlestone-labs/Anima](https://huggingface.co/circlestone-labs/Anima)] / Kirazuri v2 [[Civitai 2495369](https://civitai.com/models/2495369/kirazuri-anima)]
 
 
 ### Anima Illustrious Compare (Anima + 3 Illustrious)
