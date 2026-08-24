@@ -114,9 +114,9 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 ### Nova Anime XL IL v19.0 (Illustrious)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/nova_anime_xl_il_v190/comfy_nova_anime_xl_il_v190.ipynb)
 - What: Nova Anime XL IL v19 — anime/2.5D/3D SDXL, серия из 20+ версий, Pony/Illustrious hybrid.
-- Model creators/sources: Nova Anime team, Civitai `376130/2940478`.
+- Model creators/sources: Nova Anime team, Civitai `376130/2940478` [[Civitai 376130](https://civitai.com/models/376130/nova-anime-xl)].
 - Workflow: CheckpointLoaderSimple.
-- Preview: ниже.
+- Preview: ![Nova Anime XL](https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/f0be436e-025f-4b93-89d1-f16b893fe197/width=320/130519332.jpeg) — [[Civitai Image 130519332](https://civitai.com/images/130519332)] by Crody
 
 ### JANKU v7.77 (Illustrious + RouWei)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/janku_v777/comfy_janku_v777.ipynb)
@@ -133,7 +133,7 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 |---|---|---|
 | **Anima Aesthetic v1.1**<br/>`kirazuri-anima` [[Civitai 2495369](https://civitai.com/models/2495369/kirazuri-anima)] | High-res 1536, aesthetic bias (`very aesthetic`), improved character/outfit separation, fix small details | [![Anima preview](https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/8b3ecb37-f3cd-4cc3-8214-497e33952024/width=320/136180088.jpeg)](https://civitai.com/models/2495369/kirazuri-anima) |
 | **RouWei v0.8.0 epsilon**<br/>[[Civitai 950531](https://civitai.com/models/950531/rouwei)] | 50k артистов, лучший prompt adherence, без bleed, natural text + tags, `by artist` в отдельном CLIP чанке | [![RouWei preview](https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/1adb75a9-9bcb-4250-9e83-9ddb4a5abffa/width=320/81195856.jpeg)](https://civitai.com/models/950531/rouwei) |
-| **Nova Anime XL v19**<br/>[[Civitai 376130](https://civitai.com/models/376130/nova-anime-xl)] | Anime/2.5D/3D, 20+ версий, Pony→Illustrious, 4k/aesthetic теги | [![Nova preview](https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c2ac76e4-8bcb-48c0-abde-a8594288bfef/width=320/130519340.jpeg)](https://civitai.com/models/376130/nova-anime-xl) |
+| **Nova Anime XL v19**<br/>[Civitai 376130](https://civitai.com/models/376130/nova-anime-xl) | Anime/2.5D/3D, 20+ версий, Pony→Illustrious, 4k/aesthetic теги | [![Nova preview](https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/f0be436e-025f-4b93-89d1-f16b893fe197/width=320/130519332.jpeg)](https://civitai.com/images/130519332) |
 | **JANKU v7.77**<br/>[[Civitai 1277670](https://civitai.com/models/1277670/janku-trained-chenkin-and-noobai-rouwei-illustrious-xl)] | LoRA-free, NSFW анатомия, 35k стилей `by artist`, 1536 без upscale | [![JANKU preview](https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/573cab67-bc20-4bdc-ae8d-d5caa1ba42d4/width=320/124686956.jpeg)](https://civitai.com/models/1277670/janku-trained-chenkin-and-noobai-rouwei-illustrious-xl) |
 
 *Все превью — внешние hotlink с Civitai CDN (`image.civitai.com`), не хранятся в репо. При недоступности CDN открой ссылку на Civitai.*
