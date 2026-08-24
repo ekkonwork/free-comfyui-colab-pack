@@ -55,3 +55,17 @@
 - **qwen_image_edit_2511**: `aria2c` OK, NODES OK, HEAD `qwen-image-edit-2511-Q2_K` 200.
 - Все 3 с нуля (`rm -rf /content/ComfyUI`).
 
+
+## 2026-08-24 — Batch 5 Final (zimage_turbo, zimage_turbo_base, zimage_seedvr2, anima clean)
+
+- **zimage_turbo**: `aria2c` OK, `ComfyUI` OK, HEAD `z-image-turbo-Q4_K_M` 200.
+- **zimage_turbo_base**: `aria2c` OK, `ComfyUI` OK, HEAD `z-image-turbo-Q4_K_M` + `z-image-Q4_K_M` 200.
+- **zimage_seedvr2**: `aria2c` OK, `ComfyUI` OK, HEAD `z-image-turbo-Q4_K_M` + `seedvr2_ema_3b-Q4_K_M` 200.
+- **anima**: `aria2c` OK (не используется, но present), `ComfyUI` OK, `download()` использует `Bearer {HF_TOKEN}` корректно, HEAD `Anima`/`Anima-LLLite` 200.
+- **Итог 11/11 ноутбуков проверены с нуля (`rm -rf /content/ComfyUI` каждый раз), все доходят до `local_comfy_ready` (на CPU — expected fail `Torch CUDA`, на T4 — OK). Все GGUF URL HEAD 200, `aria2c` фикс подтверждён.**
+
+### Summary 2026-08-24
+- Пофикшено: `apt-get install aria2 ffmpeg cloudflared` → split (10 файлов)
+- Проверено: 11/11 активных ноутов, каждый с чистой установкой
+- Запушено: 11 коммитов + 5 обновлений лога via `gh api PUT /contents` (fine-grained PAT, `git push` 403, но API работает)
+
