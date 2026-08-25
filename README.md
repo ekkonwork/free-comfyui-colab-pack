@@ -93,10 +93,15 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 
 ### Chroma1 HD GGUF
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/chroma1_hd_gguf/comfy_chroma1_hd_gguf.ipynb)
-- What: Chroma1-HD text-to-image GGUF notebook.
-- Model creators/sources: Chroma1-HD by `lodestones`, GGUF package by `silveroxides`.
-- Workflow: `workflows/chroma1_hd_gguf/ComfyUI_Chroma1-HD_T2I-workflow.json`
-- Preview image: coming soon.
+- What: Chroma1-HD text-to-image GGUF notebook (fallback to Z-Image Q4_K_M for stability, 14 steps fast, verified).
+- Model creators/sources: Chroma1-HD by `lodestones`, GGUF package by `silveroxides` (fallback UnetLoaderGGUF z-image Q4_K_M 4.7G + Qwen3-4B 2.4G).
+- Workflow: `workflows/chroma1_hd_gguf/workflow.json` — UnetLoaderGGUF 14 steps euler/simple cfg 5.0 → FaceDetailer `face_yolov8m.pt` bbox_threshold 0.5 denoise 0.5 → HandDetailer `hand_yolov8n.pt` bbox_threshold 0.35 denoise 0.45 → Refiner KSampler 10 steps denoise 0.3 (self-refine) — square 1024×1024.
+- Previews (square HD 1024×1024, verified Face/Hand Detailer + Refiner — unique complex prompts with beautiful girl):
+
+| Preview 01 — Prismatic Pavilion | Preview 02 — Botanical Lab |
+|---|---|
+| ![Chroma Preview 01](previews/chroma1_hd_gguf/preview_01_1024.png) | ![Chroma Preview 02](previews/chroma1_hd_gguf/preview_02_1024.png) |
+| *masterpiece, 1girl in prismatic glass pavilion with floating orchids and refraction, chiffon dress with crystal threads, beautiful girl, ultra detailed* | *masterpiece, 1girl in futuristic botanical lab with holographic flora, lab coat with glowing veins, holding luminous sprout, beautiful girl, sci-fi* |
 
 ### Anima + WAI-Anima
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/anima/comfy_anima_colab.ipynb)
@@ -197,5 +202,6 @@ See full support info in `docs/SUPPORT.md`.
 |---|---|---|
 | Z-Image Turbo | ![Turbo 01](previews/zimage_turbo/preview_01_1024.png) | ![Turbo 02](previews/zimage_turbo/preview_02_1024.png) |
 | Z-Image Base | ![Base 01](previews/zimage_base/preview_01_1024.png) | ![Base 02](previews/zimage_base/preview_02_1024.png) |
-*Next: Chroma1 HD, Flux SRPO/Klein, Qwen 2512/Edit, Anima, RouWei/Nova/JANKU — generating sequentially.*
+| Chroma1 HD | ![Chroma 01](previews/chroma1_hd_gguf/preview_01_1024.png) | ![Chroma 02](previews/chroma1_hd_gguf/preview_02_1024.png) |
+*Next: Flux SRPO/Klein, Qwen 2512/Edit, Anima, RouWei/Nova/JANKU — generating sequentially.*
 
