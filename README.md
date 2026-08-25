@@ -30,28 +30,28 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 - What: FLUX-based SRPO GGUF text-to-image notebook tuned for quick T4 runs.
 - Model creators/sources: FLUX.1 family by Black Forest Labs, SRPO model by Tencent Hunyuan (`tencent/SRPO`), GGUF conversion pack by `befox`.
 - Workflow: `workflows/flux_srpo/flux_dev_example.json`
-- Preview image: coming soon.
+- ![Z-Image Turbo Preview](previews/zimage_turbo/preview_9x16_576x1024.png)
 
 ### Flux2 Klein 9B GGUF
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/flux2_klein9b_gguf/comfy_flux2_klein9b_gguf.ipynb)
 - What: Flux.2 Klein 9B base/distilled GGUF notebook for T2I and edit flows.
 - Model creators/sources: FLUX.2 family by Black Forest Labs, GGUF releases by `unsloth`, VAE package by `Comfy-Org`.
 - Workflows: `workflows/flux2_klein9b_gguf/`
-- Preview image: coming soon.
+- ![Z-Image Base Preview](previews/zimage_base/preview_9x16_576x1024.png)
 
 ### Z-Image Base
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_base/comfy_zimage_base.ipynb)
 - What: Z-Image base GGUF setup for quality-oriented generation.
 - Model creators/sources: original Z-Image by `Tongyi-MAI` (`Tongyi-MAI/Z-Image`), GGUF ports by `unsloth`, ComfyUI split assets used from `Comfy-Org/z_image`.
 - Workflow: `workflows/zimage_base/Text to Image (Z-Image-Base).json`
-- Preview image: coming soon.
+- ![Nova Anime XL Preview](previews/nova_anime_xl_il_v190/preview_9x16_576x1024.png)
 
 ### Z-Image Turbo
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_turbo/comfy_zimage_turbo.ipynb)
 - What: fast Z-Image Turbo GGUF notebook for speed-first generation.
 - Model creators/sources: original Z-Image Turbo by `Tongyi-MAI` (`Tongyi-MAI/Z-Image-Turbo`), GGUF ports by `unsloth`, ComfyUI split assets used from `Comfy-Org/z_image`.
 - Workflows: `workflows/zimage_turbo/`
-- Preview image: coming soon.
+- ![JANKU Preview](previews/janku_v777/preview_9x16_576x1024.png)
 
 ### Z-Image Turbo + Base
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_turbo_base/comfy_zimage_turbo_base.ipynb)
@@ -178,3 +178,10 @@ See full support info in `docs/SUPPORT.md`.
 ## Notes
 - Respect model licenses and terms.
 - Cloudflare tunnels can still be unstable in Colab due to external network conditions.
+
+
+## Preview Gallery (9:16 HD 576x1024, upside-down clockwork prompt)
+- **Z-Image Turbo** ![Z-Image Turbo](previews/zimage_turbo/preview_9x16_576x1024.png)
+- **Z-Image Base** ![Z-Image Base](previews/zimage_base/preview_9x16_576x1024.png)
+- **Nova Anime XL** ![Nova Anime XL](previews/nova_anime_xl_il_v190/preview_9x16_576x1024.png)
+- **JANKU** ![JANKU](previews/janku_v777/preview_9x16_576x1024.png)
