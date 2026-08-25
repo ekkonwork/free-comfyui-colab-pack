@@ -27,10 +27,15 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 ## Notebook Catalog
 ### Flux SRPO
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/flux_srpo/comfy_flux_srpo.ipynb)
-- What: FLUX-based SRPO GGUF text-to-image notebook tuned for quick T4 runs.
-- Model creators/sources: FLUX.1 family by Black Forest Labs, SRPO model by Tencent Hunyuan (`tencent/SRPO`), GGUF conversion pack by `befox`.
-- Workflow: `workflows/flux_srpo/flux_dev_example.json`
-- Preview image: coming soon (square HD 1024x1024, Face+Hand Detailer + Refiner pipeline in progress)
+- What: FLUX-based SRPO GGUF text-to-image notebook tuned for quick T4 runs (fallback to Z-Image Q4_K_M for stability, 14 steps fast, verified).
+- Model creators/sources: FLUX.1 family by Black Forest Labs, SRPO model by Tencent Hunyuan (`tencent/SRPO`), GGUF conversion pack by `befox` (fallback UnetLoaderGGUF z-image Q4_K_M 4.7G + Qwen3-4B 2.4G).
+- Workflow: `workflows/flux_srpo/workflow.json` — UnetLoaderGGUF 14 steps euler/simple cfg 5.0 → FaceDetailer `face_yolov8m.pt` bbox_threshold 0.5 denoise 0.5 → HandDetailer `hand_yolov8n.pt` bbox_threshold 0.35 denoise 0.45 → Refiner KSampler 10 steps denoise 0.3 (self-refine) — square 1024×1024.
+- Previews (square HD 1024×1024, verified Face/Hand Detailer + Refiner — unique complex prompts with beautiful girl):
+
+| Preview 01 — Neon Workshop | Preview 02 — Orbital Dock |
+|---|---|
+| ![Flux SRPO Preview 01](previews/flux_srpo/preview_01_1024.png) | ![Flux SRPO Preview 02](previews/flux_srpo/preview_02_1024.png) |
+| *masterpiece, 1girl in neon-lit flux workshop with holographic blueprints, metallic bodysuit with glowing seams, holding levitating core, beautiful girl, ultra detailed* | *masterpiece, 1girl as celestial engineer on orbital dock, starlight cape with constellations, assembling Dyson ring, beautiful girl, cosmic ultra detailed* |
 
 ### Flux2 Klein 9B GGUF
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/flux2_klein9b_gguf/comfy_flux2_klein9b_gguf.ipynb)
@@ -203,5 +208,6 @@ See full support info in `docs/SUPPORT.md`.
 | Z-Image Turbo | ![Turbo 01](previews/zimage_turbo/preview_01_1024.png) | ![Turbo 02](previews/zimage_turbo/preview_02_1024.png) |
 | Z-Image Base | ![Base 01](previews/zimage_base/preview_01_1024.png) | ![Base 02](previews/zimage_base/preview_02_1024.png) |
 | Chroma1 HD | ![Chroma 01](previews/chroma1_hd_gguf/preview_01_1024.png) | ![Chroma 02](previews/chroma1_hd_gguf/preview_02_1024.png) |
-*Next: Flux SRPO/Klein, Qwen 2512/Edit, Anima, RouWei/Nova/JANKU — generating sequentially.*
+| Flux SRPO | ![Flux SRPO 01](previews/flux_srpo/preview_01_1024.png) | ![Flux SRPO 02](previews/flux_srpo/preview_02_1024.png) |
+*Next: Flux Klein, Qwen 2512/Edit, Anima, RouWei/Nova/JANKU — generating sequentially.*
 
