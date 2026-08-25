@@ -41,10 +41,15 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 
 ### Z-Image Base
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_base/comfy_zimage_base.ipynb)
-- What: Z-Image base GGUF setup for quality-oriented generation.
+- What: Z-Image base GGUF setup for quality-oriented generation (14 steps fast, verified).
 - Model creators/sources: original Z-Image by `Tongyi-MAI` (`Tongyi-MAI/Z-Image`), GGUF ports by `unsloth`, ComfyUI split assets used from `Comfy-Org/z_image`.
-- Workflow: `workflows/zimage_base/Text to Image (Z-Image-Base).json`
-- Preview image: coming soon (square HD 1024x1024, Face+Hand Detailer + Refiner pipeline in progress)
+- Workflow: `workflows/zimage_base/workflow.json` — UnetLoaderGGUF Q4_K_M 14 steps euler/simple cfg 5.0 → FaceDetailer `face_yolov8m.pt` bbox_threshold 0.5 denoise 0.5 → HandDetailer `hand_yolov8n.pt` bbox_threshold 0.35 denoise 0.45 → Refiner KSampler 10 steps denoise 0.3 (self-refine) — square 1024×1024.
+- Previews (square HD 1024×1024, verified Face/Hand Detailer + Refiner — unique complex prompts with beautiful girl):
+
+| Preview 01 — Autumn Library | Preview 02 — Shrine Maiden |
+|---|---|
+| ![Z-Image Base Preview 01](previews/zimage_base/preview_01_1024.png) | ![Z-Image Base Preview 02](previews/zimage_base/preview_02_1024.png) |
+| *masterpiece, 1girl in autumn library with floating stained-glass, warm light, detailed eyes/hands, beautiful girl* | *masterpiece, 1girl futuristic shrine maiden with holo lanterns and wind chimes, ornate kimono with glowing threads* |
 
 ### Z-Image Turbo
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_turbo/comfy_zimage_turbo.ipynb)
@@ -186,5 +191,11 @@ See full support info in `docs/SUPPORT.md`.
 
 
 ## Preview Gallery (Square HD 1024x1024 — Face/Hand Detailer + Refiner)
-*Generating — two square HD previews per notebook, each verified for eyes/hands/refiner. Old previews removed, new ones landing sequentially.*
+*Verified square HD previews — each 1024×1024, FaceDetailer `face_yolov8m.pt` + HandDetailer `hand_yolov8n.pt` + Refiner (self-refine denoise 0.3), unique complex prompts with beautiful girl.*
+
+| Notebook | Preview 01 | Preview 02 |
+|---|---|---|
+| Z-Image Turbo | ![Turbo 01](previews/zimage_turbo/preview_01_1024.png) | ![Turbo 02](previews/zimage_turbo/preview_02_1024.png) |
+| Z-Image Base | ![Base 01](previews/zimage_base/preview_01_1024.png) | ![Base 02](previews/zimage_base/preview_02_1024.png) |
+*Next: Chroma1 HD, Flux SRPO/Klein, Qwen 2512/Edit, Anima, RouWei/Nova/JANKU — generating sequentially.*
 
