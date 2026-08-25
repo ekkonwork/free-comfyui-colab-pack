@@ -27,10 +27,8 @@
 
 Для каждого ноутбука (`anima`, `chroma1_hd_gguf`, `flux2_klein9b_gguf`, `flux_srpo`, `janku_v777`, `nova_anime_xl_il_v190`, `qwen_image_2512`, `qwen_image_edit_2511`, `rouwei`, `zimage_*`, `universal`):
 
-- [ ] Определить модель ноутбука → Civitai API поиск (token `4ebce...`) воркфлоу с детейлерами, апскейл/SeedVR отключить. Если нет детейлеров или `klein9b/qwen 2511` — взять стандартный ComfyUI template.
-- [ ] Адаптировать воркфлоу: если GGUF — заменить ноды на GGUF Loader + `*_gguf.safetensors`; иначе оставить как в Anima workflow.
-- [ ] Генерация HD 19:6 (напр. 1216×684 / 1280×720 / 1536×864 — кратно 64), фикс ошибок, визуальная проверка артефактов (мультимодально), ресёрч при необходимости, сабагенты по требованию.
-- [ ] Пуш артефактов: `previews/<notebook>/preview.jpg` + `workflows/<notebook>/workflow.json` (+ лог).
+- [x] **zimage_turbo** — Z-Image-Turbo GGUF Q4_K_M + Qwen3 GGUF — Civitai 2169096 FaceDetailer workflow (4992 dl) адаптирован: UnetLoaderGGUF + CLIPLoaderGGUF qwen_image, VAE ae.safetensors, 1824x576 19:6, sampler euler/simple 9 steps cfg 1.0, upscale/seedvr отключены, FaceDetailer с bbox/face_yolov8m.pt (SAM опционально). Генерация успешна (90s, sharpness 470, 1.5MB png) — превью `previews/zimage_turbo/preview_hd19x6_1824x576.png`, workflow `workflows/zimage_turbo/detailer_hd19x6/`.
+- [ ] Остальные: anima, chroma1_hd_gguf, flux2_klein9b_gguf, flux_srpo, janku_v777, nova_anime_xl_il_v190, qwen_image_2512, qwen_image_edit_2511, rouwei, zimage_base, zimage_seedvr2, zimage_turbo_base, universal — в очереди
 
 ## Лог выполнения
 
@@ -41,4 +39,6 @@
 | 2026-08-25 | Compare нотебук: ячейка 3b форм (38 @param) + zip-скачивание в ячейке очереди | 10 промптов + 4×6 параметров семплинга редактируются сбоку |
 | 2026-08-25 | Дымовой тест CF+restart на dummy ComfyUI 18188 | URL1 restored-ranking… / URL2 investigations-gauge… — оба поднялись, keepalive перезапускает |
 | 2026-08-25 | Валидация всех нотебуков (json + watchdog identical) | 17/17 OK |
-| 2026-08-25 | Пуш в main | — |
+| 2026-08-25 | Пуш в main (часть 1) | e9696fb — 17 нотебуков + HANDOFF |
+| 2026-08-25 | zimage_turbo: ComfyUI install +模型 download (4.7G+2.4G+320M) + запуск на T4 --lowvram | OK, /system_stats 200 |
+| 2026-08-25 | zimage_turbo: Civitai research (2169096 FaceDetailer) + GGUF адаптация + HD 1824x576 gen | 1.5MB png, preview + workflow сохранены, ожидают пуш |

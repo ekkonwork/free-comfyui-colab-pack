@@ -1,0 +1,11 @@
+{
+  "1": {"class_type": "UnetLoaderGGUF", "inputs": {"unet_name": "z-image-turbo-Q4_K_M.gguf"}},
+  "2": {"class_type": "CLIPLoaderGGUF", "inputs": {"clip_name": "Qwen3-4B-Q4_K_M.gguf", "type": "qwen_image"}},
+  "3": {"class_type": "VAELoader", "inputs": {"vae_name": "ae.safetensors"}},
+  "4": {"class_type": "CLIPTextEncode", "inputs": {"text": "masterpiece, best quality, ultra detailed, 1girl, solo, adult woman, upside-down suspended pose inside a zero-gravity clockwork workshop, one hand reaching toward a floating brass astrolabe, asymmetrical cobalt flight suit with transparent panels, loose ribbons and tools orbiting around her, impossible perspective, dramatic rim light, intricate mechanical background, cinematic anime illustration, highly detailed", "clip": ["2", 0]}},
+  "5": {"class_type": "CLIPTextEncode", "inputs": {"text": "worst quality, low quality, blurry, bad anatomy, watermark, text", "clip": ["2", 0]}},
+  "6": {"class_type": "EmptyLatentImage", "inputs": {"width": 1824, "height": 576, "batch_size": 1}},
+  "7": {"class_type": "KSampler", "inputs": {"seed": 424242, "steps": 9, "cfg": 1.0, "sampler_name": "euler", "scheduler": "simple", "denoise": 1.0, "model": ["1", 0], "positive": ["4", 0], "negative": ["5", 0], "latent_image": ["6", 0]}},
+  "8": {"class_type": "VAEDecode", "inputs": {"samples": ["7", 0], "vae": ["3", 0]}},
+  "9": {"class_type": "SaveImage", "inputs": {"filename_prefix": "zimage_turbo_hd19x6", "images": ["8", 0]}}
+}
