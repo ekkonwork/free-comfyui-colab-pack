@@ -50,8 +50,13 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_turbo/comfy_zimage_turbo.ipynb)
 - What: fast Z-Image Turbo GGUF notebook for speed-first generation.
 - Model creators/sources: original Z-Image Turbo by `Tongyi-MAI` (`Tongyi-MAI/Z-Image-Turbo`), GGUF ports by `unsloth`, ComfyUI split assets used from `Comfy-Org/z_image`.
-- Workflows: `workflows/zimage_turbo/`
-- Preview image: coming soon (square HD 1024x1024, Face+Hand Detailer + Refiner pipeline in progress)
+- Workflow: `workflows/zimage_turbo/workflow.json` — UnetLoaderGGUF Q4_K_M + CLIPLoaderGGUF Qwen3-4B + VAELoader ae.safetensors → KSampler 9 steps euler/simple cfg 1.0 → FaceDetailer `face_yolov8m.pt` bbox_threshold 0.5 denoise 0.5 → HandDetailer `hand_yolov8n.pt` bbox_threshold 0.35 denoise 0.45 → Refiner KSampler 12 steps denoise 0.3 (self-refine) — square 1024×1024.
+- Previews (square HD 1024×1024, verified Face/Hand Detailer + Refiner — unique complex prompts with beautiful girl):
+
+| Preview 01 — Clockwork Workshop | Preview 02 — Cyber Shrine |
+|---|---|
+| ![Z-Image Turbo Preview 01](previews/zimage_turbo/preview_01_1024.png) | ![Z-Image Turbo Preview 02](previews/zimage_turbo/preview_02_1024.png) |
+| *masterpiece, 1girl in clockwork workshop with brass gears and floating astrolabe, warm lighting, detailed eyes/hands* | *masterpiece, 1girl cyber shrine with neon lights and holographic koi, intricate kimono with light panels, beautiful girl* |
 
 ### Z-Image Turbo + Base
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_turbo_base/comfy_zimage_turbo_base.ipynb)
