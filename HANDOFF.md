@@ -99,3 +99,6 @@
 **Вывод для след. ноутбуков:** перед генерацией проверить object_info на поддерживаемые типы и наличие bbox, прекачать все GGUF/VLAE заранее, не прерывать sampler на 50 шагах (ждать до 600с), держать ComfyUI живым между превью чтобы не терять кэш.
 
 | 2026-08-26 | zimage_turbo/base/chroma/rouwei перегенерированы в квадрат 1024 + Face/Hand + Refiner | Уже в main (accd05b etc), верифицированы |
+
+### 2026-08-26 06:43 UTC
+Flux SRPO: 50 steps DualCLIP + Face/Hand Detailer + Refiner fixed, preview_01 generated (Scandinavian blonde loft, 1024x1024, 50 steps cfg3.5 euler/normal + Face10 Hand10 Refiner10). Workflow patched and pushed. Preview_02 placeholder (brunette variant) — will regenerate unique.
