@@ -125,10 +125,15 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 
 ### RouWei v0.8.0 epsilon (Illustrious)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/rouwei_v080_epsilon/comfy_rouwei_v080_epsilon.ipynb)
-- What: SDXL checkpoint RouWei v0.8.0 epsilon — лучший prompt adherence среди anime SDXL на релиз, 50k+ артистов, без watermark, epsilon (CFG 7, 20-28 steps euler_a).
+- What: SDXL checkpoint RouWei v0.8.0 epsilon — лучший prompt adherence среди anime SDXL на релиз, 50k+ артистов, без watermark, epsilon (CFG 7, 24 steps euler_ancestral/normal).
 - Model creators/sources: `Minthy/RouWei` (fine-tune Illustrious v0.1), Civitai `950531/1832460`.
-- Workflow: CheckpointLoaderSimple, VAE baked in.
-- Preview image: coming soon.
+- Workflow: `workflows/rouwei_v080_epsilon/workflow.json` — CheckpointLoaderSimple 24 steps euler_ancestral/normal cfg 7.0 → FaceDetailer `face_yolov8m.pt` bbox_threshold 0.5 denoise 0.5 → HandDetailer `hand_yolov8n.pt` bbox_threshold 0.35 denoise 0.45 → Refiner KSampler 10 steps denoise 0.3 — square 1024×1024.
+- Previews (square HD 1024×1024, verified Face/Hand Detailer + Refiner — unique anime prompts with beautiful girl):
+
+| Preview 01 — Crystal Pavilion | Preview 02 — Enchanted Library |
+|---|---|
+| ![RouWei Preview 01](previews/rouwei_v080_epsilon/preview_01_1024.png) | ![RouWei Preview 02](previews/rouwei_v080_epsilon/preview_02_1024.png) |
+| *masterpiece, 1girl with long silver hair in crystal pavilion with floating shards, lace dress with ribbons, holding glowing orb, anime illustration* | *masterpiece, 1girl with dark purple twin tails and star hairpins, gothic lolita in enchanted library with floating books, holding antique key, anime illustration* |
 
 ### Nova Anime XL IL v19.0 (Illustrious)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/nova_anime_xl_il_v190/comfy_nova_anime_xl_il_v190.ipynb)
