@@ -21,7 +21,7 @@
   "4": {
     "class_type": "CLIPTextEncode",
     "inputs": {
-      "text": "masterpiece, best quality, ultra detailed, 1girl, solo, adult woman, clockwork workshop, intricate brass gears, warm lighting, highly detailed anime illustration, sharp focus",
+      "text": "RAW photo, photorealistic, shot on Canon EOS R5 with 85mm f/1.4 lens, 8k, ultra detailed natural skin texture, a beautiful 24-year-old Scandinavian woman with long wavy blonde hair and bright blue eyes, wearing a soft cream knit sweater, sitting at a sunlit Scandinavian kitchen island with plants, holding a steaming white ceramic mug with both hands clearly visible, delicate realistic fingers, cinematic morning light through window, shallow depth of field, sharp focus on face and eyes, film grain, hygge cozy interior",
       "clip": [
         "2",
         0
@@ -31,7 +31,7 @@
   "5": {
     "class_type": "CLIPTextEncode",
     "inputs": {
-      "text": "worst quality, low quality, blurry, bad anatomy, watermark, text, extra fingers, mutated hands, poorly drawn face, deformed",
+      "text": "blurry, low quality, distorted, deformed, bad anatomy, extra fingers, mutated hands, bad eyes, disfigured face, watermark, text, oversaturated, plastic skin, airbrushed, cartoon, anime, illustration",
       "clip": [
         "2",
         0
@@ -47,16 +47,26 @@
     }
   },
   "7": {
+    "class_type": "ModelSamplingAuraFlow",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "shift": 3.0
+    }
+  },
+  "8": {
     "class_type": "KSampler",
     "inputs": {
       "seed": 424242,
       "steps": 9,
       "cfg": 1.0,
       "sampler_name": "euler",
-      "scheduler": "simple",
+      "scheduler": "beta",
       "denoise": 1.0,
       "model": [
-        "1",
+        "7",
         0
       ],
       "positive": [
@@ -73,11 +83,11 @@
       ]
     }
   },
-  "8": {
+  "9": {
     "class_type": "VAEDecode",
     "inputs": {
       "samples": [
-        "7",
+        "8",
         0
       ],
       "vae": [
@@ -86,27 +96,27 @@
       ]
     }
   },
-  "9": {
+  "10": {
     "class_type": "UltralyticsDetectorProvider",
     "inputs": {
       "model_name": "bbox/face_yolov8m.pt"
     }
   },
-  "10": {
+  "11": {
     "class_type": "UltralyticsDetectorProvider",
     "inputs": {
       "model_name": "bbox/hand_yolov8n.pt"
     }
   },
-  "11": {
+  "12": {
     "class_type": "FaceDetailer",
     "inputs": {
       "image": [
-        "8",
+        "9",
         0
       ],
       "model": [
-        "1",
+        "7",
         0
       ],
       "clip": [
@@ -124,7 +134,7 @@
       "steps": 9,
       "cfg": 1.0,
       "sampler_name": "euler",
-      "scheduler": "simple",
+      "scheduler": "beta",
       "positive": [
         "4",
         0
@@ -148,22 +158,22 @@
       "sam_mask_hint_use_negative": "False",
       "drop_size": 10,
       "bbox_detector": [
-        "9",
+        "10",
         0
       ],
       "wildcard": "",
       "cycle": 1
     }
   },
-  "12": {
+  "13": {
     "class_type": "FaceDetailer",
     "inputs": {
       "image": [
-        "11",
+        "12",
         0
       ],
       "model": [
-        "1",
+        "7",
         0
       ],
       "clip": [
@@ -181,7 +191,7 @@
       "steps": 9,
       "cfg": 1.0,
       "sampler_name": "euler",
-      "scheduler": "simple",
+      "scheduler": "beta",
       "positive": [
         "4",
         0
@@ -205,18 +215,18 @@
       "sam_mask_hint_use_negative": "False",
       "drop_size": 10,
       "bbox_detector": [
-        "10",
+        "11",
         0
       ],
       "wildcard": "",
       "cycle": 1
     }
   },
-  "13": {
+  "14": {
     "class_type": "VAEEncode",
     "inputs": {
       "pixels": [
-        "12",
+        "13",
         0
       ],
       "vae": [
@@ -225,17 +235,17 @@
       ]
     }
   },
-  "14": {
+  "15": {
     "class_type": "KSampler",
     "inputs": {
       "seed": 424242,
       "steps": 12,
       "cfg": 1.0,
       "sampler_name": "euler",
-      "scheduler": "simple",
+      "scheduler": "beta",
       "denoise": 0.3,
       "model": [
-        "1",
+        "7",
         0
       ],
       "positive": [
@@ -247,16 +257,16 @@
         0
       ],
       "latent_image": [
-        "13",
+        "14",
         0
       ]
     }
   },
-  "15": {
+  "16": {
     "class_type": "VAEDecode",
     "inputs": {
       "samples": [
-        "14",
+        "15",
         0
       ],
       "vae": [
@@ -265,12 +275,12 @@
       ]
     }
   },
-  "16": {
+  "17": {
     "class_type": "SaveImage",
     "inputs": {
       "filename_prefix": "zimage_turbo_1024",
       "images": [
-        "15",
+        "16",
         0
       ]
     }

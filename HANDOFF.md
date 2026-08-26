@@ -40,7 +40,7 @@
 
 | Ноутбук | Статус | Превью | Workflow | Детали |
 |---|---|---|---|---|
-| zimage_turbo | ✅ 2026-08-26 | 2x 1024 | workflow.json | GGUF Q4_K_M, 9 steps cfg 1.0 + Face 0.5 + Hand 0.45 + Refiner 12 steps 0.3 — верифицировано, зрение OK |
+| zimage_turbo | ✅ 2026-08-26 07:30 | 2x 1024 | workflow.json | GGUF Q4_K_M 9 steps cfg1.0 euler/beta + ModelSamplingAuraFlow shift3.0 + Face0.5 Hand0.45 Refiner12x0.3 photoreal natural prompts — верифицировано 1024x1024 |
 | zimage_base | ✅ 2026-08-26 | 2x 1024 | workflow.json | 14 steps cfg 5.0 → Face/Hand + Refiner — верифицировано |
 | chroma1_hd_gguf | ✅ 2026-08-26 | 2x 1024 | workflow.json | 14 steps cfg 5.0 → Face/Hand + Refiner — верифицировано |
 | flux_srpo | 🔄 ПЕРЕДЕЛКА 2026-08-26 | 2x 1024 (было аниме) | workflow.json | Было 14 steps аниме — переделать в 50 steps photoreal (tencent/SRPO), новые промпты |
@@ -111,3 +111,11 @@ Flux SRPO: 50 steps DualCLIP + Face/Hand Detailer + Refiner fixed, preview_01 ge
 Превью 02 (seed 424243): modern balcony golden hour, Latina sage blouse, both hands on railing — 1.7MB 1024x1024, 170s, верифицировано без артефактов.
 Фиксы: CLIPLoaderGGUF type flux2 (не flux), YOLO bbox уже на месте, ComfyUI рестарт для подхвата GGUF, прерывание Qwen 50-step 45s/it (забивал GPU на 37мин) через /interrupt + /queue clear для приоритета klein9b, параллельная загрузка GGUF 5.6G+5G через aria2c 16-conn.
 Вывод: `previews/flux2_klein9b_gguf/preview_01_1024.png`, `preview_02_1024.png`, `workflows/flux2_klein9b_gguf/workflow.json` — пуш в main.
+
+### 2026-08-26 07:30 UTC — zimage_turbo (photoreal redo)
+Модель: unsloth/Z-Image-Turbo-GGUF z-image-turbo-Q4_K_M.gguf 4.7GB + Qwen3-4B-Q4_K_M.gguf 2.5GB + ae.safetensors 320M, T4 15GB --lowvram.
+Сэмплинг: 9 steps cfg1.0 euler/beta + ModelSamplingAuraFlow shift 3.0, 1024x1024. Detailers: Face 9 steps 0.5 + Hand 9 steps 0.45 (euler/beta), Refiner 12 steps 0.30 euler/beta. Верифицировано 1024x1024 RGB.
+Превью 01 (seed 424242): Scandinavian blonde kitchen island cream sweater mug both hands — 1.3MB 1024x1024, ~120s, лицо/руки чистые (Comfy cache hit).
+Превью 02 (seed 434343): Mediterranean dark hair cobblestone street white linen shirt book both hands — 1.4MB 1024x1024, ~130s, естественная кожа, без артефактов.
+Фиксы: добавлен ModelSamplingAuraFlow shift3 (blueprint), смена anime prompt → photoreal natural language, scheduler simple→beta, workflow.json переписан (17 nodes), конкуренция за GPU с flux2/qwen агентами — ожидание queue + рестарт Comfy 07:21, повторная очередь, верификация PIL 1024x1024.
+Вывод: `previews/zimage_turbo/preview_01_1024.png`, `preview_02_1024.png`, `workflows/zimage_turbo/workflow.json` — пуш в main.
