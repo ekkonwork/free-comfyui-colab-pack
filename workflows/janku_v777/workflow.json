@@ -293,7 +293,7 @@
         "Node name for S&R": "CheckpointLoaderSimple"
       },
       "widgets_values": [
-        "rouwei_v080Epsilon.safetensors"
+        "JANKUTrainedChenkinNoobai_v777.safetensors"
       ],
       "color": "#222",
       "bgcolor": "#000"

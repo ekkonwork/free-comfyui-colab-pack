@@ -22,14 +22,17 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 - Optional ultra-low-VRAM launch mode for large images (`--novram`, smart-memory off, cache disabled, forced upcast attention).
 - Workflow Models Downloader custom node is installed alongside ComfyUI-Manager.
 - Low-VRAM defaults for Colab T4 (memory-aware settings).
-- You can use any workflow templates, just make sure to change the model loader and CLIP loader to their GGUF versions before running.
+- Every supported notebook installs exactly one bundled workflow into ComfyUI automatically.
+- GGUF notebooks already use connected `UnetLoaderGGUF`, `CLIPLoaderGGUF`, or `DualCLIPLoaderGGUF` nodes; selected runtime quant filenames are synchronized after model download.
+
+See [workflow sources and adaptations](docs/WORKFLOW_SOURCES.md).
 
 ## Notebook Catalog
 ### Flux SRPO
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/flux_srpo/comfy_flux_srpo.ipynb)
-- What: FLUX-based SRPO GGUF text-to-image notebook tuned for quick T4 runs (Tencent SRPO fine-tune of FLUX.1-dev 12B, 14 steps fast, verified photoreal).
+- What: FLUX-based SRPO GGUF text-to-image notebook using the Tencent SRPO workflow architecture.
 - Model creators/sources: FLUX.1 family by Black Forest Labs, SRPO model by Tencent Hunyuan (`tencent/SRPO`), GGUF conversion pack by `befox` (`srpo-Q2_K.gguf` 4.0G + `t5-v1_1-xxl-encoder-Q4_K_M.gguf` 2.9G).
-- Workflow: `workflows/flux_srpo/workflow.json` — UnetLoaderGGUF `srpo-Q2_K.gguf` 14 steps euler/simple cfg 4.0 → FaceDetailer `face_yolov8m.pt` bbox_threshold 0.5 denoise 0.5 → HandDetailer `hand_yolov8n.pt` bbox_threshold 0.35 denoise 0.45 → Refiner KSampler 10 steps denoise 0.3 (self-refine) — square 1024×1024.
+- Workflow: `workflows/flux_srpo/workflow.json` — official Tencent graph adapted to connected GGUF UNET + dual CLIP loaders. Notebook substitutes the selected quant filenames automatically.
 - Previews (square HD 1024×1024, verified Face/Hand Detailer + Refiner — unique photorealistic prompts with beautiful girl, 3x realism via SRPO):
 
 | Preview 01 — Scandinavian Atelier | Preview 02 — Rooftop Garden Golden Hour |
@@ -41,14 +44,14 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/flux2_klein9b_gguf/comfy_flux2_klein9b_gguf.ipynb)
 - What: Flux.2 Klein 9B base/distilled GGUF notebook for T2I and edit flows.
 - Model creators/sources: FLUX.2 family by Black Forest Labs, GGUF releases by `unsloth`, VAE package by `Comfy-Org`.
-- Workflows: `workflows/flux2_klein9b_gguf/`
+- Workflow: `workflows/flux2_klein9b_gguf/workflow.json` — one Comfy-Org 9B graph adapted to GGUF loaders.
 - Preview image: coming soon (square HD 1024x1024, Face+Hand Detailer + Refiner pipeline in progress)
 
 ### Z-Image Base
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_base/comfy_zimage_base.ipynb)
-- What: Z-Image base GGUF setup for quality-oriented generation (14 steps fast, verified).
+- What: Z-Image Base GGUF setup using the official Comfy-Org graph architecture.
 - Model creators/sources: original Z-Image by `Tongyi-MAI` (`Tongyi-MAI/Z-Image`), GGUF ports by `unsloth`, ComfyUI split assets used from `Comfy-Org/z_image`.
-- Workflow: `workflows/zimage_base/workflow.json` — UnetLoaderGGUF Q4_K_M 14 steps euler/simple cfg 5.0 → FaceDetailer `face_yolov8m.pt` bbox_threshold 0.5 denoise 0.5 → HandDetailer `hand_yolov8n.pt` bbox_threshold 0.35 denoise 0.45 → Refiner KSampler 10 steps denoise 0.3 (self-refine) — square 1024×1024.
+- Workflow: `workflows/zimage_base/workflow.json` — official Base graph adapted to connected GGUF UNET + Qwen3 loaders.
 - Previews (square HD 1024×1024, verified Face/Hand Detailer + Refiner — unique complex prompts with beautiful girl):
 
 | Preview 01 — Autumn Library | Preview 02 — Shrine Maiden |
@@ -60,7 +63,7 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_turbo/comfy_zimage_turbo.ipynb)
 - What: fast Z-Image Turbo GGUF notebook for speed-first generation.
 - Model creators/sources: original Z-Image Turbo by `Tongyi-MAI` (`Tongyi-MAI/Z-Image-Turbo`), GGUF ports by `unsloth`, ComfyUI split assets used from `Comfy-Org/z_image`.
-- Workflow: `workflows/zimage_turbo/workflow.json` — UnetLoaderGGUF Q4_K_M + CLIPLoaderGGUF Qwen3-4B + VAELoader ae.safetensors → KSampler 9 steps euler/simple cfg 1.0 → FaceDetailer `face_yolov8m.pt` bbox_threshold 0.5 denoise 0.5 → HandDetailer `hand_yolov8n.pt` bbox_threshold 0.35 denoise 0.45 → Refiner KSampler 12 steps denoise 0.3 (self-refine) — square 1024×1024.
+- Workflow: `workflows/zimage_turbo/workflow.json` — official Turbo graph adapted to connected GGUF UNET + Qwen3 loaders.
 - Previews (square HD 1024×1024, verified Face/Hand Detailer + Refiner — unique complex prompts with beautiful girl):
 
 | Preview 01 — Clockwork Workshop | Preview 02 — Cyber Shrine |
@@ -72,35 +75,35 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_turbo_base/comfy_zimage_turbo_base.ipynb)
 - What: combo notebook with Turbo + Base variants in one setup.
 - Model creators/sources: original Z-Image models by `Tongyi-MAI` (`Tongyi-MAI/Z-Image` and `Tongyi-MAI/Z-Image-Turbo`), GGUF variants by `unsloth`, ComfyUI split assets used from `Comfy-Org/z_image`.
-- Workflows: `workflows/zimage_turbo_base/`
+- Workflow: `workflows/zimage_turbo_base/workflow.json` — Turbo and Base branches on one canvas, one selectable file.
 - Preview image: coming soon.
 
-### Z-Image Turbo + SeedVR2 Upscaler
+### Z-Image Turbo notebook (SeedVR2 excluded from bundled flow)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_seedvr2/comfy_zimage_seedvr2.ipynb)
-- What: two-stage pipeline (Z-Image generation + SeedVR2 upscaling).
+- What: notebook retains optional SeedVR2 model setup, but its single bundled workflow is clean Z-Image Turbo generation only.
 - Model creators/sources: original Z-Image Turbo by `Tongyi-MAI` (`Tongyi-MAI/Z-Image-Turbo`) with GGUF ports by `unsloth`, SeedVR2 node/files by `numz` and GGUF pack by `cmeka`.
-- Workflows: `workflows/zimage_seedvr2/`
+- Workflow: `workflows/zimage_seedvr2/workflow.json`; no SeedVR2 nodes are present.
 - Preview image: coming soon.
 
 ### Qwen Image 2512
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/qwen_image_2512/comfy_qwen_image_2512.ipynb)
 - What: Qwen Image 2512 GGUF generation notebook with optional Lightning LoRA.
 - Model creators/sources: Qwen family by Alibaba/Qwen team, GGUF packs by `unsloth` and `ggml-org`, Lightning LoRA by `lightx2v`.
-- Workflows: `workflows/qwen_image_2512/`
+- Workflow: `workflows/qwen_image_2512/workflow.json` — official Comfy-Org graph with GGUF loaders and runtime LoRA filename synchronization.
 - Preview image: coming soon.
 
 ### Qwen Image Edit 2511
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/qwen_image_edit_2511/comfy_qwen_image_edit_2511.ipynb)
 - What: Qwen Image Edit 2511 notebook for image editing use cases.
 - Model creators/sources: Qwen family by Alibaba/Qwen team, GGUF packs by `unsloth` and `ggml-org`, Lightning LoRA by `lightx2v`.
-- Workflow: `workflows/qwen_image_edit_2511/Image Edit (Qwen 2511).json`
+- Workflow: `workflows/qwen_image_edit_2511/workflow.json` — official Comfy-Org edit graph with GGUF loaders and runtime LoRA filename synchronization.
 - Preview image: coming soon.
 
 ### Chroma1 HD GGUF
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/chroma1_hd_gguf/comfy_chroma1_hd_gguf.ipynb)
-- What: Chroma1-HD text-to-image GGUF notebook (fallback to Z-Image Q4_K_M for stability, 14 steps fast, verified).
-- Model creators/sources: Chroma1-HD by `lodestones`, GGUF package by `silveroxides` (fallback UnetLoaderGGUF z-image Q4_K_M 4.7G + Qwen3-4B 2.4G).
-- Workflow: `workflows/chroma1_hd_gguf/workflow.json` — UnetLoaderGGUF 14 steps euler/simple cfg 5.0 → FaceDetailer `face_yolov8m.pt` bbox_threshold 0.5 denoise 0.5 → HandDetailer `hand_yolov8n.pt` bbox_threshold 0.35 denoise 0.45 → Refiner KSampler 10 steps denoise 0.3 (self-refine) — square 1024×1024.
+- What: Chroma1-HD text-to-image GGUF notebook; the bundled graph uses real Chroma, not a Z-Image fallback.
+- Model creators/sources: Chroma1-HD by `lodestones`, GGUF package by `silveroxides`.
+- Workflow: `workflows/chroma1_hd_gguf/workflow.json` — author Chroma graph adapted to connected Chroma GGUF + FLAN-T5 GGUF loaders.
 - Previews (square HD 1024×1024, verified Face/Hand Detailer + Refiner — unique complex prompts with beautiful girl):
 
 | Preview 01 — Prismatic Pavilion | Preview 02 — Botanical Lab |
@@ -113,7 +116,7 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 - What: native Anima Aesthetic v1.1 and WAI-Anima v1.0 workflows for T2I, ControlNet and inpainting.
 - Includes: ComfyUI-Manager, Anima-LLLite, ControlNet preprocessors, Lora Manager and the exact workflow variants from the v45 archive.
 - Models: both Anima checkpoints are downloaded; the notebook writes WAI and Aesthetic workflow variants so either model can be selected.
-- Workflow files are kept in the private companion repository and loaded by its separate loader notebook.
+- Workflow: `workflows/anima/workflow.json`, installed into ComfyUI automatically.
 
 
 ### Anima Illustrious Compare (Anima + 3 Illustrious)
@@ -127,7 +130,7 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/rouwei_v080_epsilon/comfy_rouwei_v080_epsilon.ipynb)
 - What: SDXL checkpoint RouWei v0.8.0 epsilon — лучший prompt adherence среди anime SDXL на релиз, 50k+ артистов, без watermark, epsilon (CFG 7, 24 steps euler_ancestral/normal).
 - Model creators/sources: `Minthy/RouWei` (fine-tune Illustrious v0.1), Civitai `950531/1832460`.
-- Workflow: `workflows/rouwei_v080_epsilon/workflow.json` — CheckpointLoaderSimple 24 steps euler_ancestral/normal cfg 7.0 → FaceDetailer `face_yolov8m.pt` bbox_threshold 0.5 denoise 0.5 → HandDetailer `hand_yolov8n.pt` bbox_threshold 0.35 denoise 0.45 → Refiner KSampler 10 steps denoise 0.3 — square 1024×1024.
+- Workflow: `workflows/rouwei_v080_epsilon/workflow.json` — checkpoint → base KSampler → second KSampler/refiner → FaceDetailer → Hand Detailer → SaveImage.
 - Previews (square HD 1024×1024, verified Face/Hand Detailer + Refiner — unique anime prompts with beautiful girl):
 
 | Preview 01 — Crystal Pavilion | Preview 02 — Enchanted Library |
@@ -139,14 +142,14 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/nova_anime_xl_il_v190/comfy_nova_anime_xl_il_v190.ipynb)
 - What: Nova Anime XL IL v19 — anime/2.5D/3D SDXL, серия из 20+ версий, Pony/Illustrious hybrid.
 - Model creators/sources: Nova Anime team, Civitai `376130/2940478`.
-- Workflow: CheckpointLoaderSimple.
+- Workflow: `workflows/nova_anime_xl_il_v190/workflow.json` — checkpoint → base KSampler → second KSampler/refiner → FaceDetailer → Hand Detailer → SaveImage.
 - Preview image: coming soon.
 
 ### JANKU v7.77 (Illustrious + RouWei)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/janku_v777/comfy_janku_v777.ipynb)
 - What: JANKU v7.77 — Illustrious XL merge с Chenkin/NoobAI/RouWei, LoRA-free, улучшенная анатомия/NSFW, 1536 без upscale.
 - Model creators/sources: JANKU (janxd), Civitai `1277670/2786084`, base `NoobAI-XL 1.0 License`.
-- Workflow: CheckpointLoaderSimple, VAE baked in.
+- Workflow: `workflows/janku_v777/workflow.json` — checkpoint → base KSampler → second KSampler/refiner → FaceDetailer → Hand Detailer → SaveImage; VAE baked in.
 - Preview image: coming soon.
 
 
@@ -160,7 +163,7 @@ These are kept in repo and can be returned to active catalog after validation.
 ```text
 free-comfyui-colab-pack/
   notebooks/<model>/comfy_<model>.ipynb
-  workflows/<model>/*.json
+  workflows/<model>/workflow.json
   docs/
 ```
 
@@ -169,7 +172,7 @@ free-comfyui-colab-pack/
 2. Run cells top-to-bottom.
 3. Enter Hugging Face token when asked.
 4. Enter Civitai token when asked (recommended for LoRA downloads).
-5. Open generated Cloudflare link and load workflow from `workflows/<model>/`.
+5. Open the generated Cloudflare link and choose the notebook-named flow in ComfyUI's Workflows menu.
 
 For 1K+ images on free Colab, set `LOW_VRAM_STABLE = True` in the launch cell. This trades speed for stability.
 

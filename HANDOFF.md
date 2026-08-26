@@ -3,7 +3,45 @@
 > Автор задачи: ekkonwork. Исполнитель: Hermes Agent.
 > Токены: HF `hf_***REDACTED***`, Civitai `***REDACTED***`, GitHub PAT предоставлен.
 > Правило: пуш сразу в `main` без PR.
-> Актуальный приоритет: сообщение от 2026-08-26 (квадрат HD 1024x1024, 2 превью/ноутбук, рефайнер+детейлеры, верификация глазами)
+> Актуальный приоритет: последнее сообщение пользователя 2026-08-26 — генерация превью отменена; подготовить по одному выбираемому в ComfyUI workflow на notebook.
+
+## Текущий handoff — workflow-only, 2026-08-26
+
+Последнее сообщение пользователя отменяет старую очередь генерации превью. Сейчас результатом считаются workflow JSON и их автозагрузка в ComfyUI.
+
+### Сделано
+
+- Для 14 активных model notebooks создан ровно один файл `workflows/<model>/workflow.json`; дополнительные `source_native.json` и варианты удалены, чтобы пользователь не мог выбрать не тот JSON.
+- В GGUF workflows официальные Comfy-Org/Tencent/Lodestones схемы адаптированы заменой `UNETLoader` → `UnetLoaderGGUF`, `CLIPLoader` → `CLIPLoaderGGUF`, `DualCLIPLoader` → `DualCLIPLoaderGGUF`. Связи loader → model/conditioning сохранены.
+- Notebook после model-download ячейки скачивает свой единственный JSON, подставляет фактически выбранные runtime quant filenames и записывает его в `/content/ComfyUI/user/default/workflows/<model>.json`. Flow виден в меню Workflows после открытия ComfyUI.
+- SDXL workflows JANKU v7.77, Nova Anime XL IL v19 и RouWei v0.8 epsilon содержат base KSampler → второй KSampler-refiner → VAE decode → FaceDetailer → Hand Detailer → SaveImage.
+- `anima_illustrious_compare` не использует устаревшие чужие ветки авторского comparison JSON: один canvas собран из точного Anima checkpoint и точных RouWei/Nova/JANKU SDXL branches.
+- По прямому требованию пользователя SeedVR2 полностью исключён из всех workflow. `zimage_seedvr2/workflow.json` — чистый Z-Image Turbo GGUF flow без SeedVR nodes.
+- Генерация Flux SRPO №2 остановлена. Незавершённое локальное изменение preview №1 откатилось; новые previews в этот checkpoint не входят.
+
+### Проверено
+
+- `python scripts/check_notebooks.py` — OK.
+- `python scripts/check_workflows.py` — 14/14 OK: один JSON на папку, UI workflow schema, GGUF loader counts/connections, SDXL refiner/detailer topology, notebook auto-install cell.
+- Официальный validator из `Comfy-Org/workflow_templates` (`_validate_workflow_04`) — 0 schema errors для 14 JSON.
+- `rg -n "SeedVR|seedvr" workflows -g "*.json"` — 0 совпадений.
+
+### Баги и фиксы этого этапа
+
+| Баг | Фикс |
+|---|---|
+| Старый Chroma workflow на деле ссылался на Z-Image GGUF/Qwen | Заменён авторским Chroma1-HD graph; loaders адаптированы под Chroma GGUF + FLAN-T5 GGUF |
+| Native official JSON не работал с notebook GGUF weights | Loader nodes заменены на ComfyUI-GGUF без разрыва links |
+| Auto-quant мог выбрать filename, отличный от статического JSON | Auto-install cell выполняется после model download и рекурсивно подставляет runtime `*_fname` |
+| Qwen official graph ссылается на другое имя Lightning LoRA | Auto-install cell подставляет реально скачанный `lora_fname` |
+| Несколько JSON в одной папке позволяли выбрать неверный вариант | Оставлен ровно один `workflow.json` на notebook |
+| Авторский Anima Compare сравнивал Anima/NetaYume/Chroma/Newbie, а не нужные четыре модели | Собран точный четырёхветочный canvas Anima + RouWei + Nova + JANKU без grid custom node |
+| SeedVR2 попал в комбинированную схему вопреки последнему требованию | Полностью удалён из workflow JSON |
+
+### Осталось
+
+- Выполнить live-open smoke test хотя бы одного GGUF, одного SDXL и comparison workflow в свежем ComfyUI после получения файлов из `main`.
+- Не возобновлять preview generation без нового прямого запроса пользователя.
 
 ## Часть 1 — Инфраструктура ноутбуков ✅ ЗАВЕРШЕНА (2026-08-25)
 
