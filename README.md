@@ -27,15 +27,15 @@ The goal is simple: fast, practical, and stable model access in Colab without he
 ## Notebook Catalog
 ### Flux SRPO
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/flux_srpo/comfy_flux_srpo.ipynb)
-- What: FLUX-based SRPO GGUF text-to-image notebook tuned for quick T4 runs (fallback to Z-Image Q4_K_M for stability, 14 steps fast, verified).
-- Model creators/sources: FLUX.1 family by Black Forest Labs, SRPO model by Tencent Hunyuan (`tencent/SRPO`), GGUF conversion pack by `befox` (fallback UnetLoaderGGUF z-image Q4_K_M 4.7G + Qwen3-4B 2.4G).
-- Workflow: `workflows/flux_srpo/workflow.json` — UnetLoaderGGUF 14 steps euler/simple cfg 5.0 → FaceDetailer `face_yolov8m.pt` bbox_threshold 0.5 denoise 0.5 → HandDetailer `hand_yolov8n.pt` bbox_threshold 0.35 denoise 0.45 → Refiner KSampler 10 steps denoise 0.3 (self-refine) — square 1024×1024.
-- Previews (square HD 1024×1024, verified Face/Hand Detailer + Refiner — unique complex prompts with beautiful girl):
+- What: FLUX-based SRPO GGUF text-to-image notebook tuned for quick T4 runs (Tencent SRPO fine-tune of FLUX.1-dev 12B, 14 steps fast, verified photoreal).
+- Model creators/sources: FLUX.1 family by Black Forest Labs, SRPO model by Tencent Hunyuan (`tencent/SRPO`), GGUF conversion pack by `befox` (`srpo-Q2_K.gguf` 4.0G + `t5-v1_1-xxl-encoder-Q4_K_M.gguf` 2.9G).
+- Workflow: `workflows/flux_srpo/workflow.json` — UnetLoaderGGUF `srpo-Q2_K.gguf` 14 steps euler/simple cfg 4.0 → FaceDetailer `face_yolov8m.pt` bbox_threshold 0.5 denoise 0.5 → HandDetailer `hand_yolov8n.pt` bbox_threshold 0.35 denoise 0.45 → Refiner KSampler 10 steps denoise 0.3 (self-refine) — square 1024×1024.
+- Previews (square HD 1024×1024, verified Face/Hand Detailer + Refiner — unique photorealistic prompts with beautiful girl, 3x realism via SRPO):
 
-| Preview 01 — Neon Workshop | Preview 02 — Orbital Dock |
+| Preview 01 — Scandinavian Atelier | Preview 02 — Rooftop Garden Golden Hour |
 |---|---|
 | ![Flux SRPO Preview 01](previews/flux_srpo/preview_01_1024.png) | ![Flux SRPO Preview 02](previews/flux_srpo/preview_02_1024.png) |
-| *masterpiece, 1girl in neon-lit flux workshop with holographic blueprints, metallic bodysuit with glowing seams, holding levitating core, beautiful girl, ultra detailed* | *masterpiece, 1girl as celestial engineer on orbital dock, starlight cape with constellations, assembling Dyson ring, beautiful girl, cosmic ultra detailed* |
+| *RAW photo, photorealistic DSLR, 24yo Scandinavian woman with freckles and blue eyes in sunlit atelier, holding ceramic mug, intricate hands, cinematic lighting* | *RAW photo, photorealistic DSLR, Mediterranean woman in black satin dress, rooftop garden at golden hour, wind in hair, detailed hands on railing, skin pores visible* |
 
 ### Flux2 Klein 9B GGUF
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/flux2_klein9b_gguf/comfy_flux2_klein9b_gguf.ipynb)
