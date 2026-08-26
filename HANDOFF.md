@@ -40,8 +40,13 @@
 
 ### Осталось
 
-- Выполнить live-open smoke test хотя бы одного GGUF, одного SDXL и comparison workflow в свежем ComfyUI после получения файлов из `main`.
+- Выполнить live-open smoke test хотя бы одного GGUF, одного SDXL и comparison workflow в свежем ComfyUI после получения файлов из `main`. Post-push попытка на старой `comfy-preview` не выполнилась: Colab CLI получил `404/401`, признал runtime потерянным и удалил stale session; это не workflow failure.
 - Не возобновлять preview generation без нового прямого запроса пользователя.
+
+### Push
+
+- Commit `e3a33b76d25df103313ab657072eacea403c8ff2` (`feat: bundle one selectable workflow per notebook`) отправлен в `origin/main`.
+- После push локальный HEAD и `refs/heads/main` совпали.
 
 ## Часть 1 — Инфраструктура ноутбуков ✅ ЗАВЕРШЕНА (2026-08-25)
 
