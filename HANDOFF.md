@@ -85,4 +85,17 @@
 | 2026-08-25 | zimage_turbo: ComfyUI install + модели download (4.7G+2.4G+320M) + запуск на T4 --lowvram | OK, /system_stats 200 |
 | 2026-08-25 | zimage_turbo: Civitai research (2169096 FaceDetailer) + GGUF адаптация + HD 1824x576 gen | 1.5MB png, preview + workflow сохранены, ожидают пуш |
 | 2026-08-26 | Актуализация HANDOFF под требования 2026-08-26 (квадрат HD, 2 превью, Refiner+Detailers, 50 шагов SRPO, верификация глазами, сабагенты) | Переписан раздел Часть 2, очередь 11 ноутбуков |
+
+## Проблемы и фиксы (2026-08-26 Flux SRPO)
+
+| Проблема | Причина | Фикс | Время |
+|---|---|---|---|
+| CLIPLoaderGGUF type 'flux' not in list | ComfyUI 0.34 убрал 'flux' из CLIPLoader, оставил только в DualCLIPLoader | Заменить node 2 на DualCLIPLoaderGGUF(clip_name1=t5, clip_name2=clip_l, type=flux) | 2026-08-26 05:30 |
+| UltralyticsDetectorProvider bbox/face_yolov8m.pt not in [] | Модели не скачаны, автозагрузка Impact Pack не сработала | Ручная загрузка aria2c Bingsu/adetailer face_yolov8m.pt (50M) + hand_yolov8n.pt (6M) в /models/ultralytics/bbox, рестарт ComfyUI | 05:30 |
+| 50 шагов медленно (3-4 мин/изо vs 14 шагов 40с) | Официальный SRPO требует 50 steps cfg 3.5 normal (пользователь прав, 14 — это Schnell preset) | Принять как норму, оптимизация: detailer 15→12 steps, refiner 15→12, keep 50 base | 05:50 |
+| Queue stuck / execution_interrupted | Прерывание через /interrupt оставило job в queue_running, блокировало следующие | Очистка queue через /queue clear, рестарт ComfyUI при зависании >400с | 05:46 |
+| T4 низкая скорость из-за --lowvram offload | GGUF 4G+2.9G → 7GB VRAM, offload на RAM | Оставить --lowvram, но не использовать --novram/cache-none, дать DynamicVRAM работать | 05:30 |
+
+**Вывод для след. ноутбуков:** перед генерацией проверить object_info на поддерживаемые типы и наличие bbox, прекачать все GGUF/VLAE заранее, не прерывать sampler на 50 шагах (ждать до 600с), держать ComfyUI живым между превью чтобы не терять кэш.
+
 | 2026-08-26 | zimage_turbo/base/chroma/rouwei перегенерированы в квадрат 1024 + Face/Hand + Refiner | Уже в main (accd05b etc), верифицированы |

@@ -6,9 +6,10 @@
         }
     },
     "2": {
-        "class_type": "CLIPLoaderGGUF",
+        "class_type": "DualCLIPLoaderGGUF",
         "inputs": {
-            "clip_name": "t5-v1_1-xxl-encoder-Q4_K_M.gguf",
+            "clip_name1": "t5-v1_1-xxl-encoder-Q4_K_M.gguf",
+            "clip_name2": "clip_l.safetensors",
             "type": "flux"
         }
     },
@@ -21,7 +22,7 @@
     "4": {
         "class_type": "CLIPTextEncode",
         "inputs": {
-            "text": "RAW photo, photorealistic, DSLR, 8k, ultra detailed, 1girl, 24yo beautiful Scandinavian woman with natural skin texture, subtle freckles, piercing blue eyes, long wavy blonde hair, wearing elegant cream silk blouse and tailored beige trousers, standing in sunlit modern atelier with large windows, soft bokeh background, holding ceramic mug in both hands, intricate realistic hands, sharp focus on eyes, cinematic lighting, shallow depth of field",
+            "text": "RAW photo, photorealistic, DSLR Canon EOS R5, 85mm f/1.4, 8k, ultra detailed, natural skin texture with visible pores and subtle freckles, 26yo beautiful Scandinavian woman with icy blue eyes and long wavy platinum blonde hair, wearing elegant cream silk blouse and soft beige knitted cardigan, sitting at a sunlit Scandinavian wooden kitchen table holding a white ceramic mug with both hands, intricate realistic hands with natural nails, morning sunlight through large window, shallow depth of field, cinematic lighting, sharp focus on eyes, film grain",
             "clip": [
                 "2",
                 0
@@ -31,7 +32,7 @@
     "5": {
         "class_type": "CLIPTextEncode",
         "inputs": {
-            "text": "worst quality, blurry, bad anatomy, bad hands, bad eyes, watermark",
+            "text": "blurry, low quality, distorted, deformed, bad anatomy, bad hands, extra fingers, mutated hands, bad eyes, watermark, text, oversaturated, plastic skin, airbrushed",
             "clip": [
                 "2",
                 0
@@ -50,10 +51,10 @@
         "class_type": "KSampler",
         "inputs": {
             "seed": 424242,
-            "steps": 14,
-            "cfg": 4,
+            "steps": 50,
+            "cfg": 3.5,
             "sampler_name": "euler",
-            "scheduler": "simple",
+            "scheduler": "normal",
             "denoise": 1.0,
             "model": [
                 "1",
@@ -121,10 +122,10 @@
             "guide_size_for": true,
             "max_size": 1024,
             "seed": 424242,
-            "steps": 10,
-            "cfg": 4,
+            "steps": 12,
+            "cfg": 3.5,
             "sampler_name": "euler",
-            "scheduler": "simple",
+            "scheduler": "normal",
             "positive": [
                 "4",
                 0
@@ -178,10 +179,10 @@
             "guide_size_for": true,
             "max_size": 768,
             "seed": 424242,
-            "steps": 10,
-            "cfg": 4,
+            "steps": 12,
+            "cfg": 3.5,
             "sampler_name": "euler",
-            "scheduler": "simple",
+            "scheduler": "normal",
             "positive": [
                 "4",
                 0
@@ -229,11 +230,11 @@
         "class_type": "KSampler",
         "inputs": {
             "seed": 424242,
-            "steps": 10,
-            "cfg": 4,
+            "steps": 12,
+            "cfg": 3.5,
             "sampler_name": "euler",
-            "scheduler": "simple",
-            "denoise": 0.3,
+            "scheduler": "normal",
+            "denoise": 0.35,
             "model": [
                 "1",
                 0
@@ -268,7 +269,7 @@
     "16": {
         "class_type": "SaveImage",
         "inputs": {
-            "filename_prefix": "flux_srpo_1024_1",
+            "filename_prefix": "flux_srpo_1024",
             "images": [
                 "15",
                 0
