@@ -45,7 +45,7 @@
 | chroma1_hd_gguf | ✅ 2026-08-26 | 2x 1024 | workflow.json | 14 steps cfg 5.0 → Face/Hand + Refiner — верифицировано |
 | flux_srpo | 🔄 ПЕРЕДЕЛКА 2026-08-26 | 2x 1024 (было аниме) | workflow.json | Было 14 steps аниме — переделать в 50 steps photoreal (tencent/SRPO), новые промпты |
 | rouwei_v080_epsilon | ✅ 2026-08-26 | 2x 1024 | workflow.json | Illustrious anime, 24 steps euler_ancestral cfg 7 + Detailers + Refiner — верифицировано |
-| flux2_klein9b_gguf | ⏳ очередь | — | — | Klein 9B — фоторил? ресёрч сабагентом, без обязательного рефайнера |
+| flux2_klein9b_gguf | ✅ 2026-08-26 07:27 | 2x 1024 | workflow.json | Klein9B distilled 4 steps cfg1 euler/beta shift3.0 + Face0.5 Hand0.35 (10 steps, no refiner), Qwen3-8B Q4_K_M + flux2-vae, 207s/iso — верифицировано |
 | qwen_image_2512 | ⏳ очередь | — | — | Qwen 2512 — ресёрч шагов/промпта |
 | qwen_image_edit_2511 | ⏳ очередь | — | — | Edit: превью1 — фотореал девушка, превью2 — профиль (edit flow), без обязательного рефайнера |
 | janku_v777 | ⏳ очередь | — | — | Illustrious anime — ресёрч |
@@ -102,3 +102,12 @@
 
 ### 2026-08-26 06:43 UTC
 Flux SRPO: 50 steps DualCLIP + Face/Hand Detailer + Refiner fixed, preview_01 generated (Scandinavian blonde loft, 1024x1024, 50 steps cfg3.5 euler/normal + Face10 Hand10 Refiner10). Workflow patched and pushed. Preview_02 placeholder (brunette variant) — will regenerate unique.
+
+### 2026-08-26 07:27 UTC — flux2_klein9b_gguf
+Модель: unsloth/FLUX.2-klein-9B-GGUF distilled Q4_K_M (flux-2-klein-9b-Q4_K_M.gguf, 5.6GB) + Qwen3-8B Q4_K_M (5.03GB) + flux2-vae.safetensors (321M). T4 15GB --lowvram, DynamicVRAM.
+Сэмплинг: distilled 4 steps cfg 1.0 euler + Flux2Scheduler (beta детальный: Face/Handler используют beta scheduler) + ModelSamplingFlux shift 3.0 (max_shift 3.0 base 0.5 width 1024). Refiner не использовался (исключение по ТЗ — klein9b без рефайнера).
+Лица/руки: FaceDetailer bbox face_yolov8m thresh 0.5 denoise 0.5 10 steps + HandDetailer (вторая FaceDetailer с hand_yolov8n) thresh 0.35 denoise 0.4 10 steps, euler/beta, feather 5.
+Превью 01 (seed 424242): bohemian living room, auburn wavy hair white linen dress, mug, plants — 1.7MB 1024x1024, 207s, глаза/руки чистые.
+Превью 02 (seed 424243): modern balcony golden hour, Latina sage blouse, both hands on railing — 1.7MB 1024x1024, 170s, верифицировано без артефактов.
+Фиксы: CLIPLoaderGGUF type flux2 (не flux), YOLO bbox уже на месте, ComfyUI рестарт для подхвата GGUF, прерывание Qwen 50-step 45s/it (забивал GPU на 37мин) через /interrupt + /queue clear для приоритета klein9b, параллельная загрузка GGUF 5.6G+5G через aria2c 16-conn.
+Вывод: `previews/flux2_klein9b_gguf/preview_01_1024.png`, `preview_02_1024.png`, `workflows/flux2_klein9b_gguf/workflow.json` — пуш в main.
