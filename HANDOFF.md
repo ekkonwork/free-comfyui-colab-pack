@@ -96,6 +96,42 @@
 | Queue stuck / execution_interrupted | Прерывание через /interrupt оставило job в queue_running, блокировало следующие | Очистка queue через /queue clear, рестарт ComfyUI при зависании >400с | 05:46 |
 | T4 низкая скорость из-за --lowvram offload | GGUF 4G+2.9G → 7GB VRAM, offload на RAM | Оставить --lowvram, но не использовать --novram/cache-none, дать DynamicVRAM работать | 05:30 |
 
+## Live handoff — 2026-08-26, текущая CLI-сессия
+
+Статус: **IMPLEMENTED, VALIDATION REQUIRED**. Источник истины — текущее сообщение пользователя; старые отметки `✅` не принимаются без повторной генерации и визуальной проверки.
+
+### Исправлено и доказано
+
+- `colab-codex-lab`: vendored `google-colab-cli` не устанавливался через `uv tool install --editable` без собственной `.git` (`hatch-vcs`) и запрещал direct dependency `jupyter-kernel-client`. Добавлены VCS fallback-version и `allow-direct-references`; установка прошла, regression tests `8 passed`. Commit `902fb54`, pushed, `HEAD == origin/main`.
+- `colab-codex-lab`: Windows CP1251 ломал notebook/debug output на Unicode. Добавлена UTF-8 настройка `stdout/stderr/__stdout__/__stderr__` и тест. Прямой Unicode notebook output после фикса проходит; debug logger от `jupyter-kernel-client` всё ещё иногда пишет нефатальный `Logging error` через сохранённый старый stream — требуется отдельный regression/fix.
+- Colab OAuth и T4 проверены: Python 3.13.15, PyTorch 2.11.0+cu128, CUDA `True`, Tesla T4, `GPU_SMOKE_OK`.
+- Flux SRPO: официальный ресёрч подтверждает photoreal, `1024x1024`, `50 steps`, CFG `3.5`, `euler/normal`. Старые 14-step/аниме настройки недействительны.
+- Flux SRPO notebook: auto VRAM выбирал Q5_K при собственном прогнозе RAM peak 11.20/12.67 GB и не понижал quant из-за жёсткого floor. Auto budget снижен до 50%, текущий T4 run использует Q3_K; фактические weights ~9.06 GB, ComfyUI стартовал с ~11.2 GB свободной RAM до загрузки модели.
+- Общий setup-баг: workflow использует `FaceDetailer`/`UltralyticsDetectorProvider`, но notebook не ставил `ComfyUI-Impact-Pack` и современный `ComfyUI-Impact-Subpack`. Оба добавлены в Flux notebook и реально загружены ComfyUI после restart.
+- Общий downloader-баг: `aria2` preallocate оставлял файл полного размера с `.aria2`, а `dl()` принимал любой `os.path.exists()` за успешную загрузку. Реальный T5 имел нулевой GGUF magic и падал `GGUF magic invalid`. Добавлена проверка `.aria2` + magic `GGUF`; T5 и CLIP успешно resumed, T5 теперь загружается loader-ом.
+- Swap-баг: Colab запрещает `swapon`, но cell печатала `Swap enabled`. Flux notebook теперь проверяет результат и честно пишет unavailable.
+
+### Сейчас выполняется
+
+- Flux SRPO preview 01: queued на реальном ComfyUI/T4, seed 782641, уникальный photoreal prompt (заброшенная приливная обсерватория, медный bob, прозрачный raincoat, обе руки на telescope), base 50 / CFG 3.5 + Face/Hand Detailer + second KSampler refiner.
+- После preview 01 автоматически queued preview 02: seed 913507, уникальный environmental fashion prompt (подвесной greenhouse bridge над canyon, Moroccan woman, saffron velvet coat, карта + glass railing).
+
+### Осталось проверить/сделать
+
+1. Дождаться обоих Flux outputs, скачать через CLI, проверить 1024x1024 и глазами при native resolution: глаза, лицо, обе руки, пальцы, анатомия. При дефектах изменить denoise/sampling и перегенерировать.
+2. Пакетно перенести общие fixes во все 17 notebooks: Impact Pack + Subpack, честный swap status, aria2/magic validation. Не переносить одинаковые sampler/prompt параметры между разными моделями.
+3. Запустить `scripts/check_notebooks.py`, проверить identical/shared setup invariants и targeted JSON/workflow checks.
+4. Обновить Flux README/workflow/HANDOFF итоговыми seed, prompt, timings и визуальным verdict; commit+push сразу в `main`, подтвердить `HEAD == origin/main`.
+5. Затем последовательно переделать остальные notebooks кроме Z-Image Turbo и RouWei. Z-Image Base требует 28–50 steps; Chroma preview должен быть реальным Chroma, не Z-Image fallback; Qwen Edit — source photoreal woman затем identity-preserving 90° profile edit.
+
+### Пакетный shared-fix checkpoint
+
+- Общие fixes применены ко всем 17 notebooks, включая `_paused`: установка Impact Pack + Impact Subpack; честный результат `swapon`; GGUF downloader проверяет `.aria2` и magic вместо одного `exists()`.
+- Sampling/model/prompt presets пакетно не менялись. Flux отдельно получил T4 auto budget 50% и Q3_K runtime workflow.
+- `scripts/check_notebooks.py` исправлен для Windows: явный UTF-8 при чтении notebook JSON.
+- Проверка после нормализации исходного JSON formatting: `python scripts/check_notebooks.py` — exit 0; `git diff --check` — без ошибок (только ожидаемые CRLF warnings Git).
+- Секреты пользователя в файлы не записаны; targeted repository scan обязателен перед commit.
+
 **Вывод для след. ноутбуков:** перед генерацией проверить object_info на поддерживаемые типы и наличие bbox, прекачать все GGUF/VLAE заранее, не прерывать sampler на 50 шагах (ждать до 600с), держать ComfyUI живым между превью чтобы не терять кэш.
 
 | 2026-08-26 | zimage_turbo/base/chroma/rouwei перегенерированы в квадрат 1024 + Face/Hand + Refiner | Уже в main (accd05b etc), верифицированы |
