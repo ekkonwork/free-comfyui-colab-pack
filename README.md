@@ -2,7 +2,6 @@
 
 ![Free ComfyUI Colab Pack Banner](docs/assets/free_comfyui_colab_pack_banner.png)
 
-
 [![Donate on Boosty](https://img.shields.io/badge/Donate-Boosty-F15F2C?style=for-the-badge)](https://boosty.to/ekkonwork/donate)
 [![Hire Me on LinkedIn](https://img.shields.io/badge/Hire%20Me-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mikhail-kuznetsov-14304433b)
 
@@ -33,83 +32,54 @@ See [workflow sources and adaptations](docs/WORKFLOW_SOURCES.md).
 - What: FLUX-based SRPO GGUF text-to-image notebook using the Tencent SRPO workflow architecture.
 - Model creators/sources: FLUX.1 family by Black Forest Labs, SRPO model by Tencent Hunyuan (`tencent/SRPO`), GGUF conversion pack by `befox` (`srpo-Q2_K.gguf` 4.0G + `t5-v1_1-xxl-encoder-Q4_K_M.gguf` 2.9G).
 - Workflow: `workflows/flux_srpo/workflow.json` — official Tencent graph adapted to connected GGUF UNET + dual CLIP loaders. Notebook substitutes the selected quant filenames automatically.
-- Previews (square HD 1024×1024, verified Face/Hand Detailer + Refiner — unique photorealistic prompts with beautiful girl, 3x realism via SRPO):
-
-| Preview 01 — Scandinavian Atelier | Preview 02 — Rooftop Garden Golden Hour |
-|---|---|
-| ![Flux SRPO Preview 01](previews/flux_srpo/preview_01_1024.png) | ![Flux SRPO Preview 02](previews/flux_srpo/preview_02_1024.png) |
-| *RAW photo, photorealistic DSLR, 24yo Scandinavian woman with freckles and blue eyes in sunlit atelier, holding ceramic mug, intricate hands, cinematic lighting* | *RAW photo, photorealistic DSLR, Mediterranean woman in black satin dress, rooftop garden at golden hour, wind in hair, detailed hands on railing, skin pores visible* |
 
 ### Flux2 Klein 9B GGUF
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/flux2_klein9b_gguf/comfy_flux2_klein9b_gguf.ipynb)
 - What: Flux.2 Klein 9B base/distilled GGUF notebook for T2I and edit flows.
 - Model creators/sources: FLUX.2 family by Black Forest Labs, GGUF releases by `unsloth`, VAE package by `Comfy-Org`.
 - Workflow: `workflows/flux2_klein9b_gguf/workflow.json` — one Comfy-Org 9B graph adapted to GGUF loaders.
-- Preview image: coming soon (square HD 1024x1024, Face+Hand Detailer + Refiner pipeline in progress)
 
 ### Z-Image Base
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_base/comfy_zimage_base.ipynb)
 - What: Z-Image Base GGUF setup using the official Comfy-Org graph architecture.
 - Model creators/sources: original Z-Image by `Tongyi-MAI` (`Tongyi-MAI/Z-Image`), GGUF ports by `unsloth`, ComfyUI split assets used from `Comfy-Org/z_image`.
 - Workflow: `workflows/zimage_base/workflow.json` — official Base graph adapted to connected GGUF UNET + Qwen3 loaders.
-- Previews (square HD 1024×1024, verified Face/Hand Detailer + Refiner — unique complex prompts with beautiful girl):
-
-| Preview 01 — Autumn Library | Preview 02 — Shrine Maiden |
-|---|---|
-| ![Z-Image Base Preview 01](previews/zimage_base/preview_01_1024.png) | ![Z-Image Base Preview 02](previews/zimage_base/preview_02_1024.png) |
-| *masterpiece, 1girl in autumn library with floating stained-glass, warm light, detailed eyes/hands, beautiful girl* | *masterpiece, 1girl futuristic shrine maiden with holo lanterns and wind chimes, ornate kimono with glowing threads* |
 
 ### Z-Image Turbo
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_turbo/comfy_zimage_turbo.ipynb)
 - What: fast Z-Image Turbo GGUF notebook for speed-first generation.
 - Model creators/sources: original Z-Image Turbo by `Tongyi-MAI` (`Tongyi-MAI/Z-Image-Turbo`), GGUF ports by `unsloth`, ComfyUI split assets used from `Comfy-Org/z_image`.
 - Workflow: `workflows/zimage_turbo/workflow.json` — official Turbo graph adapted to connected GGUF UNET + Qwen3 loaders.
-- Previews (square HD 1024×1024, verified Face/Hand Detailer + Refiner — unique complex prompts with beautiful girl):
-
-| Preview 01 — Clockwork Workshop | Preview 02 — Cyber Shrine |
-|---|---|
-| ![Z-Image Turbo Preview 01](previews/zimage_turbo/preview_01_1024.png) | ![Z-Image Turbo Preview 02](previews/zimage_turbo/preview_02_1024.png) |
-| *masterpiece, 1girl in clockwork workshop with brass gears and floating astrolabe, warm lighting, detailed eyes/hands* | *masterpiece, 1girl cyber shrine with neon lights and holographic koi, intricate kimono with light panels, beautiful girl* |
 
 ### Z-Image Turbo + Base
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_turbo_base/comfy_zimage_turbo_base.ipynb)
 - What: combo notebook with Turbo + Base variants in one setup.
 - Model creators/sources: original Z-Image models by `Tongyi-MAI` (`Tongyi-MAI/Z-Image` and `Tongyi-MAI/Z-Image-Turbo`), GGUF variants by `unsloth`, ComfyUI split assets used from `Comfy-Org/z_image`.
 - Workflow: `workflows/zimage_turbo_base/workflow.json` — Turbo and Base branches on one canvas, one selectable file.
-- Preview image: coming soon.
 
 ### Z-Image Turbo notebook (SeedVR2 excluded from bundled flow)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/zimage_seedvr2/comfy_zimage_seedvr2.ipynb)
 - What: notebook retains optional SeedVR2 model setup, but its single bundled workflow is clean Z-Image Turbo generation only.
 - Model creators/sources: original Z-Image Turbo by `Tongyi-MAI` (`Tongyi-MAI/Z-Image-Turbo`) with GGUF ports by `unsloth`, SeedVR2 node/files by `numz` and GGUF pack by `cmeka`.
 - Workflow: `workflows/zimage_seedvr2/workflow.json`; no SeedVR2 nodes are present.
-- Preview image: coming soon.
 
 ### Qwen Image 2512
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/qwen_image_2512/comfy_qwen_image_2512.ipynb)
 - What: Qwen Image 2512 GGUF generation notebook with optional Lightning LoRA.
 - Model creators/sources: Qwen family by Alibaba/Qwen team, GGUF packs by `unsloth` and `ggml-org`, Lightning LoRA by `lightx2v`.
 - Workflow: `workflows/qwen_image_2512/workflow.json` — official Comfy-Org graph with GGUF loaders and runtime LoRA filename synchronization.
-- Preview image: coming soon.
 
 ### Qwen Image Edit 2511
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/qwen_image_edit_2511/comfy_qwen_image_edit_2511.ipynb)
 - What: Qwen Image Edit 2511 notebook for image editing use cases.
 - Model creators/sources: Qwen family by Alibaba/Qwen team, GGUF packs by `unsloth` and `ggml-org`, Lightning LoRA by `lightx2v`.
 - Workflow: `workflows/qwen_image_edit_2511/workflow.json` — official Comfy-Org edit graph with GGUF loaders and runtime LoRA filename synchronization.
-- Preview image: coming soon.
 
 ### Chroma1 HD GGUF
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/chroma1_hd_gguf/comfy_chroma1_hd_gguf.ipynb)
 - What: Chroma1-HD text-to-image GGUF notebook; the bundled graph uses real Chroma, not a Z-Image fallback.
 - Model creators/sources: Chroma1-HD by `lodestones`, GGUF package by `silveroxides`.
 - Workflow: `workflows/chroma1_hd_gguf/workflow.json` — author Chroma graph adapted to connected Chroma GGUF + FLAN-T5 GGUF loaders.
-- Previews (square HD 1024×1024, verified Face/Hand Detailer + Refiner — unique complex prompts with beautiful girl):
-
-| Preview 01 — Prismatic Pavilion | Preview 02 — Botanical Lab |
-|---|---|
-| ![Chroma Preview 01](previews/chroma1_hd_gguf/preview_01_1024.png) | ![Chroma Preview 02](previews/chroma1_hd_gguf/preview_02_1024.png) |
-| *masterpiece, 1girl in prismatic glass pavilion with floating orchids and refraction, chiffon dress with crystal threads, beautiful girl, ultra detailed* | *masterpiece, 1girl in futuristic botanical lab with holographic flora, lab coat with glowing veins, holding luminous sprout, beautiful girl, sci-fi* |
 
 ### Anima + WAI-Anima
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/anima/comfy_anima_colab.ipynb)
@@ -117,7 +87,6 @@ See [workflow sources and adaptations](docs/WORKFLOW_SOURCES.md).
 - Includes: ComfyUI-Manager, Anima-LLLite, ControlNet preprocessors, Lora Manager and the exact workflow variants from the v45 archive.
 - Models: both Anima checkpoints are downloaded; the notebook writes WAI and Aesthetic workflow variants so either model can be selected.
 - Workflow: `workflows/anima/workflow.json`, installed into ComfyUI automatically.
-
 
 ### Anima Illustrious Compare (Anima + 3 Illustrious)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/anima_illustrious_compare/comfy_anima_illustrious_compare.ipynb)
@@ -143,15 +112,12 @@ See [workflow sources and adaptations](docs/WORKFLOW_SOURCES.md).
 - What: Nova Anime XL IL v19 — anime/2.5D/3D SDXL, серия из 20+ версий, Pony/Illustrious hybrid.
 - Model creators/sources: Nova Anime team, Civitai `376130/2940478`.
 - Workflow: `workflows/nova_anime_xl_il_v190/workflow.json` — checkpoint → base KSampler → second KSampler/refiner → FaceDetailer → Hand Detailer → SaveImage.
-- Preview image: coming soon.
 
 ### JANKU v7.77 (Illustrious + RouWei)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/janku_v777/comfy_janku_v777.ipynb)
 - What: JANKU v7.77 — Illustrious XL merge с Chenkin/NoobAI/RouWei, LoRA-free, улучшенная анатомия/NSFW, 1536 без upscale.
 - Model creators/sources: JANKU (janxd), Civitai `1277670/2786084`, base `NoobAI-XL 1.0 License`.
 - Workflow: `workflows/janku_v777/workflow.json` — checkpoint → base KSampler → second KSampler/refiner → FaceDetailer → Hand Detailer → SaveImage; VAE baked in.
-- Preview image: coming soon.
-
 
 ## Paused (Not In Active Testing)
 - `notebooks/_paused/ltx2_gguf/`
@@ -207,15 +173,10 @@ See full support info in `docs/SUPPORT.md`.
 - Respect model licenses and terms.
 - Cloudflare tunnels can still be unstable in Colab due to external network conditions.
 
-
 ## Preview Gallery (Square HD 1024x1024 — Face/Hand Detailer + Refiner)
 *Verified square HD previews — each 1024×1024, FaceDetailer `face_yolov8m.pt` + HandDetailer `hand_yolov8n.pt` + Refiner (self-refine denoise 0.3), unique complex prompts with beautiful girl.*
 
 | Notebook | Preview 01 | Preview 02 |
 |---|---|---|
-| Z-Image Turbo | ![Turbo 01](previews/zimage_turbo/preview_01_1024.png) | ![Turbo 02](previews/zimage_turbo/preview_02_1024.png) |
-| Z-Image Base | ![Base 01](previews/zimage_base/preview_01_1024.png) | ![Base 02](previews/zimage_base/preview_02_1024.png) |
-| Chroma1 HD | ![Chroma 01](previews/chroma1_hd_gguf/preview_01_1024.png) | ![Chroma 02](previews/chroma1_hd_gguf/preview_02_1024.png) |
-| Flux SRPO | ![Flux SRPO 01](previews/flux_srpo/preview_01_1024.png) | ![Flux SRPO 02](previews/flux_srpo/preview_02_1024.png) |
-*Next: Flux Klein, Qwen 2512/Edit, Anima, RouWei/Nova/JANKU — generating sequentially.*
+| RouWei v0.8.0 epsilon | ![RouWei 01](previews/rouwei_v080_epsilon/preview_01_1024.png) | ![RouWei 02](previews/rouwei_v080_epsilon/preview_02_1024.png) |
 
