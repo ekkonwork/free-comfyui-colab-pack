@@ -20,3 +20,5 @@ jobs:
         run: python scripts/check_notebooks.py
       - name: Validate workflows
         run: python scripts/check_workflows.py
+      - name: Validate proof record
+        run: python scripts/check_proof.py
