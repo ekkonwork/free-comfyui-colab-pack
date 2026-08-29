@@ -1,6 +1,6 @@
 {
-  "last_node_id": 103,
-  "last_link_id": 183,
+  "last_node_id": 106,
+  "last_link_id": 187,
   "nodes": [
     {
       "id": 28,
@@ -56,10 +56,10 @@
         431433362471142,
         "randomize",
         30,
-        5.0,
+        5,
         "euler_ancestral",
         "normal",
-        1.0
+        1
       ],
       "color": "#322",
       "bgcolor": "#533"
@@ -657,14 +657,14 @@
         "Node name for S&R": "FaceDetailer"
       },
       "widgets_values": [
-        360,
+        512,
         true,
-        768,
+        1024,
         0,
         "fixed",
-        20,
-        8,
-        "euler",
+        30,
+        5,
+        "euler_ancestral",
         "normal",
         0.5,
         5,
@@ -688,7 +688,8 @@
         false
       ],
       "color": "#223",
-      "bgcolor": "#335"
+      "bgcolor": "#335",
+      "title": "Face Detailer — same sampling, denoise 0.50"
     },
     {
       "id": 17,
@@ -1056,15 +1057,15 @@
       "widgets_values": [
         99238144271031,
         "randomize",
-        12,
-        5.0,
-        "dpmpp_2m",
-        "karras",
+        30,
+        5,
+        "euler_ancestral",
+        "normal",
         0.3
       ],
       "color": "#322",
       "bgcolor": "#533",
-      "title": "Second sampler / refiner"
+      "title": "Second sampler / refiner — same sampler, denoise 0.30"
     },
     {
       "id": 101,
@@ -1189,7 +1190,7 @@
           "type": "IMAGE",
           "shape": 3,
           "links": [
-            183
+            184
           ],
           "slot_index": 0
         },
@@ -1231,14 +1232,14 @@
         "Node name for S&R": "FaceDetailer"
       },
       "widgets_values": [
-        360,
+        512,
         true,
-        768,
+        1024,
         0,
         "fixed",
-        12,
-        5.0,
-        "euler",
+        30,
+        5,
+        "euler_ancestral",
         "normal",
         0.35,
         5,
@@ -1263,7 +1264,7 @@
       ],
       "color": "#223",
       "bgcolor": "#335",
-      "title": "Hand Detailer"
+      "title": "Hand Detailer — same sampling, denoise 0.35"
     },
     {
       "id": 103,
@@ -1283,7 +1284,7 @@
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 183
+          "link": 187
         }
       ],
       "outputs": [],
@@ -1293,6 +1294,426 @@
       },
       "widgets_values": [
         "preview"
+      ]
+    },
+    {
+      "id": 104,
+      "type": "SeedVR2LoadDiTModel",
+      "pos": [
+        800,
+        740
+      ],
+      "size": [
+        308,
+        202
+      ],
+      "flags": {},
+      "order": 1000,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "torch_compile_args",
+          "shape": 7,
+          "type": "TORCH_COMPILE_ARGS",
+          "link": null
+        },
+        {
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        },
+        {
+          "name": "blocks_to_swap",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "blocks_to_swap"
+          },
+          "link": null
+        },
+        {
+          "name": "swap_io_components",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "swap_io_components"
+          },
+          "link": null
+        },
+        {
+          "name": "offload_device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "offload_device"
+          },
+          "link": null
+        },
+        {
+          "name": "cache_model",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "cache_model"
+          },
+          "link": null
+        },
+        {
+          "name": "attention_mode",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "attention_mode"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEEDVR2_DIT",
+          "type": "SEEDVR2_DIT",
+          "links": [
+            185
+          ]
+        }
+      ],
+      "title": "SeedVR2 3B Q4 low-VRAM (auto-download)",
+      "properties": {
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+        "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+        "Node name for S&R": "SeedVR2LoadDiTModel"
+      },
+      "widgets_values": [
+        "seedvr2_ema_3b-Q4_K_M.gguf",
+        "cuda:0",
+        32,
+        true,
+        "cpu",
+        false,
+        "sdpa"
+      ]
+    },
+    {
+      "id": 105,
+      "type": "SeedVR2LoadVAEModel",
+      "pos": [
+        800,
+        980
+      ],
+      "size": [
+        313,
+        298
+      ],
+      "flags": {},
+      "order": 1001,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "torch_compile_args",
+          "shape": 7,
+          "type": "TORCH_COMPILE_ARGS",
+          "link": null
+        },
+        {
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        },
+        {
+          "name": "encode_tiled",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "encode_tiled"
+          },
+          "link": null
+        },
+        {
+          "name": "encode_tile_size",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "encode_tile_size"
+          },
+          "link": null
+        },
+        {
+          "name": "encode_tile_overlap",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "encode_tile_overlap"
+          },
+          "link": null
+        },
+        {
+          "name": "decode_tiled",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "decode_tiled"
+          },
+          "link": null
+        },
+        {
+          "name": "decode_tile_size",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "decode_tile_size"
+          },
+          "link": null
+        },
+        {
+          "name": "decode_tile_overlap",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "decode_tile_overlap"
+          },
+          "link": null
+        },
+        {
+          "name": "tile_debug",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "tile_debug"
+          },
+          "link": null
+        },
+        {
+          "name": "offload_device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "offload_device"
+          },
+          "link": null
+        },
+        {
+          "name": "cache_model",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "cache_model"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEEDVR2_VAE",
+          "type": "SEEDVR2_VAE",
+          "links": [
+            186
+          ]
+        }
+      ],
+      "title": "SeedVR2 tiled VAE low-VRAM",
+      "properties": {
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+        "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+        "Node name for S&R": "SeedVR2LoadVAEModel"
+      },
+      "widgets_values": [
+        "ema_vae_fp16.safetensors",
+        "cuda:0",
+        true,
+        768,
+        128,
+        true,
+        768,
+        128,
+        "false",
+        "cpu",
+        false
+      ]
+    },
+    {
+      "id": 106,
+      "type": "SeedVR2VideoUpscaler",
+      "pos": [
+        1160,
+        340
+      ],
+      "size": [
+        300,
+        386
+      ],
+      "flags": {},
+      "order": 1002,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 184
+        },
+        {
+          "name": "dit",
+          "type": "SEEDVR2_DIT",
+          "link": 185
+        },
+        {
+          "name": "vae",
+          "type": "SEEDVR2_VAE",
+          "link": 186
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "name": "resolution",
+          "type": "INT",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": null
+        },
+        {
+          "name": "max_resolution",
+          "type": "INT",
+          "widget": {
+            "name": "max_resolution"
+          },
+          "link": null
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        },
+        {
+          "name": "uniform_batch_size",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "uniform_batch_size"
+          },
+          "link": null
+        },
+        {
+          "name": "color_correction",
+          "type": "COMBO",
+          "widget": {
+            "name": "color_correction"
+          },
+          "link": null
+        },
+        {
+          "name": "temporal_overlap",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "temporal_overlap"
+          },
+          "link": null
+        },
+        {
+          "name": "prepend_frames",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "prepend_frames"
+          },
+          "link": null
+        },
+        {
+          "name": "input_noise_scale",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "input_noise_scale"
+          },
+          "link": null
+        },
+        {
+          "name": "latent_noise_scale",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "latent_noise_scale"
+          },
+          "link": null
+        },
+        {
+          "name": "offload_device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "offload_device"
+          },
+          "link": null
+        },
+        {
+          "name": "enable_debug",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_debug"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            187
+          ]
+        }
+      ],
+      "title": "OPTIONAL SeedVR2 upscale — BYPASS by default",
+      "properties": {
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+        "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+        "Node name for S&R": "SeedVR2VideoUpscaler"
+      },
+      "widgets_values": [
+        42,
+        "fixed",
+        1536,
+        1536,
+        1,
+        false,
+        "lab",
+        0,
+        0,
+        0,
+        0,
+        "cpu",
+        false
       ]
     }
   ],
@@ -1634,8 +2055,32 @@
       "SAM_MODEL"
     ],
     [
-      183,
+      184,
       102,
+      0,
+      106,
+      0,
+      "IMAGE"
+    ],
+    [
+      185,
+      104,
+      0,
+      106,
+      1,
+      "SEEDVR2_DIT"
+    ],
+    [
+      186,
+      105,
+      0,
+      106,
+      2,
+      "SEEDVR2_VAE"
+    ],
+    [
+      187,
+      106,
       0,
       103,
       0,
