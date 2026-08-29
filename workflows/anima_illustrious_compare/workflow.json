@@ -1,8 +1,8 @@
 {
   "id": "f7a250a1-53fb-496b-8c39-c60d9e764028",
   "revision": 0,
-  "last_node_id": 735,
-  "last_link_id": 1061,
+  "last_node_id": 738,
+  "last_link_id": 1075,
   "nodes": [
     {
       "id": 48,
@@ -270,6 +270,15 @@
           "type": "LATENT",
           "link": 298,
           "slot_index": 3
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 1062
         }
       ],
       "outputs": [
@@ -287,7 +296,7 @@
       },
       "widgets_values": [
         431433362471142,
-        "randomize",
+        "fixed",
         28,
         5,
         "euler_ancestral",
@@ -833,6 +842,15 @@
           "type": "SCHEDULER_FUNC",
           "shape": 7,
           "link": null
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 1064
         }
       ],
       "outputs": [
@@ -893,7 +911,7 @@
         512,
         true,
         1024,
-        0,
+        431433362471142,
         "fixed",
         28,
         5,
@@ -1272,6 +1290,15 @@
           "type": "LATENT",
           "link": 299,
           "slot_index": 3
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 1063
         }
       ],
       "outputs": [
@@ -1288,8 +1315,8 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        99238144271031,
-        "randomize",
+        431433362471142,
+        "fixed",
         28,
         5,
         "euler_ancestral",
@@ -1415,6 +1442,15 @@
           "type": "SCHEDULER_FUNC",
           "shape": 7,
           "link": null
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 1065
         }
       ],
       "outputs": [
@@ -1468,7 +1504,7 @@
         512,
         true,
         1024,
-        0,
+        431433362471142,
         "fixed",
         28,
         5,
@@ -1564,6 +1600,15 @@
           "type": "LATENT",
           "link": 581,
           "slot_index": 3
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 1066
         }
       ],
       "outputs": [
@@ -1581,7 +1626,7 @@
       },
       "widgets_values": [
         431433362471142,
-        "randomize",
+        "fixed",
         30,
         5,
         "euler_ancestral",
@@ -2127,6 +2172,15 @@
           "type": "SCHEDULER_FUNC",
           "shape": 7,
           "link": null
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 1068
         }
       ],
       "outputs": [
@@ -2187,7 +2241,7 @@
         512,
         true,
         1024,
-        0,
+        431433362471142,
         "fixed",
         30,
         5,
@@ -2566,6 +2620,15 @@
           "type": "LATENT",
           "link": 582,
           "slot_index": 3
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 1067
         }
       ],
       "outputs": [
@@ -2582,8 +2645,8 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        99238144271031,
-        "randomize",
+        431433362471142,
+        "fixed",
         30,
         5,
         "euler_ancestral",
@@ -2709,6 +2772,15 @@
           "type": "SCHEDULER_FUNC",
           "shape": 7,
           "link": null
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 1069
         }
       ],
       "outputs": [
@@ -2762,7 +2834,7 @@
         512,
         true,
         1024,
-        0,
+        431433362471142,
         "fixed",
         30,
         5,
@@ -2858,6 +2930,15 @@
           "type": "LATENT",
           "link": 864,
           "slot_index": 3
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 1070
         }
       ],
       "outputs": [
@@ -2875,7 +2956,7 @@
       },
       "widgets_values": [
         431433362471142,
-        "randomize",
+        "fixed",
         30,
         5,
         "euler_ancestral",
@@ -3421,6 +3502,15 @@
           "type": "SCHEDULER_FUNC",
           "shape": 7,
           "link": null
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 1072
         }
       ],
       "outputs": [
@@ -3481,7 +3571,7 @@
         512,
         true,
         1024,
-        0,
+        431433362471142,
         "fixed",
         30,
         5,
@@ -3860,6 +3950,15 @@
           "type": "LATENT",
           "link": 865,
           "slot_index": 3
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 1071
         }
       ],
       "outputs": [
@@ -3876,8 +3975,8 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        99238144271031,
-        "randomize",
+        431433362471142,
+        "fixed",
         30,
         5,
         "euler_ancestral",
@@ -4003,6 +4102,15 @@
           "type": "SCHEDULER_FUNC",
           "shape": 7,
           "link": null
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 1073
         }
       ],
       "outputs": [
@@ -4056,7 +4164,7 @@
         512,
         true,
         1024,
-        0,
+        431433362471142,
         "fixed",
         30,
         5,
@@ -5376,6 +5484,117 @@
         "cpu",
         false
       ]
+    },
+    {
+      "id": 736,
+      "type": "PrimitiveInt",
+      "pos": [
+        1090,
+        670
+      ],
+      "size": [
+        270,
+        90
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "localized_name": "INT",
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            1062,
+            1063,
+            1064,
+            1065
+          ]
+        }
+      ],
+      "title": "Shared Seed — RouWei",
+      "properties": {
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        431433362471142,
+        "randomize"
+      ]
+    },
+    {
+      "id": 737,
+      "type": "PrimitiveInt",
+      "pos": [
+        1990,
+        670
+      ],
+      "size": [
+        270,
+        90
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "localized_name": "INT",
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            1066,
+            1067,
+            1068,
+            1069
+          ]
+        }
+      ],
+      "title": "Shared Seed — Nova",
+      "properties": {
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        431433362471142,
+        "randomize"
+      ]
+    },
+    {
+      "id": 738,
+      "type": "PrimitiveInt",
+      "pos": [
+        2890,
+        670
+      ],
+      "size": [
+        270,
+        90
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "localized_name": "INT",
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            1070,
+            1071,
+            1072,
+            1073
+          ]
+        }
+      ],
+      "title": "Shared Seed — JANKU",
+      "properties": {
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        431433362471142,
+        "randomize"
+      ]
     }
   ],
   "links": [
@@ -6506,6 +6725,102 @@
       700,
       0,
       "IMAGE"
+    ],
+    [
+      1062,
+      736,
+      0,
+      219,
+      4,
+      "INT"
+    ],
+    [
+      1063,
+      736,
+      0,
+      291,
+      4,
+      "INT"
+    ],
+    [
+      1064,
+      736,
+      0,
+      242,
+      11,
+      "INT"
+    ],
+    [
+      1065,
+      736,
+      0,
+      293,
+      11,
+      "INT"
+    ],
+    [
+      1066,
+      737,
+      0,
+      422,
+      4,
+      "INT"
+    ],
+    [
+      1067,
+      737,
+      0,
+      494,
+      4,
+      "INT"
+    ],
+    [
+      1068,
+      737,
+      0,
+      445,
+      11,
+      "INT"
+    ],
+    [
+      1069,
+      737,
+      0,
+      496,
+      11,
+      "INT"
+    ],
+    [
+      1070,
+      738,
+      0,
+      625,
+      4,
+      "INT"
+    ],
+    [
+      1071,
+      738,
+      0,
+      697,
+      4,
+      "INT"
+    ],
+    [
+      1072,
+      738,
+      0,
+      648,
+      11,
+      "INT"
+    ],
+    [
+      1073,
+      738,
+      0,
+      699,
+      11,
+      "INT"
     ]
   ],
   "groups": [],
@@ -6517,7 +6832,7 @@
         "state": {
           "lastGroupId": 5,
           "lastNodeId": 726,
-          "lastLinkId": 1049,
+          "lastLinkId": 1075,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -6598,7 +6913,9 @@
             "type": "INT",
             "linkIds": [
               1012,
-              1021
+              1021,
+              1074,
+              1075
             ],
             "pos": [
               -180.955078125,
@@ -7080,7 +7397,7 @@
             },
             "widgets_values": [
               755918130909406,
-              "randomize",
+              "fixed",
               30,
               4,
               "euler",
@@ -7701,7 +8018,7 @@
             },
             "widgets_values": [
               755918130909406,
-              "randomize",
+              "fixed",
               30,
               4,
               "euler",
@@ -7799,6 +8116,15 @@
                   "name": "cfg"
                 },
                 "link": 1027
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 1074
               }
             ],
             "outputs": [
@@ -7859,7 +8185,7 @@
               512,
               true,
               1024,
-              0,
+              755918130909406,
               "fixed",
               30,
               4,
@@ -7979,6 +8305,15 @@
                   "name": "cfg"
                 },
                 "link": 1029
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 1075
               }
             ],
             "outputs": [
@@ -8039,7 +8374,7 @@
               512,
               true,
               1024,
-              0,
+              755918130909406,
               "fixed",
               30,
               4,
@@ -9160,6 +9495,22 @@
             "target_id": -20,
             "target_slot": 0,
             "type": "IMAGE"
+          },
+          {
+            "id": 1074,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 719,
+            "target_slot": 13,
+            "type": "INT"
+          },
+          {
+            "id": 1075,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 720,
+            "target_slot": 13,
+            "type": "INT"
           }
         ],
         "extra": {}
