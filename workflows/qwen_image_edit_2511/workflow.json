@@ -1055,8 +1055,8 @@
               "ver": "0.5.1",
               "models": [
                 {
-                  "name": "Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
-                  "url": "https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/resolve/main/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors",
+                  "name": "Qwen-Image-Edit-2511-Lightning-8steps-V1.0-bf16.safetensors",
+                  "url": "https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/resolve/main/Qwen-Image-Edit-2511-Lightning-8steps-V1.0-bf16.safetensors",
                   "directory": "loras"
                 }
               ],
