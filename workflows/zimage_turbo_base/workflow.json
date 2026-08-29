@@ -2,7 +2,7 @@
   "id": "9ae6082b-c7f4-433c-9971-7a8f65a3ea65",
   "revision": 0,
   "last_node_id": 252,
-  "last_link_id": 297,
+  "last_link_id": 301,
   "nodes": [
     {
       "id": 35,
@@ -490,7 +490,7 @@
         "state": {
           "lastGroupId": 4,
           "lastNodeId": 70,
-          "lastLinkId": 102,
+          "lastLinkId": 299,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -558,7 +558,9 @@
             "type": "INT",
             "linkIds": [
               71,
-              79
+              79,
+              298,
+              299
             ],
             "pos": [
               -460,
@@ -1158,7 +1160,7 @@
             },
             "widgets_values": [
               0,
-              "randomize",
+              "fixed",
               8,
               1,
               "res_multistep",
@@ -1249,7 +1251,7 @@
             },
             "widgets_values": [
               0,
-              "randomize",
+              "fixed",
               8,
               1,
               "res_multistep",
@@ -1331,6 +1333,15 @@
                 "type": "SCHEDULER_FUNC",
                 "shape": 7,
                 "link": null
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 298
               }
             ],
             "outputs": [
@@ -1488,6 +1499,15 @@
                 "type": "SCHEDULER_FUNC",
                 "shape": 7,
                 "link": null
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 299
               }
             ],
             "outputs": [
@@ -2497,6 +2517,22 @@
             "target_id": -20,
             "target_slot": 0,
             "type": "IMAGE"
+          },
+          {
+            "id": 298,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 63,
+            "target_slot": 11,
+            "type": "INT"
+          },
+          {
+            "id": 299,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 64,
+            "target_slot": 11,
+            "type": "INT"
           }
         ],
         "extra": {
@@ -2509,7 +2545,7 @@
         "state": {
           "lastGroupId": 6,
           "lastNodeId": 104,
-          "lastLinkId": 163,
+          "lastLinkId": 301,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -2620,7 +2656,9 @@
             "type": "INT",
             "linkIds": [
               130,
-              139
+              139,
+              300,
+              301
             ],
             "pos": [
               -230.955078125,
@@ -3237,7 +3275,7 @@
             },
             "widgets_values": [
               677498465340151,
-              "randomize",
+              "fixed",
               30,
               4,
               "res_multistep",
@@ -3361,7 +3399,7 @@
             },
             "widgets_values": [
               677498465340151,
-              "randomize",
+              "fixed",
               30,
               4,
               "res_multistep",
@@ -3443,6 +3481,15 @@
                 "type": "SCHEDULER_FUNC",
                 "shape": 7,
                 "link": null
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 300
               }
             ],
             "outputs": [
@@ -3496,7 +3543,7 @@
               512,
               true,
               1024,
-              0,
+              677498465340151,
               "fixed",
               30,
               4,
@@ -3600,6 +3647,15 @@
                 "type": "SCHEDULER_FUNC",
                 "shape": 7,
                 "link": null
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 301
               }
             ],
             "outputs": [
@@ -3653,7 +3709,7 @@
               512,
               true,
               1024,
-              0,
+              677498465340151,
               "fixed",
               30,
               4,
@@ -4630,6 +4686,22 @@
             "target_id": -20,
             "target_slot": 0,
             "type": "IMAGE"
+          },
+          {
+            "id": 300,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 97,
+            "target_slot": 11,
+            "type": "INT"
+          },
+          {
+            "id": 301,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 98,
+            "target_slot": 11,
+            "type": "INT"
           }
         ],
         "extra": {
