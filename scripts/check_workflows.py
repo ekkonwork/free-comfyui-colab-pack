@@ -106,13 +106,19 @@ def origin_for_input(graph: dict[str, Any], node: dict[str, Any], name: str):
 
 def resolve_origin(graph: dict[str, Any], node: dict[str, Any], name: str):
     by_id = node_map(graph)
+    links = link_map(graph)
     origin_id, origin_slot, kind = origin_for_input(graph, node, name)
     seen = set()
     while origin_id in by_id and by_id[origin_id].get("type") == "Reroute":
         assert origin_id not in seen, "reroute cycle"
         seen.add(origin_id)
         reroute = by_id[origin_id]
-        origin_id, origin_slot, kind = origin_for_input(graph, reroute, "input")
+        reroute_inputs = reroute.get("inputs", [])
+        assert len(reroute_inputs) == 1 and reroute_inputs[0].get("link") is not None, (
+            f"Reroute#{origin_id}: expected exactly one connected input"
+        )
+        upstream = links[reroute_inputs[0]["link"]]
+        origin_id, origin_slot, kind = upstream[1], upstream[2], upstream[5]
     return origin_id, origin_slot, kind
 
 
