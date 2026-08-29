@@ -2,7 +2,7 @@
   "id": "9ae6082b-c7f4-433c-9971-7a8f65a3ea65",
   "revision": 0,
   "last_node_id": 70,
-  "last_link_id": 102,
+  "last_link_id": 104,
   "nodes": [
     {
       "id": 35,
@@ -173,7 +173,7 @@
         "state": {
           "lastGroupId": 4,
           "lastNodeId": 70,
-          "lastLinkId": 102,
+          "lastLinkId": 104,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -241,7 +241,9 @@
             "type": "INT",
             "linkIds": [
               71,
-              79
+              79,
+              103,
+              104
             ],
             "pos": [
               -460,
@@ -841,7 +843,7 @@
             },
             "widgets_values": [
               0,
-              "randomize",
+              "fixed",
               8,
               1,
               "res_multistep",
@@ -932,7 +934,7 @@
             },
             "widgets_values": [
               0,
-              "randomize",
+              "fixed",
               8,
               1,
               "res_multistep",
@@ -1014,6 +1016,15 @@
                 "type": "SCHEDULER_FUNC",
                 "shape": 7,
                 "link": null
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 103
               }
             ],
             "outputs": [
@@ -1171,6 +1182,15 @@
                 "type": "SCHEDULER_FUNC",
                 "shape": 7,
                 "link": null
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 104
               }
             ],
             "outputs": [
@@ -2180,6 +2200,22 @@
             "target_id": -20,
             "target_slot": 0,
             "type": "IMAGE"
+          },
+          {
+            "id": 103,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 63,
+            "target_slot": 11,
+            "type": "INT"
+          },
+          {
+            "id": 104,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 64,
+            "target_slot": 11,
+            "type": "INT"
           }
         ],
         "extra": {
