@@ -2,7 +2,7 @@
   "id": "f7a250a1-53fb-496b-8c39-c60d9e764028",
   "revision": 0,
   "last_node_id": 100,
-  "last_link_id": 171,
+  "last_link_id": 173,
   "nodes": [
     {
       "id": 48,
@@ -271,7 +271,7 @@
         "state": {
           "lastGroupId": 5,
           "lastNodeId": 100,
-          "lastLinkId": 171,
+          "lastLinkId": 173,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -352,7 +352,9 @@
             "type": "INT",
             "linkIds": [
               132,
-              143
+              143,
+              172,
+              173
             ],
             "pos": [
               -180.955078125,
@@ -834,7 +836,7 @@
             },
             "widgets_values": [
               755918130909406,
-              "randomize",
+              "fixed",
               30,
               4,
               "euler",
@@ -1455,7 +1457,7 @@
             },
             "widgets_values": [
               755918130909406,
-              "randomize",
+              "fixed",
               30,
               4,
               "euler",
@@ -1553,6 +1555,15 @@
                   "name": "cfg"
                 },
                 "link": 149
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 172
               }
             ],
             "outputs": [
@@ -1613,7 +1624,7 @@
               512,
               true,
               1024,
-              0,
+              755918130909406,
               "fixed",
               30,
               4,
@@ -1733,6 +1744,15 @@
                   "name": "cfg"
                 },
                 "link": 151
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 173
               }
             ],
             "outputs": [
@@ -1793,7 +1813,7 @@
               512,
               true,
               1024,
-              0,
+              755918130909406,
               "fixed",
               30,
               4,
@@ -2914,6 +2934,22 @@
             "target_id": -20,
             "target_slot": 0,
             "type": "IMAGE"
+          },
+          {
+            "id": 172,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 93,
+            "target_slot": 13,
+            "type": "INT"
+          },
+          {
+            "id": 173,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 94,
+            "target_slot": 13,
+            "type": "INT"
           }
         ],
         "extra": {}
