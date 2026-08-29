@@ -148,10 +148,20 @@ def seedvr_nodes(graph: dict[str, Any]):
     )
 
 
-def check_seedvr(graph: dict[str, Any], label: str) -> None:
-    dits, vaes, ups = seedvr_nodes(graph)
-    assert len(dits) == len(vaes) == len(ups) == 1, f"{label}: expected one SeedVR2 stage"
-    dit, vae, up = dits[0], vaes[0], ups[0]
+def check_seedvr(graph: dict[str, Any], label: str, up_id: int | None = None) -> None:
+    by_id = node_map(graph)
+    if up_id is None:
+        ups = [n for n in nodes(graph) if n.get("type") == "SeedVR2VideoUpscaler"]
+        assert len(ups) == 1, f"{label}: expected one SeedVR2 stage"
+        up = ups[0]
+    else:
+        up = by_id[up_id]
+        assert up.get("type") == "SeedVR2VideoUpscaler", f"{label}: selected node is not SeedVR2"
+    dit_id, _, _ = origin_for_input(graph, up, "dit")
+    vae_id, _, _ = origin_for_input(graph, up, "vae")
+    dit, vae = by_id[dit_id], by_id[vae_id]
+    assert dit.get("type") == "SeedVR2LoadDiTModel", f"{label}: SeedVR2 DiT loader missing"
+    assert vae.get("type") == "SeedVR2LoadVAEModel", f"{label}: SeedVR2 VAE loader missing"
     assert dit.get("widgets_values", [])[:7] == [
         "seedvr2_ema_3b-Q4_K_M.gguf", "cuda:0", 32, True, "cpu", False, "sdpa"
     ], f"{label}: unexpected SeedVR2 DiT low-VRAM profile"
@@ -165,26 +175,50 @@ def check_seedvr(graph: dict[str, Any], label: str) -> None:
     assert uw[11] == "cpu", f"{label}: SeedVR2 offload must be CPU"
 
 
-def check_sam_and_detectors(graph: dict[str, Any], label: str) -> None:
-    sam = [n for n in nodes(graph) if n.get("type") == "SAMLoader"]
-    assert len(sam) == 1, f"{label}: expected one SAMLoader"
-    assert sam[0].get("widgets_values", [])[:2] == ["sam_vit_b_01ec64.pth", "CPU"], f"{label}: SAM must be vit_b on CPU"
-    detector_names = [
-        str(n.get("widgets_values", [""])[0])
-        for n in nodes(graph)
-        if n.get("type") == "UltralyticsDetectorProvider"
-    ]
-    assert sum("face_yolov8m.pt" in name for name in detector_names) == 1, f"{label}: face YOLO missing"
-    assert sum("hand_yolov8n.pt" in name for name in detector_names) == 1, f"{label}: hand YOLO missing"
-
-
-def standard_chain_from_output(graph: dict[str, Any], label: str):
-    """Return base, refiner, face, hand by walking backward from SeedVR output."""
+def check_sam_and_detectors(
+    graph: dict[str, Any],
+    label: str,
+    face: dict[str, Any] | None = None,
+    hand: dict[str, Any] | None = None,
+) -> None:
     by_id = node_map(graph)
-    links = link_map(graph)
-    ups = [n for n in nodes(graph) if n.get("type") == "SeedVR2VideoUpscaler"]
-    assert len(ups) == 1, f"{label}: one SeedVR2 upscaler required"
-    up = ups[0]
+    if face is None or hand is None:
+        sam = [n for n in nodes(graph) if n.get("type") == "SAMLoader"]
+        assert len(sam) == 1, f"{label}: expected one SAMLoader"
+        sam_node = sam[0]
+        detector_names = [
+            str(n.get("widgets_values", [""])[0])
+            for n in nodes(graph)
+            if n.get("type") == "UltralyticsDetectorProvider"
+        ]
+        assert sum("face_yolov8m.pt" in name for name in detector_names) == 1, f"{label}: face YOLO missing"
+        assert sum("hand_yolov8n.pt" in name for name in detector_names) == 1, f"{label}: hand YOLO missing"
+    else:
+        face_det_id, _, _ = resolve_origin(graph, face, "bbox_detector")
+        hand_det_id, _, _ = resolve_origin(graph, hand, "bbox_detector")
+        face_det, hand_det = by_id[face_det_id], by_id[hand_det_id]
+        assert face_det.get("type") == hand_det.get("type") == "UltralyticsDetectorProvider"
+        assert "face_yolov8m.pt" in str(face_det.get("widgets_values", [""])[0]), f"{label}: face YOLO mismatch"
+        assert "hand_yolov8n.pt" in str(hand_det.get("widgets_values", [""])[0]), f"{label}: hand YOLO mismatch"
+        sam_id, _, _ = resolve_origin(graph, face, "sam_model_opt")
+        assert resolve_origin(graph, hand, "sam_model_opt")[0] == sam_id, f"{label}: face/hand SAM differ"
+        sam_node = by_id[sam_id]
+        assert sam_node.get("type") == "SAMLoader", f"{label}: detailer SAM source is not SAMLoader"
+    assert sam_node.get("widgets_values", [])[:2] == ["sam_vit_b_01ec64.pth", "CPU"], f"{label}: SAM must be vit_b on CPU"
+
+
+def standard_chain_from_output(
+    graph: dict[str, Any], label: str, up_id: int | None = None
+):
+    """Return base, refiner, face, hand by walking backward from one SeedVR branch."""
+    by_id = node_map(graph)
+    if up_id is None:
+        ups = [n for n in nodes(graph) if n.get("type") == "SeedVR2VideoUpscaler"]
+        assert len(ups) == 1, f"{label}: one SeedVR2 upscaler required"
+        up = ups[0]
+    else:
+        up = by_id[up_id]
+        assert up.get("type") == "SeedVR2VideoUpscaler", f"{label}: invalid SeedVR branch anchor"
     hand_id, _, _ = origin_for_input(graph, up, "image")
     hand = by_id[hand_id]
     assert hand.get("type") == "FaceDetailer" and "Hand Detailer" in str(hand.get("title", "")), f"{label}: SeedVR must follow Hand Detailer"
@@ -219,8 +253,9 @@ def check_standard_ksampler_pipeline(
     graph: dict[str, Any],
     label: str,
     expected: tuple[int, float, str, str] | None = None,
+    up_id: int | None = None,
 ) -> tuple[int, float, str, str]:
-    base, refiner, face, hand = standard_chain_from_output(graph, label)
+    base, refiner, face, hand = standard_chain_from_output(graph, label, up_id)
     assert base.get("type") == refiner.get("type") == "KSampler", f"{label}: expected KSampler pipeline"
     preset = tuple(base.get("widgets_values", [])[2:6])
     if expected is not None:
@@ -232,8 +267,8 @@ def check_standard_ksampler_pipeline(
     assert face.get("widgets_values", [None] * 10)[9] == 0.50, f"{label}: face denoise"
     assert hand.get("widgets_values", [None] * 10)[9] == 0.35, f"{label}: hand denoise"
     check_detail_sources(graph, face, hand, label)
-    check_sam_and_detectors(graph, label)
-    check_seedvr(graph, label)
+    check_sam_and_detectors(graph, label, face, hand)
+    check_seedvr(graph, label, up_id)
     return preset
 
 
@@ -352,7 +387,15 @@ def check_folder(folder: Path) -> None:
         saves = [n for n in nodes(graph) if n.get("type") == "SaveImage"]
         seed_saves = [s for s in saves if node_map(graph)[origin_for_input(graph, s, "images")[0]].get("type") == "SeedVR2VideoUpscaler"]
         assert len(seed_saves) == 3, "compare: expected RouWei/Nova/JANKU SeedVR saves"
-        presets = sorted(check_standard_ksampler_pipeline(graph, f"compare:{s['id']}") for s in seed_saves)
+        presets = []
+        for save in seed_saves:
+            up_id, _, _ = origin_for_input(graph, save, "images")
+            presets.append(
+                check_standard_ksampler_pipeline(
+                    graph, f"compare:{save['id']}", up_id=up_id
+                )
+            )
+        presets = sorted(presets)
         assert presets == sorted([
             (28, 5, "euler_ancestral", "normal"),
             (30, 5, "euler_ancestral", "normal"),
