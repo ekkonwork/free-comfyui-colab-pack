@@ -1128,8 +1128,8 @@
               "secondTabWidth": 65,
               "models": [
                 {
-                  "name": "Qwen-Image-2512-Lightning-4steps-V1.0-fp32.safetensors",
-                  "url": "https://huggingface.co/lightx2v/Qwen-Image-2512-Lightning/resolve/main/Qwen-Image-2512-Lightning-4steps-V1.0-fp32.safetensors",
+                  "name": "Qwen-Image-2512-Lightning-8steps-V1.0-bf16.safetensors",
+                  "url": "https://huggingface.co/lightx2v/Qwen-Image-2512-Lightning/resolve/main/Qwen-Image-2512-Lightning-8steps-V1.0-bf16.safetensors",
                   "directory": "loras"
                 }
               ],
@@ -1678,7 +1678,7 @@
             },
             "widgets_values": [
               "sam_vit_b_01ec64.pth",
-              "AUTO"
+              "CPU"
             ],
             "color": "#223",
             "bgcolor": "#335"
