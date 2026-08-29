@@ -1,70 +1,170 @@
 {
   "task_id": "comfy-audit-hardening-20260829",
-  "overall_verdict": "UNKNOWN",
+  "overall_verdict": "PASS",
+  "validated_code_head": "4274dd52bfef1a70eb9586b808d0b40ba43406f9",
   "acceptance_criteria": [
     {
       "id": "AC1",
-      "status": "UNKNOWN",
-      "proof": [],
-      "reason": "Not verified."
+      "status": "PASS",
+      "proof": [
+        "scripts/check_workflows.py asserts the exact 14 workflow-folder set and exactly one workflow.json per folder.",
+        "FLUX.2 Klein notebook installs only flux2_klein9b_gguf.json and the installer removes legacy generated workflow names."
+      ],
+      "reason": "One bundled workflow per model folder is enforced; multi-branch models remain on one canvas."
     },
     {
       "id": "AC2",
-      "status": "UNKNOWN",
-      "proof": [],
-      "reason": "Not verified."
+      "status": "PASS",
+      "proof": [
+        "scripts/check_workflows.py traces main -> refiner -> VAEDecode -> FaceDetailer -> Hand Detailer -> SeedVR2 for every non-exception branch.",
+        "Sampling parity assertions cover steps, CFG/guidance semantics, sampler, scheduler and shared seed; denoise is 0.30/0.50/0.35."
+      ],
+      "reason": "All required detail pipelines now share the main sampling configuration and seed, with denoise as the intentional delta."
     },
     {
       "id": "AC3",
-      "status": "UNKNOWN",
-      "proof": [],
-      "reason": "Not verified."
+      "status": "PASS",
+      "proof": [
+        "workflows/flux2_klein9b_gguf/workflow.json has Base 50/CFG4/Euler and Distilled 4/CFG1/Euler on one canvas with no FaceDetailer/refiner.",
+        "workflows/qwen_image_edit_2511/workflow.json uses Qwen-Image-Edit-2511-Lightning-8steps-V1.0-bf16.safetensors at 8/1/Euler/simple with no FaceDetailer/refiner.",
+        "Repository sweep found no Lightning-4steps, patch_flux2_gguf_workflow or force_mode( remnants."
+      ],
+      "reason": "Both explicitly requested exceptions are preserved exactly."
     },
     {
       "id": "AC4",
-      "status": "UNKNOWN",
-      "proof": [],
-      "reason": "Not verified."
+      "status": "PASS",
+      "proof": [
+        "workflows/qwen_image_2512/workflow.json uses Qwen-Image-2512-Lightning-8steps-V1.0-bf16.safetensors.",
+        "Main/refiner/Face/Hand are enforced at 8/1/Euler/simple with shared seed.",
+        "Stale 4-step model metadata and stale link 347 were removed."
+      ],
+      "reason": "Qwen-Image-2512 is fully migrated to the mandatory 8-step Lightning path."
     },
     {
       "id": "AC5",
-      "status": "UNKNOWN",
-      "proof": [],
-      "reason": "Not verified."
+      "status": "PASS",
+      "proof": [
+        "scripts/check_workflows.py requires SeedVR2LoadDiTModel + SeedVR2LoadVAEModel + SeedVR2VideoUpscaler on every bundled branch.",
+        "Required profile: seedvr2_ema_3b-Q4_K_M.gguf, blocks_to_swap=32, CPU offload, tiled 768/128 VAE, batch=1, upscaler mode=4 BYPASS.",
+        "SeedVR2 node registration was independently checked against numz/ComfyUI-SeedVR2_VideoUpscaler."
+      ],
+      "reason": "Optional SeedVR2 is final in every model branch and remains bypassed by default for T4 safety."
     },
     {
       "id": "AC6",
-      "status": "UNKNOWN",
-      "proof": [],
-      "reason": "Not verified."
+      "status": "PASS",
+      "proof": [
+        "scripts/check_notebooks.py validates all 17 notebooks, including universal and both _paused notebooks.",
+        "Every notebook has unified ComfyUI+Cloudflare and ComfyUI+bore watchdogs with COMFY_RESTART_GRACE=25, COMFY_HUNG_GRACE=120 and Manager/external process detection.",
+        "Detail notebooks explicitly provision face_yolov8m.pt, hand_yolov8n.pt and sam_vit_b_01ec64.pth; workflow SAMLoader is CPU."
+      ],
+      "reason": "Clean-Colab dependencies and Manager-safe watchdog behavior are repository-wide guardrails."
     },
     {
       "id": "AC7",
-      "status": "UNKNOWN",
-      "proof": [],
-      "reason": "Not verified."
+      "status": "PASS",
+      "proof": [
+        "Strict link-integrity validation checks both ends of every workflow link, including legacy Reroute serialization.",
+        "Face/Hand source parity checks model, CLIP, VAE, positive, negative, SAM and intended YOLO detectors.",
+        "Chroma preserves CFGGuider 3.8, Euler, BetaSamplingScheduler 26/(0.45,0.45), shift 1; SRPO preserves FluxGuidance 3.5, Euler and normal 50-step sigmas."
+      ],
+      "reason": "Workflow graph integrity and custom-sampler semantics are statically enforced."
     },
     {
       "id": "AC8",
-      "status": "UNKNOWN",
-      "proof": [],
-      "reason": "Not verified."
+      "status": "PASS",
+      "proof": [
+        "scripts/check_notebooks.py and scripts/check_workflows.py encode the audited architecture.",
+        "scripts/install_bundled_workflows.py uses Qwen 8-step LoRA names and one-flow Klein behavior.",
+        "scripts/apply_shared_runtime_fixes.py knows SeedVR2 node install and SAM provisioning.",
+        ".github/workflows/validate.yml runs helper compilation plus notebook and workflow validators."
+      ],
+      "reason": "Future helper-script use is guarded against reintroducing the audited regressions."
     },
     {
       "id": "AC9",
-      "status": "UNKNOWN",
-      "proof": [],
-      "reason": "Not verified."
+      "status": "PASS",
+      "proof": [
+        "RouWei: 28/5/euler_ancestral/normal.",
+        "Z-Image Base: 30/4/res_multistep/simple.",
+        "Chroma1-HD: 26 steps, CFG 3.8, Euler, Beta(0.45,0.45), shift 1.",
+        "SRPO: 50 steps, FluxGuidance 3.5, Euler, normal.",
+        "GitHub Actions run 33275260839 passed the model-specific sampling assertions."
+      ],
+      "reason": "All previously identified sampling corrections remain applied and enforced."
     },
     {
       "id": "AC10",
-      "status": "UNKNOWN",
-      "proof": [],
-      "reason": "Not verified."
+      "status": "PASS",
+      "proof": [
+        "proof.json contains PASS for AC1-AC10 and problems is empty.",
+        "scripts/check_proof.py validates task id, overall PASS, exact AC1-AC10 list, non-empty evidence/reasons, no open problems and a green CI record.",
+        "GitHub Actions static-validation run 33275260839 completed successfully for helper compilation, notebooks and workflows."
+      ],
+      "reason": "The proof record is complete and a proof-loop-lite guardrail is now part of the repository."
     }
   ],
-  "changed_files": [],
-  "checks": [],
+  "changed_files": [
+    ".github/workflows/validate.yml",
+    "scripts/check_notebooks.py",
+    "scripts/check_workflows.py",
+    "scripts/install_bundled_workflows.py",
+    "scripts/apply_shared_runtime_fixes.py",
+    "scripts/check_proof.py",
+    "workflows/anima/workflow.json",
+    "workflows/anima_illustrious_compare/workflow.json",
+    "workflows/chroma1_hd_gguf/workflow.json",
+    "workflows/flux2_klein9b_gguf/workflow.json",
+    "workflows/flux_srpo/workflow.json",
+    "workflows/janku_v777/workflow.json",
+    "workflows/nova_anime_xl_il_v190/workflow.json",
+    "workflows/qwen_image_2512/workflow.json",
+    "workflows/qwen_image_edit_2511/workflow.json",
+    "workflows/rouwei_v080_epsilon/workflow.json",
+    "workflows/zimage_base/workflow.json",
+    "workflows/zimage_seedvr2/workflow.json",
+    "workflows/zimage_turbo/workflow.json",
+    "workflows/zimage_turbo_base/workflow.json",
+    "all active model notebooks",
+    "notebooks/universal/comfy_universal_colab.ipynb",
+    "notebooks/_paused/ltx2_gguf/comfy_ltx2_gguf.ipynb",
+    "notebooks/_paused/wan22_14b_combo/comfy_wan22_14b_combo.ipynb"
+  ],
+  "checks": [
+    {
+      "name": "GitHub Actions static-validation",
+      "status": "PASS",
+      "run_id": 33275260839,
+      "head_sha": "4274dd52bfef1a70eb9586b808d0b40ba43406f9",
+      "details": [
+        "python -m compileall -q scripts: PASS",
+        "python scripts/check_notebooks.py: PASS",
+        "python scripts/check_workflows.py: PASS"
+      ]
+    },
+    {
+      "name": "Repository stale-regression sweep",
+      "status": "PASS",
+      "details": [
+        "Lightning-4steps: 0 matches",
+        "patch_flux2_gguf_workflow: 0 matches",
+        "force_mode(: 0 matches",
+        "SeedVR is forbidden: 0 matches",
+        "SAMLoader AUTO target string: 0 matches"
+      ]
+    },
+    {
+      "name": "Strict endpoint-link sweep",
+      "status": "PASS",
+      "details": [
+        "All 14 bundled workflow JSON graphs have consistent origin/output and target/input link references after removal of Qwen-2512 stale link 347."
+      ]
+    }
+  ],
   "problems": [],
-  "residual_risks": []
+  "residual_risks": [
+    "No real Google Colab T4 end-to-end image generation benchmark was executed in this session; this was explicitly a non-goal in spec.md.",
+    "External model hosts, tunnels, and third-party custom-node repositories can change independently of this repository."
+  ]
 }
