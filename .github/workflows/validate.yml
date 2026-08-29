@@ -1,0 +1,22 @@
+name: Validate ComfyUI pack
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  static-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile helper scripts
+        run: python -m compileall -q scripts
+      - name: Validate notebooks
+        run: python scripts/check_notebooks.py
+      - name: Validate workflows
+        run: python scripts/check_workflows.py
