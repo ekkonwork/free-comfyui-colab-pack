@@ -1,8 +1,8 @@
 {
   "id": "f7a250a1-53fb-496b-8c39-c60d9e764028",
   "revision": 0,
-  "last_node_id": 700,
-  "last_link_id": 988,
+  "last_node_id": 735,
+  "last_link_id": 1061,
   "nodes": [
     {
       "id": 48,
@@ -288,11 +288,11 @@
       "widgets_values": [
         431433362471142,
         "randomize",
-        30,
-        5.0,
+        28,
+        5,
         "euler_ancestral",
         "normal",
-        1.0
+        1
       ],
       "color": "#322",
       "bgcolor": "#533"
@@ -890,14 +890,14 @@
         "Node name for S&R": "FaceDetailer"
       },
       "widgets_values": [
-        360,
+        512,
         true,
-        768,
+        1024,
         0,
         "fixed",
-        20,
-        8,
-        "euler",
+        28,
+        5,
+        "euler_ancestral",
         "normal",
         0.5,
         5,
@@ -921,7 +921,8 @@
         false
       ],
       "color": "#223",
-      "bgcolor": "#335"
+      "bgcolor": "#335",
+      "title": "Face Detailer — same sampling, denoise 0.50"
     },
     {
       "id": 208,
@@ -1289,15 +1290,15 @@
       "widgets_values": [
         99238144271031,
         "randomize",
-        12,
-        5.0,
-        "dpmpp_2m",
-        "karras",
+        28,
+        5,
+        "euler_ancestral",
+        "normal",
         0.3
       ],
       "color": "#322",
       "bgcolor": "#533",
-      "title": "Second sampler / refiner"
+      "title": "Second sampler / refiner — same sampling, denoise 0.30"
     },
     {
       "id": 292,
@@ -1422,7 +1423,7 @@
           "type": "IMAGE",
           "shape": 3,
           "links": [
-            422
+            1050
           ],
           "slot_index": 0
         },
@@ -1464,14 +1465,14 @@
         "Node name for S&R": "FaceDetailer"
       },
       "widgets_values": [
-        360,
+        512,
         true,
-        768,
+        1024,
         0,
         "fixed",
-        12,
-        5.0,
-        "euler",
+        28,
+        5,
+        "euler_ancestral",
         "normal",
         0.35,
         5,
@@ -1496,7 +1497,7 @@
       ],
       "color": "#223",
       "bgcolor": "#335",
-      "title": "Hand Detailer"
+      "title": "Hand Detailer — same sampling, denoise 0.35"
     },
     {
       "id": 294,
@@ -1516,7 +1517,7 @@
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 422
+          "link": 1053
         }
       ],
       "outputs": [],
@@ -1582,10 +1583,10 @@
         431433362471142,
         "randomize",
         30,
-        5.0,
+        5,
         "euler_ancestral",
         "normal",
-        1.0
+        1
       ],
       "color": "#322",
       "bgcolor": "#533"
@@ -2183,14 +2184,14 @@
         "Node name for S&R": "FaceDetailer"
       },
       "widgets_values": [
-        360,
+        512,
         true,
-        768,
+        1024,
         0,
         "fixed",
-        20,
-        8,
-        "euler",
+        30,
+        5,
+        "euler_ancestral",
         "normal",
         0.5,
         5,
@@ -2214,7 +2215,8 @@
         false
       ],
       "color": "#223",
-      "bgcolor": "#335"
+      "bgcolor": "#335",
+      "title": "Face Detailer — same sampling, denoise 0.50"
     },
     {
       "id": 411,
@@ -2582,15 +2584,15 @@
       "widgets_values": [
         99238144271031,
         "randomize",
-        12,
-        5.0,
-        "dpmpp_2m",
-        "karras",
+        30,
+        5,
+        "euler_ancestral",
+        "normal",
         0.3
       ],
       "color": "#322",
       "bgcolor": "#533",
-      "title": "Second sampler / refiner"
+      "title": "Second sampler / refiner — same sampling, denoise 0.30"
     },
     {
       "id": 495,
@@ -2715,7 +2717,7 @@
           "type": "IMAGE",
           "shape": 3,
           "links": [
-            705
+            1054
           ],
           "slot_index": 0
         },
@@ -2757,14 +2759,14 @@
         "Node name for S&R": "FaceDetailer"
       },
       "widgets_values": [
-        360,
+        512,
         true,
-        768,
+        1024,
         0,
         "fixed",
-        12,
-        5.0,
-        "euler",
+        30,
+        5,
+        "euler_ancestral",
         "normal",
         0.35,
         5,
@@ -2789,7 +2791,7 @@
       ],
       "color": "#223",
       "bgcolor": "#335",
-      "title": "Hand Detailer"
+      "title": "Hand Detailer — same sampling, denoise 0.35"
     },
     {
       "id": 497,
@@ -2809,7 +2811,7 @@
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 705
+          "link": 1057
         }
       ],
       "outputs": [],
@@ -2875,10 +2877,10 @@
         431433362471142,
         "randomize",
         30,
-        5.0,
+        5,
         "euler_ancestral",
         "normal",
-        1.0
+        1
       ],
       "color": "#322",
       "bgcolor": "#533"
@@ -3476,14 +3478,14 @@
         "Node name for S&R": "FaceDetailer"
       },
       "widgets_values": [
-        360,
+        512,
         true,
-        768,
+        1024,
         0,
         "fixed",
-        20,
-        8,
-        "euler",
+        30,
+        5,
+        "euler_ancestral",
         "normal",
         0.5,
         5,
@@ -3507,7 +3509,8 @@
         false
       ],
       "color": "#223",
-      "bgcolor": "#335"
+      "bgcolor": "#335",
+      "title": "Face Detailer — same sampling, denoise 0.50"
     },
     {
       "id": 614,
@@ -3875,15 +3878,15 @@
       "widgets_values": [
         99238144271031,
         "randomize",
-        12,
-        5.0,
-        "dpmpp_2m",
-        "karras",
+        30,
+        5,
+        "euler_ancestral",
+        "normal",
         0.3
       ],
       "color": "#322",
       "bgcolor": "#533",
-      "title": "Second sampler / refiner"
+      "title": "Second sampler / refiner — same sampling, denoise 0.30"
     },
     {
       "id": 698,
@@ -4008,7 +4011,7 @@
           "type": "IMAGE",
           "shape": 3,
           "links": [
-            988
+            1058
           ],
           "slot_index": 0
         },
@@ -4050,14 +4053,14 @@
         "Node name for S&R": "FaceDetailer"
       },
       "widgets_values": [
-        360,
+        512,
         true,
-        768,
+        1024,
         0,
         "fixed",
-        12,
-        5.0,
-        "euler",
+        30,
+        5,
+        "euler_ancestral",
         "normal",
         0.35,
         5,
@@ -4082,7 +4085,7 @@
       ],
       "color": "#223",
       "bgcolor": "#335",
-      "title": "Hand Detailer"
+      "title": "Hand Detailer — same sampling, denoise 0.35"
     },
     {
       "id": 700,
@@ -4102,7 +4105,7 @@
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 988
+          "link": 1061
         }
       ],
       "outputs": [],
@@ -4112,6 +4115,1266 @@
       },
       "widgets_values": [
         "preview"
+      ]
+    },
+    {
+      "id": 727,
+      "type": "SeedVR2LoadDiTModel",
+      "pos": [
+        1300,
+        940
+      ],
+      "size": [
+        308,
+        202
+      ],
+      "flags": {},
+      "order": 1000,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "torch_compile_args",
+          "shape": 7,
+          "type": "TORCH_COMPILE_ARGS",
+          "link": null
+        },
+        {
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        },
+        {
+          "name": "blocks_to_swap",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "blocks_to_swap"
+          },
+          "link": null
+        },
+        {
+          "name": "swap_io_components",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "swap_io_components"
+          },
+          "link": null
+        },
+        {
+          "name": "offload_device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "offload_device"
+          },
+          "link": null
+        },
+        {
+          "name": "cache_model",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "cache_model"
+          },
+          "link": null
+        },
+        {
+          "name": "attention_mode",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "attention_mode"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEEDVR2_DIT",
+          "type": "SEEDVR2_DIT",
+          "links": [
+            1051
+          ]
+        }
+      ],
+      "title": "SeedVR2 3B Q4 low-VRAM (auto-download)",
+      "properties": {
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+        "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+        "Node name for S&R": "SeedVR2LoadDiTModel"
+      },
+      "widgets_values": [
+        "seedvr2_ema_3b-Q4_K_M.gguf",
+        "cuda:0",
+        32,
+        true,
+        "cpu",
+        false,
+        "sdpa"
+      ]
+    },
+    {
+      "id": 728,
+      "type": "SeedVR2LoadVAEModel",
+      "pos": [
+        1300,
+        1180
+      ],
+      "size": [
+        313,
+        298
+      ],
+      "flags": {},
+      "order": 1001,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "torch_compile_args",
+          "shape": 7,
+          "type": "TORCH_COMPILE_ARGS",
+          "link": null
+        },
+        {
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        },
+        {
+          "name": "encode_tiled",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "encode_tiled"
+          },
+          "link": null
+        },
+        {
+          "name": "encode_tile_size",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "encode_tile_size"
+          },
+          "link": null
+        },
+        {
+          "name": "encode_tile_overlap",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "encode_tile_overlap"
+          },
+          "link": null
+        },
+        {
+          "name": "decode_tiled",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "decode_tiled"
+          },
+          "link": null
+        },
+        {
+          "name": "decode_tile_size",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "decode_tile_size"
+          },
+          "link": null
+        },
+        {
+          "name": "decode_tile_overlap",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "decode_tile_overlap"
+          },
+          "link": null
+        },
+        {
+          "name": "tile_debug",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "tile_debug"
+          },
+          "link": null
+        },
+        {
+          "name": "offload_device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "offload_device"
+          },
+          "link": null
+        },
+        {
+          "name": "cache_model",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "cache_model"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEEDVR2_VAE",
+          "type": "SEEDVR2_VAE",
+          "links": [
+            1052
+          ]
+        }
+      ],
+      "title": "SeedVR2 tiled VAE low-VRAM",
+      "properties": {
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+        "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+        "Node name for S&R": "SeedVR2LoadVAEModel"
+      },
+      "widgets_values": [
+        "ema_vae_fp16.safetensors",
+        "cuda:0",
+        true,
+        768,
+        128,
+        true,
+        768,
+        128,
+        "false",
+        "cpu",
+        false
+      ]
+    },
+    {
+      "id": 729,
+      "type": "SeedVR2VideoUpscaler",
+      "pos": [
+        1660,
+        540
+      ],
+      "size": [
+        300,
+        386
+      ],
+      "flags": {},
+      "order": 1002,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1050
+        },
+        {
+          "name": "dit",
+          "type": "SEEDVR2_DIT",
+          "link": 1051
+        },
+        {
+          "name": "vae",
+          "type": "SEEDVR2_VAE",
+          "link": 1052
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "name": "resolution",
+          "type": "INT",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": null
+        },
+        {
+          "name": "max_resolution",
+          "type": "INT",
+          "widget": {
+            "name": "max_resolution"
+          },
+          "link": null
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        },
+        {
+          "name": "uniform_batch_size",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "uniform_batch_size"
+          },
+          "link": null
+        },
+        {
+          "name": "color_correction",
+          "type": "COMBO",
+          "widget": {
+            "name": "color_correction"
+          },
+          "link": null
+        },
+        {
+          "name": "temporal_overlap",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "temporal_overlap"
+          },
+          "link": null
+        },
+        {
+          "name": "prepend_frames",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "prepend_frames"
+          },
+          "link": null
+        },
+        {
+          "name": "input_noise_scale",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "input_noise_scale"
+          },
+          "link": null
+        },
+        {
+          "name": "latent_noise_scale",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "latent_noise_scale"
+          },
+          "link": null
+        },
+        {
+          "name": "offload_device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "offload_device"
+          },
+          "link": null
+        },
+        {
+          "name": "enable_debug",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_debug"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1053
+          ]
+        }
+      ],
+      "title": "OPTIONAL SeedVR2 upscale — BYPASS by default",
+      "properties": {
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+        "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+        "Node name for S&R": "SeedVR2VideoUpscaler"
+      },
+      "widgets_values": [
+        42,
+        "fixed",
+        1536,
+        1536,
+        1,
+        false,
+        "lab",
+        0,
+        0,
+        0,
+        0,
+        "cpu",
+        false
+      ]
+    },
+    {
+      "id": 730,
+      "type": "SeedVR2LoadDiTModel",
+      "pos": [
+        1300,
+        940
+      ],
+      "size": [
+        308,
+        202
+      ],
+      "flags": {},
+      "order": 1000,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "torch_compile_args",
+          "shape": 7,
+          "type": "TORCH_COMPILE_ARGS",
+          "link": null
+        },
+        {
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        },
+        {
+          "name": "blocks_to_swap",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "blocks_to_swap"
+          },
+          "link": null
+        },
+        {
+          "name": "swap_io_components",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "swap_io_components"
+          },
+          "link": null
+        },
+        {
+          "name": "offload_device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "offload_device"
+          },
+          "link": null
+        },
+        {
+          "name": "cache_model",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "cache_model"
+          },
+          "link": null
+        },
+        {
+          "name": "attention_mode",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "attention_mode"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEEDVR2_DIT",
+          "type": "SEEDVR2_DIT",
+          "links": [
+            1055
+          ]
+        }
+      ],
+      "title": "SeedVR2 3B Q4 low-VRAM (auto-download)",
+      "properties": {
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+        "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+        "Node name for S&R": "SeedVR2LoadDiTModel"
+      },
+      "widgets_values": [
+        "seedvr2_ema_3b-Q4_K_M.gguf",
+        "cuda:0",
+        32,
+        true,
+        "cpu",
+        false,
+        "sdpa"
+      ]
+    },
+    {
+      "id": 731,
+      "type": "SeedVR2LoadVAEModel",
+      "pos": [
+        1300,
+        1180
+      ],
+      "size": [
+        313,
+        298
+      ],
+      "flags": {},
+      "order": 1001,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "torch_compile_args",
+          "shape": 7,
+          "type": "TORCH_COMPILE_ARGS",
+          "link": null
+        },
+        {
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        },
+        {
+          "name": "encode_tiled",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "encode_tiled"
+          },
+          "link": null
+        },
+        {
+          "name": "encode_tile_size",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "encode_tile_size"
+          },
+          "link": null
+        },
+        {
+          "name": "encode_tile_overlap",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "encode_tile_overlap"
+          },
+          "link": null
+        },
+        {
+          "name": "decode_tiled",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "decode_tiled"
+          },
+          "link": null
+        },
+        {
+          "name": "decode_tile_size",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "decode_tile_size"
+          },
+          "link": null
+        },
+        {
+          "name": "decode_tile_overlap",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "decode_tile_overlap"
+          },
+          "link": null
+        },
+        {
+          "name": "tile_debug",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "tile_debug"
+          },
+          "link": null
+        },
+        {
+          "name": "offload_device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "offload_device"
+          },
+          "link": null
+        },
+        {
+          "name": "cache_model",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "cache_model"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEEDVR2_VAE",
+          "type": "SEEDVR2_VAE",
+          "links": [
+            1056
+          ]
+        }
+      ],
+      "title": "SeedVR2 tiled VAE low-VRAM",
+      "properties": {
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+        "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+        "Node name for S&R": "SeedVR2LoadVAEModel"
+      },
+      "widgets_values": [
+        "ema_vae_fp16.safetensors",
+        "cuda:0",
+        true,
+        768,
+        128,
+        true,
+        768,
+        128,
+        "false",
+        "cpu",
+        false
+      ]
+    },
+    {
+      "id": 732,
+      "type": "SeedVR2VideoUpscaler",
+      "pos": [
+        1660,
+        540
+      ],
+      "size": [
+        300,
+        386
+      ],
+      "flags": {},
+      "order": 1002,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1054
+        },
+        {
+          "name": "dit",
+          "type": "SEEDVR2_DIT",
+          "link": 1055
+        },
+        {
+          "name": "vae",
+          "type": "SEEDVR2_VAE",
+          "link": 1056
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "name": "resolution",
+          "type": "INT",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": null
+        },
+        {
+          "name": "max_resolution",
+          "type": "INT",
+          "widget": {
+            "name": "max_resolution"
+          },
+          "link": null
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        },
+        {
+          "name": "uniform_batch_size",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "uniform_batch_size"
+          },
+          "link": null
+        },
+        {
+          "name": "color_correction",
+          "type": "COMBO",
+          "widget": {
+            "name": "color_correction"
+          },
+          "link": null
+        },
+        {
+          "name": "temporal_overlap",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "temporal_overlap"
+          },
+          "link": null
+        },
+        {
+          "name": "prepend_frames",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "prepend_frames"
+          },
+          "link": null
+        },
+        {
+          "name": "input_noise_scale",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "input_noise_scale"
+          },
+          "link": null
+        },
+        {
+          "name": "latent_noise_scale",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "latent_noise_scale"
+          },
+          "link": null
+        },
+        {
+          "name": "offload_device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "offload_device"
+          },
+          "link": null
+        },
+        {
+          "name": "enable_debug",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_debug"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1057
+          ]
+        }
+      ],
+      "title": "OPTIONAL SeedVR2 upscale — BYPASS by default",
+      "properties": {
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+        "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+        "Node name for S&R": "SeedVR2VideoUpscaler"
+      },
+      "widgets_values": [
+        42,
+        "fixed",
+        1536,
+        1536,
+        1,
+        false,
+        "lab",
+        0,
+        0,
+        0,
+        0,
+        "cpu",
+        false
+      ]
+    },
+    {
+      "id": 733,
+      "type": "SeedVR2LoadDiTModel",
+      "pos": [
+        1300,
+        940
+      ],
+      "size": [
+        308,
+        202
+      ],
+      "flags": {},
+      "order": 1000,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "torch_compile_args",
+          "shape": 7,
+          "type": "TORCH_COMPILE_ARGS",
+          "link": null
+        },
+        {
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        },
+        {
+          "name": "blocks_to_swap",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "blocks_to_swap"
+          },
+          "link": null
+        },
+        {
+          "name": "swap_io_components",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "swap_io_components"
+          },
+          "link": null
+        },
+        {
+          "name": "offload_device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "offload_device"
+          },
+          "link": null
+        },
+        {
+          "name": "cache_model",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "cache_model"
+          },
+          "link": null
+        },
+        {
+          "name": "attention_mode",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "attention_mode"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEEDVR2_DIT",
+          "type": "SEEDVR2_DIT",
+          "links": [
+            1059
+          ]
+        }
+      ],
+      "title": "SeedVR2 3B Q4 low-VRAM (auto-download)",
+      "properties": {
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+        "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+        "Node name for S&R": "SeedVR2LoadDiTModel"
+      },
+      "widgets_values": [
+        "seedvr2_ema_3b-Q4_K_M.gguf",
+        "cuda:0",
+        32,
+        true,
+        "cpu",
+        false,
+        "sdpa"
+      ]
+    },
+    {
+      "id": 734,
+      "type": "SeedVR2LoadVAEModel",
+      "pos": [
+        1300,
+        1180
+      ],
+      "size": [
+        313,
+        298
+      ],
+      "flags": {},
+      "order": 1001,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "torch_compile_args",
+          "shape": 7,
+          "type": "TORCH_COMPILE_ARGS",
+          "link": null
+        },
+        {
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        },
+        {
+          "name": "encode_tiled",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "encode_tiled"
+          },
+          "link": null
+        },
+        {
+          "name": "encode_tile_size",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "encode_tile_size"
+          },
+          "link": null
+        },
+        {
+          "name": "encode_tile_overlap",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "encode_tile_overlap"
+          },
+          "link": null
+        },
+        {
+          "name": "decode_tiled",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "decode_tiled"
+          },
+          "link": null
+        },
+        {
+          "name": "decode_tile_size",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "decode_tile_size"
+          },
+          "link": null
+        },
+        {
+          "name": "decode_tile_overlap",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "decode_tile_overlap"
+          },
+          "link": null
+        },
+        {
+          "name": "tile_debug",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "tile_debug"
+          },
+          "link": null
+        },
+        {
+          "name": "offload_device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "offload_device"
+          },
+          "link": null
+        },
+        {
+          "name": "cache_model",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "cache_model"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEEDVR2_VAE",
+          "type": "SEEDVR2_VAE",
+          "links": [
+            1060
+          ]
+        }
+      ],
+      "title": "SeedVR2 tiled VAE low-VRAM",
+      "properties": {
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+        "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+        "Node name for S&R": "SeedVR2LoadVAEModel"
+      },
+      "widgets_values": [
+        "ema_vae_fp16.safetensors",
+        "cuda:0",
+        true,
+        768,
+        128,
+        true,
+        768,
+        128,
+        "false",
+        "cpu",
+        false
+      ]
+    },
+    {
+      "id": 735,
+      "type": "SeedVR2VideoUpscaler",
+      "pos": [
+        1660,
+        540
+      ],
+      "size": [
+        300,
+        386
+      ],
+      "flags": {},
+      "order": 1002,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1058
+        },
+        {
+          "name": "dit",
+          "type": "SEEDVR2_DIT",
+          "link": 1059
+        },
+        {
+          "name": "vae",
+          "type": "SEEDVR2_VAE",
+          "link": 1060
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "name": "resolution",
+          "type": "INT",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": null
+        },
+        {
+          "name": "max_resolution",
+          "type": "INT",
+          "widget": {
+            "name": "max_resolution"
+          },
+          "link": null
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        },
+        {
+          "name": "uniform_batch_size",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "uniform_batch_size"
+          },
+          "link": null
+        },
+        {
+          "name": "color_correction",
+          "type": "COMBO",
+          "widget": {
+            "name": "color_correction"
+          },
+          "link": null
+        },
+        {
+          "name": "temporal_overlap",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "temporal_overlap"
+          },
+          "link": null
+        },
+        {
+          "name": "prepend_frames",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "prepend_frames"
+          },
+          "link": null
+        },
+        {
+          "name": "input_noise_scale",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "input_noise_scale"
+          },
+          "link": null
+        },
+        {
+          "name": "latent_noise_scale",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "latent_noise_scale"
+          },
+          "link": null
+        },
+        {
+          "name": "offload_device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "offload_device"
+          },
+          "link": null
+        },
+        {
+          "name": "enable_debug",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable_debug"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1061
+          ]
+        }
+      ],
+      "title": "OPTIONAL SeedVR2 upscale — BYPASS by default",
+      "properties": {
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+        "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+        "Node name for S&R": "SeedVR2VideoUpscaler"
+      },
+      "widgets_values": [
+        42,
+        "fixed",
+        1536,
+        1536,
+        1,
+        false,
+        "lab",
+        0,
+        0,
+        0,
+        0,
+        "cpu",
+        false
       ]
     }
   ],
@@ -4477,14 +5740,6 @@
       "SAM_MODEL"
     ],
     [
-      422,
-      293,
-      0,
-      294,
-      0,
-      "IMAGE"
-    ],
-    [
       579,
       399,
       0,
@@ -4819,14 +6074,6 @@
       496,
       7,
       "SAM_MODEL"
-    ],
-    [
-      705,
-      496,
-      0,
-      497,
-      0,
-      "IMAGE"
     ],
     [
       862,
@@ -5165,8 +6412,96 @@
       "SAM_MODEL"
     ],
     [
-      988,
+      1050,
+      293,
+      0,
+      729,
+      0,
+      "IMAGE"
+    ],
+    [
+      1051,
+      727,
+      0,
+      729,
+      1,
+      "SEEDVR2_DIT"
+    ],
+    [
+      1052,
+      728,
+      0,
+      729,
+      2,
+      "SEEDVR2_VAE"
+    ],
+    [
+      1053,
+      729,
+      0,
+      294,
+      0,
+      "IMAGE"
+    ],
+    [
+      1054,
+      496,
+      0,
+      732,
+      0,
+      "IMAGE"
+    ],
+    [
+      1055,
+      730,
+      0,
+      732,
+      1,
+      "SEEDVR2_DIT"
+    ],
+    [
+      1056,
+      731,
+      0,
+      732,
+      2,
+      "SEEDVR2_VAE"
+    ],
+    [
+      1057,
+      732,
+      0,
+      497,
+      0,
+      "IMAGE"
+    ],
+    [
+      1058,
       699,
+      0,
+      735,
+      0,
+      "IMAGE"
+    ],
+    [
+      1059,
+      733,
+      0,
+      735,
+      1,
+      "SEEDVR2_DIT"
+    ],
+    [
+      1060,
+      734,
+      0,
+      735,
+      2,
+      "SEEDVR2_VAE"
+    ],
+    [
+      1061,
+      735,
       0,
       700,
       0,
@@ -5181,8 +6516,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 5,
-          "lastNodeId": 91,
-          "lastLinkId": 139,
+          "lastNodeId": 726,
+          "lastLinkId": 1049,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -5212,7 +6547,7 @@
             "name": "text",
             "type": "STRING",
             "linkIds": [
-              128
+              1008
             ],
             "label": "positive_prompt",
             "pos": [
@@ -5225,7 +6560,7 @@
             "name": "text_1",
             "type": "STRING",
             "linkIds": [
-              129
+              1009
             ],
             "label": "negative_prompt",
             "pos": [
@@ -5238,7 +6573,7 @@
             "name": "width",
             "type": "INT",
             "linkIds": [
-              130
+              1010
             ],
             "pos": [
               -180.955078125,
@@ -5250,7 +6585,7 @@
             "name": "height",
             "type": "INT",
             "linkIds": [
-              131
+              1011
             ],
             "pos": [
               -180.955078125,
@@ -5262,7 +6597,8 @@
             "name": "seed",
             "type": "INT",
             "linkIds": [
-              132
+              1012,
+              1021
             ],
             "pos": [
               -180.955078125,
@@ -5274,7 +6610,7 @@
             "name": "unet_name",
             "type": "COMBO",
             "linkIds": [
-              133
+              1013
             ],
             "pos": [
               -180.955078125,
@@ -5286,7 +6622,7 @@
             "name": "clip_name",
             "type": "COMBO",
             "linkIds": [
-              134
+              1014
             ],
             "pos": [
               -180.955078125,
@@ -5298,7 +6634,7 @@
             "name": "vae_name",
             "type": "COMBO",
             "linkIds": [
-              135
+              1015
             ],
             "pos": [
               -180.955078125,
@@ -5310,7 +6646,7 @@
             "name": "value",
             "type": "BOOLEAN",
             "linkIds": [
-              136
+              1016
             ],
             "label": "turbo_mode",
             "pos": [
@@ -5323,7 +6659,7 @@
             "name": "lora_name",
             "type": "COMBO",
             "linkIds": [
-              137
+              1017
             ],
             "label": "turbo_lora",
             "pos": [
@@ -5338,7 +6674,7 @@
             "name": "IMAGE",
             "type": "IMAGE",
             "linkIds": [
-              113
+              1049
             ],
             "localized_name": "IMAGE",
             "pos": [
@@ -5350,7 +6686,7 @@
         "widgets": [],
         "nodes": [
           {
-            "id": 71,
+            "id": 701,
             "type": "CLIPLoader",
             "pos": [
               320,
@@ -5371,7 +6707,7 @@
                 "widget": {
                   "name": "clip_name"
                 },
-                "link": 134
+                "link": 1014
               }
             ],
             "outputs": [
@@ -5380,8 +6716,10 @@
                 "name": "CLIP",
                 "type": "CLIP",
                 "links": [
-                  107,
-                  112
+                  990,
+                  997,
+                  1032,
+                  1037
                 ]
               }
             ],
@@ -5411,7 +6749,7 @@
             ]
           },
           {
-            "id": 72,
+            "id": 702,
             "type": "VAELoader",
             "pos": [
               330,
@@ -5432,7 +6770,7 @@
                 "widget": {
                   "name": "vae_name"
                 },
-                "link": 135
+                "link": 1015
               }
             ],
             "outputs": [
@@ -5441,7 +6779,9 @@
                 "name": "VAE",
                 "type": "VAE",
                 "links": [
-                  106
+                  989,
+                  1033,
+                  1038
                 ]
               }
             ],
@@ -5469,7 +6809,7 @@
             ]
           },
           {
-            "id": 73,
+            "id": 703,
             "type": "VAEDecode",
             "pos": [
               2370,
@@ -5489,13 +6829,13 @@
                 "localized_name": "samples",
                 "name": "samples",
                 "type": "LATENT",
-                "link": 105
+                "link": 1025
               },
               {
                 "localized_name": "vae",
                 "name": "vae",
                 "type": "VAE",
-                "link": 106
+                "link": 989
               }
             ],
             "outputs": [
@@ -5505,7 +6845,7 @@
                 "type": "IMAGE",
                 "slot_index": 0,
                 "links": [
-                  113
+                  1030
                 ]
               }
             ],
@@ -5524,7 +6864,7 @@
             "widgets_values": []
           },
           {
-            "id": 74,
+            "id": 704,
             "type": "EmptyLatentImage",
             "pos": [
               330,
@@ -5545,7 +6885,7 @@
                 "widget": {
                   "name": "width"
                 },
-                "link": 130
+                "link": 1010
               },
               {
                 "localized_name": "height",
@@ -5554,7 +6894,7 @@
                 "widget": {
                   "name": "height"
                 },
-                "link": 131
+                "link": 1011
               }
             ],
             "outputs": [
@@ -5563,7 +6903,7 @@
                 "name": "LATENT",
                 "type": "LATENT",
                 "links": [
-                  111
+                  994
                 ]
               }
             ],
@@ -5586,7 +6926,7 @@
             ]
           },
           {
-            "id": 75,
+            "id": 705,
             "type": "CLIPTextEncode",
             "pos": [
               720,
@@ -5604,7 +6944,7 @@
                 "localized_name": "clip",
                 "name": "clip",
                 "type": "CLIP",
-                "link": 107
+                "link": 990
               },
               {
                 "localized_name": "text",
@@ -5613,7 +6953,7 @@
                 "widget": {
                   "name": "text"
                 },
-                "link": 129
+                "link": 1009
               }
             ],
             "outputs": [
@@ -5622,7 +6962,10 @@
                 "name": "CONDITIONING",
                 "type": "CONDITIONING",
                 "links": [
-                  110
+                  993,
+                  1020,
+                  1035,
+                  1040
                 ]
               }
             ],
@@ -5646,7 +6989,7 @@
             "bgcolor": "#335"
           },
           {
-            "id": 76,
+            "id": 706,
             "type": "KSampler",
             "pos": [
               2040,
@@ -5664,25 +7007,25 @@
                 "localized_name": "model",
                 "name": "model",
                 "type": "MODEL",
-                "link": 117
+                "link": 991
               },
               {
                 "localized_name": "positive",
                 "name": "positive",
                 "type": "CONDITIONING",
-                "link": 109
+                "link": 992
               },
               {
                 "localized_name": "negative",
                 "name": "negative",
                 "type": "CONDITIONING",
-                "link": 110
+                "link": 993
               },
               {
                 "localized_name": "latent_image",
                 "name": "latent_image",
                 "type": "LATENT",
-                "link": 111
+                "link": 994
               },
               {
                 "localized_name": "seed",
@@ -5691,7 +7034,7 @@
                 "widget": {
                   "name": "seed"
                 },
-                "link": 132
+                "link": 1012
               },
               {
                 "localized_name": "steps",
@@ -5700,7 +7043,7 @@
                 "widget": {
                   "name": "steps"
                 },
-                "link": 123
+                "link": 995
               },
               {
                 "localized_name": "cfg",
@@ -5709,7 +7052,7 @@
                 "widget": {
                   "name": "cfg"
                 },
-                "link": 122
+                "link": 996
               }
             ],
             "outputs": [
@@ -5719,7 +7062,7 @@
                 "type": "LATENT",
                 "slot_index": 0,
                 "links": [
-                  105
+                  1024
                 ]
               }
             ],
@@ -5746,7 +7089,7 @@
             ]
           },
           {
-            "id": 77,
+            "id": 707,
             "type": "CLIPTextEncode",
             "pos": [
               710,
@@ -5764,7 +7107,7 @@
                 "localized_name": "clip",
                 "name": "clip",
                 "type": "CLIP",
-                "link": 112
+                "link": 997
               },
               {
                 "localized_name": "text",
@@ -5773,7 +7116,7 @@
                 "widget": {
                   "name": "text"
                 },
-                "link": 128
+                "link": 1008
               }
             ],
             "outputs": [
@@ -5782,7 +7125,10 @@
                 "name": "CONDITIONING",
                 "type": "CONDITIONING",
                 "links": [
-                  109
+                  992,
+                  1019,
+                  1034,
+                  1039
                 ]
               }
             ],
@@ -5806,7 +7152,7 @@
             "bgcolor": "#353"
           },
           {
-            "id": 78,
+            "id": 708,
             "type": "UNETLoader",
             "pos": [
               330,
@@ -5827,7 +7173,7 @@
                 "widget": {
                   "name": "unet_name"
                 },
-                "link": 133
+                "link": 1013
               }
             ],
             "outputs": [
@@ -5836,8 +7182,8 @@
                 "name": "MODEL",
                 "type": "MODEL",
                 "links": [
-                  114,
-                  116
+                  998,
+                  999
                 ]
               }
             ],
@@ -5859,7 +7205,7 @@
             ]
           },
           {
-            "id": 79,
+            "id": 709,
             "type": "PrimitiveInt",
             "pos": [
               1260,
@@ -5879,7 +7225,7 @@
                 "name": "INT",
                 "type": "INT",
                 "links": [
-                  118
+                  1002
                 ]
               }
             ],
@@ -5893,7 +7239,7 @@
             ]
           },
           {
-            "id": 81,
+            "id": 710,
             "type": "PrimitiveInt",
             "pos": [
               1260,
@@ -5913,7 +7259,7 @@
                 "name": "INT",
                 "type": "INT",
                 "links": [
-                  119
+                  1003
                 ]
               }
             ],
@@ -5927,7 +7273,7 @@
             ]
           },
           {
-            "id": 83,
+            "id": 711,
             "type": "LoraLoaderModelOnly",
             "pos": [
               1260,
@@ -5945,7 +7291,7 @@
                 "localized_name": "model",
                 "name": "model",
                 "type": "MODEL",
-                "link": 114
+                "link": 998
               },
               {
                 "localized_name": "lora_name",
@@ -5954,7 +7300,7 @@
                 "widget": {
                   "name": "lora_name"
                 },
-                "link": 137
+                "link": 1017
               }
             ],
             "outputs": [
@@ -5963,7 +7309,7 @@
                 "name": "MODEL",
                 "type": "MODEL",
                 "links": [
-                  115
+                  1000
                 ]
               }
             ],
@@ -5983,7 +7329,7 @@
             ]
           },
           {
-            "id": 84,
+            "id": 712,
             "type": "ComfySwitchNode",
             "pos": [
               1630,
@@ -6001,13 +7347,13 @@
                 "localized_name": "on_false",
                 "name": "on_false",
                 "type": "MODEL",
-                "link": 116
+                "link": 999
               },
               {
                 "localized_name": "on_true",
                 "name": "on_true",
                 "type": "MODEL",
-                "link": 115
+                "link": 1000
               },
               {
                 "localized_name": "switch",
@@ -6016,7 +7362,7 @@
                 "widget": {
                   "name": "switch"
                 },
-                "link": 124
+                "link": 1001
               }
             ],
             "outputs": [
@@ -6025,7 +7371,10 @@
                 "name": "output",
                 "type": "MODEL",
                 "links": [
-                  117
+                  991,
+                  1018,
+                  1031,
+                  1036
                 ]
               }
             ],
@@ -6037,7 +7386,7 @@
             ]
           },
           {
-            "id": 85,
+            "id": 713,
             "type": "ComfySwitchNode",
             "pos": [
               1630,
@@ -6055,13 +7404,13 @@
                 "localized_name": "on_false",
                 "name": "on_false",
                 "type": "INT",
-                "link": 118
+                "link": 1002
               },
               {
                 "localized_name": "on_true",
                 "name": "on_true",
                 "type": "INT",
-                "link": 119
+                "link": 1003
               },
               {
                 "localized_name": "switch",
@@ -6070,7 +7419,7 @@
                 "widget": {
                   "name": "switch"
                 },
-                "link": 125
+                "link": 1004
               }
             ],
             "outputs": [
@@ -6079,7 +7428,10 @@
                 "name": "output",
                 "type": "INT",
                 "links": [
-                  123
+                  995,
+                  1022,
+                  1026,
+                  1028
                 ]
               }
             ],
@@ -6091,7 +7443,7 @@
             ]
           },
           {
-            "id": 86,
+            "id": 714,
             "type": "PrimitiveFloat",
             "pos": [
               1260,
@@ -6111,7 +7463,7 @@
                 "name": "FLOAT",
                 "type": "FLOAT",
                 "links": [
-                  120
+                  1005
                 ]
               }
             ],
@@ -6124,7 +7476,7 @@
             ]
           },
           {
-            "id": 87,
+            "id": 715,
             "type": "ComfySwitchNode",
             "pos": [
               1630,
@@ -6142,13 +7494,13 @@
                 "localized_name": "on_false",
                 "name": "on_false",
                 "type": "FLOAT",
-                "link": 120
+                "link": 1005
               },
               {
                 "localized_name": "on_true",
                 "name": "on_true",
                 "type": "FLOAT",
-                "link": 121
+                "link": 1006
               },
               {
                 "localized_name": "switch",
@@ -6157,7 +7509,7 @@
                 "widget": {
                   "name": "switch"
                 },
-                "link": 126
+                "link": 1007
               }
             ],
             "outputs": [
@@ -6166,7 +7518,10 @@
                 "name": "output",
                 "type": "FLOAT",
                 "links": [
-                  122
+                  996,
+                  1023,
+                  1027,
+                  1029
                 ]
               }
             ],
@@ -6178,7 +7533,7 @@
             ]
           },
           {
-            "id": 88,
+            "id": 716,
             "type": "PrimitiveFloat",
             "pos": [
               1260,
@@ -6198,7 +7553,7 @@
                 "name": "FLOAT",
                 "type": "FLOAT",
                 "links": [
-                  121
+                  1006
                 ]
               }
             ],
@@ -6211,7 +7566,7 @@
             ]
           },
           {
-            "id": 89,
+            "id": 717,
             "type": "PrimitiveBoolean",
             "pos": [
               1260,
@@ -6232,7 +7587,7 @@
                 "widget": {
                   "name": "value"
                 },
-                "link": 136
+                "link": 1016
               }
             ],
             "outputs": [
@@ -6241,9 +7596,9 @@
                 "name": "BOOLEAN",
                 "type": "BOOLEAN",
                 "links": [
-                  124,
-                  125,
-                  126
+                  1001,
+                  1004,
+                  1007
                 ]
               }
             ],
@@ -6251,6 +7606,1006 @@
               "Node name for S&R": "PrimitiveBoolean"
             },
             "widgets_values": [
+              false
+            ]
+          },
+          {
+            "id": 718,
+            "type": "KSampler",
+            "pos": [
+              2690,
+              430
+            ],
+            "size": [
+              300,
+              620
+            ],
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 1018
+              },
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": 1019
+              },
+              {
+                "localized_name": "negative",
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": 1020
+              },
+              {
+                "localized_name": "latent_image",
+                "name": "latent_image",
+                "type": "LATENT",
+                "link": 1024
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 1021
+              },
+              {
+                "localized_name": "steps",
+                "name": "steps",
+                "type": "INT",
+                "widget": {
+                  "name": "steps"
+                },
+                "link": 1022
+              },
+              {
+                "localized_name": "cfg",
+                "name": "cfg",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "cfg"
+                },
+                "link": 1023
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "LATENT",
+                "name": "LATENT",
+                "type": "LATENT",
+                "slot_index": 0,
+                "links": [
+                  1025
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "KSampler",
+              "cnr_id": "comfy-core",
+              "ver": "0.3.40",
+              "enableTabs": false,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "hasSecondTab": false,
+              "secondTabText": "Send Back",
+              "secondTabOffset": 80,
+              "secondTabWidth": 65
+            },
+            "widgets_values": [
+              755918130909406,
+              "randomize",
+              30,
+              4,
+              "euler",
+              "simple",
+              0.3
+            ],
+            "title": "Second sampler / refiner — same dynamic sampling, denoise 0.30"
+          },
+          {
+            "id": 719,
+            "type": "FaceDetailer",
+            "pos": [
+              2370,
+              -80
+            ],
+            "size": [
+              350,
+              1180
+            ],
+            "flags": {},
+            "order": 17,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "image",
+                "type": "IMAGE",
+                "link": 1030
+              },
+              {
+                "name": "model",
+                "type": "MODEL",
+                "link": 1031
+              },
+              {
+                "name": "clip",
+                "type": "CLIP",
+                "link": 1032
+              },
+              {
+                "name": "vae",
+                "type": "VAE",
+                "link": 1033
+              },
+              {
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": 1034
+              },
+              {
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": 1035
+              },
+              {
+                "name": "bbox_detector",
+                "type": "BBOX_DETECTOR",
+                "link": 1041
+              },
+              {
+                "name": "sam_model_opt",
+                "type": "SAM_MODEL",
+                "shape": 7,
+                "link": 1043
+              },
+              {
+                "name": "segm_detector_opt",
+                "type": "SEGM_DETECTOR",
+                "shape": 7,
+                "link": null
+              },
+              {
+                "name": "detailer_hook",
+                "type": "DETAILER_HOOK",
+                "shape": 7,
+                "link": null
+              },
+              {
+                "name": "scheduler_func_opt",
+                "type": "SCHEDULER_FUNC",
+                "shape": 7,
+                "link": null
+              },
+              {
+                "name": "steps",
+                "type": "INT",
+                "widget": {
+                  "name": "steps"
+                },
+                "link": 1026
+              },
+              {
+                "name": "cfg",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "cfg"
+                },
+                "link": 1027
+              }
+            ],
+            "outputs": [
+              {
+                "name": "image",
+                "type": "IMAGE",
+                "shape": 3,
+                "links": [
+                  1045
+                ],
+                "slot_index": 0
+              },
+              {
+                "name": "cropped_refined",
+                "type": "IMAGE",
+                "shape": 6,
+                "links": [],
+                "slot_index": 1
+              },
+              {
+                "name": "cropped_enhanced_alpha",
+                "type": "IMAGE",
+                "shape": 6,
+                "links": [],
+                "slot_index": 2
+              },
+              {
+                "name": "mask",
+                "type": "MASK",
+                "shape": 3,
+                "links": [],
+                "slot_index": 3
+              },
+              {
+                "name": "detailer_pipe",
+                "type": "DETAILER_PIPE",
+                "shape": 3,
+                "links": []
+              },
+              {
+                "name": "cnet_images",
+                "type": "IMAGE",
+                "shape": 6,
+                "links": []
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "FaceDetailer",
+              "ue_properties": {
+                "version": "7.0.1",
+                "widget_ue_connectable": {
+                  "steps": true,
+                  "cfg": true
+                }
+              }
+            },
+            "widgets_values": [
+              512,
+              true,
+              1024,
+              0,
+              "fixed",
+              30,
+              4,
+              "euler",
+              "simple",
+              0.5,
+              5,
+              true,
+              false,
+              0.5,
+              15,
+              3,
+              "center-1",
+              0,
+              0.93,
+              0,
+              0.7,
+              "False",
+              10,
+              "",
+              1,
+              false,
+              20,
+              false,
+              false
+            ],
+            "color": "#223",
+            "bgcolor": "#335",
+            "title": "Face Detailer — follows Base/Turbo steps+CFG, denoise 0.50"
+          },
+          {
+            "id": 720,
+            "type": "FaceDetailer",
+            "pos": [
+              2040,
+              570
+            ],
+            "size": [
+              350,
+              1180
+            ],
+            "flags": {},
+            "order": 17,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "image",
+                "type": "IMAGE",
+                "link": 1045
+              },
+              {
+                "name": "model",
+                "type": "MODEL",
+                "link": 1036
+              },
+              {
+                "name": "clip",
+                "type": "CLIP",
+                "link": 1037
+              },
+              {
+                "name": "vae",
+                "type": "VAE",
+                "link": 1038
+              },
+              {
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": 1039
+              },
+              {
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": 1040
+              },
+              {
+                "name": "bbox_detector",
+                "type": "BBOX_DETECTOR",
+                "link": 1042
+              },
+              {
+                "name": "sam_model_opt",
+                "type": "SAM_MODEL",
+                "shape": 7,
+                "link": 1044
+              },
+              {
+                "name": "segm_detector_opt",
+                "type": "SEGM_DETECTOR",
+                "shape": 7,
+                "link": null
+              },
+              {
+                "name": "detailer_hook",
+                "type": "DETAILER_HOOK",
+                "shape": 7,
+                "link": null
+              },
+              {
+                "name": "scheduler_func_opt",
+                "type": "SCHEDULER_FUNC",
+                "shape": 7,
+                "link": null
+              },
+              {
+                "name": "steps",
+                "type": "INT",
+                "widget": {
+                  "name": "steps"
+                },
+                "link": 1028
+              },
+              {
+                "name": "cfg",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "cfg"
+                },
+                "link": 1029
+              }
+            ],
+            "outputs": [
+              {
+                "name": "image",
+                "type": "IMAGE",
+                "shape": 3,
+                "links": [
+                  1046
+                ],
+                "slot_index": 0
+              },
+              {
+                "name": "cropped_refined",
+                "type": "IMAGE",
+                "shape": 6,
+                "links": [],
+                "slot_index": 1
+              },
+              {
+                "name": "cropped_enhanced_alpha",
+                "type": "IMAGE",
+                "shape": 6,
+                "links": [],
+                "slot_index": 2
+              },
+              {
+                "name": "mask",
+                "type": "MASK",
+                "shape": 3,
+                "links": [],
+                "slot_index": 3
+              },
+              {
+                "name": "detailer_pipe",
+                "type": "DETAILER_PIPE",
+                "shape": 3,
+                "links": []
+              },
+              {
+                "name": "cnet_images",
+                "type": "IMAGE",
+                "shape": 6,
+                "links": []
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "FaceDetailer",
+              "ue_properties": {
+                "version": "7.0.1",
+                "widget_ue_connectable": {
+                  "steps": true,
+                  "cfg": true
+                }
+              }
+            },
+            "widgets_values": [
+              512,
+              true,
+              1024,
+              0,
+              "fixed",
+              30,
+              4,
+              "euler",
+              "simple",
+              0.35,
+              5,
+              true,
+              false,
+              0.5,
+              15,
+              3,
+              "center-1",
+              0,
+              0.93,
+              0,
+              0.7,
+              "False",
+              10,
+              "",
+              1,
+              false,
+              20,
+              false,
+              false
+            ],
+            "color": "#223",
+            "bgcolor": "#335",
+            "title": "Hand Detailer — follows Base/Turbo steps+CFG, denoise 0.35"
+          },
+          {
+            "id": 721,
+            "type": "UltralyticsDetectorProvider",
+            "pos": [
+              1940,
+              450
+            ],
+            "size": [
+              315,
+              78
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "name": "BBOX_DETECTOR",
+                "type": "BBOX_DETECTOR",
+                "shape": 3,
+                "links": [
+                  1041
+                ],
+                "slot_index": 0
+              },
+              {
+                "name": "SEGM_DETECTOR",
+                "type": "SEGM_DETECTOR",
+                "shape": 3,
+                "links": []
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "UltralyticsDetectorProvider"
+            },
+            "widgets_values": [
+              "bbox/face_yolov8m.pt"
+            ],
+            "color": "#223",
+            "bgcolor": "#335"
+          },
+          {
+            "id": 722,
+            "type": "UltralyticsDetectorProvider",
+            "pos": [
+              1730,
+              1120
+            ],
+            "size": [
+              315,
+              78
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "name": "BBOX_DETECTOR",
+                "type": "BBOX_DETECTOR",
+                "shape": 3,
+                "links": [
+                  1042
+                ],
+                "slot_index": 0
+              },
+              {
+                "name": "SEGM_DETECTOR",
+                "type": "SEGM_DETECTOR",
+                "shape": 3,
+                "links": []
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "UltralyticsDetectorProvider"
+            },
+            "widgets_values": [
+              "bbox/hand_yolov8n.pt"
+            ],
+            "color": "#223",
+            "bgcolor": "#335",
+            "title": "Hand detector"
+          },
+          {
+            "id": 723,
+            "type": "SAMLoader",
+            "pos": [
+              1940,
+              590
+            ],
+            "size": [
+              320,
+              82
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "name": "SAM_MODEL",
+                "type": "SAM_MODEL",
+                "links": [
+                  1043,
+                  1044
+                ],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "SAMLoader"
+            },
+            "widgets_values": [
+              "sam_vit_b_01ec64.pth",
+              "AUTO"
+            ],
+            "color": "#223",
+            "bgcolor": "#335"
+          },
+          {
+            "id": 724,
+            "type": "SeedVR2LoadDiTModel",
+            "pos": [
+              1450,
+              990
+            ],
+            "size": [
+              308,
+              202
+            ],
+            "flags": {},
+            "order": 1000,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "torch_compile_args",
+                "shape": 7,
+                "type": "TORCH_COMPILE_ARGS",
+                "link": null
+              },
+              {
+                "name": "model",
+                "type": "COMBO",
+                "widget": {
+                  "name": "model"
+                },
+                "link": null
+              },
+              {
+                "name": "device",
+                "type": "COMBO",
+                "widget": {
+                  "name": "device"
+                },
+                "link": null
+              },
+              {
+                "name": "blocks_to_swap",
+                "shape": 7,
+                "type": "INT",
+                "widget": {
+                  "name": "blocks_to_swap"
+                },
+                "link": null
+              },
+              {
+                "name": "swap_io_components",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "swap_io_components"
+                },
+                "link": null
+              },
+              {
+                "name": "offload_device",
+                "shape": 7,
+                "type": "COMBO",
+                "widget": {
+                  "name": "offload_device"
+                },
+                "link": null
+              },
+              {
+                "name": "cache_model",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "cache_model"
+                },
+                "link": null
+              },
+              {
+                "name": "attention_mode",
+                "shape": 7,
+                "type": "COMBO",
+                "widget": {
+                  "name": "attention_mode"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "name": "SEEDVR2_DIT",
+                "type": "SEEDVR2_DIT",
+                "links": [
+                  1047
+                ]
+              }
+            ],
+            "title": "SeedVR2 3B Q4 low-VRAM (auto-download)",
+            "properties": {
+              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+              "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+              "Node name for S&R": "SeedVR2LoadDiTModel"
+            },
+            "widgets_values": [
+              "seedvr2_ema_3b-Q4_K_M.gguf",
+              "cuda:0",
+              32,
+              true,
+              "cpu",
+              false,
+              "sdpa"
+            ]
+          },
+          {
+            "id": 725,
+            "type": "SeedVR2LoadVAEModel",
+            "pos": [
+              1450,
+              1230
+            ],
+            "size": [
+              313,
+              298
+            ],
+            "flags": {},
+            "order": 1001,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "torch_compile_args",
+                "shape": 7,
+                "type": "TORCH_COMPILE_ARGS",
+                "link": null
+              },
+              {
+                "name": "model",
+                "type": "COMBO",
+                "widget": {
+                  "name": "model"
+                },
+                "link": null
+              },
+              {
+                "name": "device",
+                "type": "COMBO",
+                "widget": {
+                  "name": "device"
+                },
+                "link": null
+              },
+              {
+                "name": "encode_tiled",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "encode_tiled"
+                },
+                "link": null
+              },
+              {
+                "name": "encode_tile_size",
+                "shape": 7,
+                "type": "INT",
+                "widget": {
+                  "name": "encode_tile_size"
+                },
+                "link": null
+              },
+              {
+                "name": "encode_tile_overlap",
+                "shape": 7,
+                "type": "INT",
+                "widget": {
+                  "name": "encode_tile_overlap"
+                },
+                "link": null
+              },
+              {
+                "name": "decode_tiled",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "decode_tiled"
+                },
+                "link": null
+              },
+              {
+                "name": "decode_tile_size",
+                "shape": 7,
+                "type": "INT",
+                "widget": {
+                  "name": "decode_tile_size"
+                },
+                "link": null
+              },
+              {
+                "name": "decode_tile_overlap",
+                "shape": 7,
+                "type": "INT",
+                "widget": {
+                  "name": "decode_tile_overlap"
+                },
+                "link": null
+              },
+              {
+                "name": "tile_debug",
+                "shape": 7,
+                "type": "COMBO",
+                "widget": {
+                  "name": "tile_debug"
+                },
+                "link": null
+              },
+              {
+                "name": "offload_device",
+                "shape": 7,
+                "type": "COMBO",
+                "widget": {
+                  "name": "offload_device"
+                },
+                "link": null
+              },
+              {
+                "name": "cache_model",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "cache_model"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "name": "SEEDVR2_VAE",
+                "type": "SEEDVR2_VAE",
+                "links": [
+                  1048
+                ]
+              }
+            ],
+            "title": "SeedVR2 tiled VAE low-VRAM",
+            "properties": {
+              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+              "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+              "Node name for S&R": "SeedVR2LoadVAEModel"
+            },
+            "widgets_values": [
+              "ema_vae_fp16.safetensors",
+              "cuda:0",
+              true,
+              768,
+              128,
+              true,
+              768,
+              128,
+              "false",
+              "cpu",
+              false
+            ]
+          },
+          {
+            "id": 726,
+            "type": "SeedVR2VideoUpscaler",
+            "pos": [
+              1810,
+              590
+            ],
+            "size": [
+              300,
+              386
+            ],
+            "flags": {},
+            "order": 1002,
+            "mode": 4,
+            "inputs": [
+              {
+                "name": "image",
+                "type": "IMAGE",
+                "link": 1046
+              },
+              {
+                "name": "dit",
+                "type": "SEEDVR2_DIT",
+                "link": 1047
+              },
+              {
+                "name": "vae",
+                "type": "SEEDVR2_VAE",
+                "link": 1048
+              },
+              {
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": null
+              },
+              {
+                "name": "resolution",
+                "type": "INT",
+                "widget": {
+                  "name": "resolution"
+                },
+                "link": null
+              },
+              {
+                "name": "max_resolution",
+                "type": "INT",
+                "widget": {
+                  "name": "max_resolution"
+                },
+                "link": null
+              },
+              {
+                "name": "batch_size",
+                "type": "INT",
+                "widget": {
+                  "name": "batch_size"
+                },
+                "link": null
+              },
+              {
+                "name": "uniform_batch_size",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "uniform_batch_size"
+                },
+                "link": null
+              },
+              {
+                "name": "color_correction",
+                "type": "COMBO",
+                "widget": {
+                  "name": "color_correction"
+                },
+                "link": null
+              },
+              {
+                "name": "temporal_overlap",
+                "shape": 7,
+                "type": "INT",
+                "widget": {
+                  "name": "temporal_overlap"
+                },
+                "link": null
+              },
+              {
+                "name": "prepend_frames",
+                "shape": 7,
+                "type": "INT",
+                "widget": {
+                  "name": "prepend_frames"
+                },
+                "link": null
+              },
+              {
+                "name": "input_noise_scale",
+                "shape": 7,
+                "type": "FLOAT",
+                "widget": {
+                  "name": "input_noise_scale"
+                },
+                "link": null
+              },
+              {
+                "name": "latent_noise_scale",
+                "shape": 7,
+                "type": "FLOAT",
+                "widget": {
+                  "name": "latent_noise_scale"
+                },
+                "link": null
+              },
+              {
+                "name": "offload_device",
+                "shape": 7,
+                "type": "COMBO",
+                "widget": {
+                  "name": "offload_device"
+                },
+                "link": null
+              },
+              {
+                "name": "enable_debug",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "enable_debug"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  1049
+                ]
+              }
+            ],
+            "title": "OPTIONAL SeedVR2 upscale — BYPASS by default",
+            "properties": {
+              "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+              "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+              "Node name for S&R": "SeedVR2VideoUpscaler"
+            },
+            "widgets_values": [
+              42,
+              "fixed",
+              1536,
+              1536,
+              1,
+              false,
+              "lab",
+              0,
+              0,
+              0,
+              0,
+              "cpu",
               false
             ]
           }
@@ -6319,252 +8674,492 @@
         ],
         "links": [
           {
-            "id": 105,
-            "origin_id": 76,
+            "id": 989,
+            "origin_id": 702,
             "origin_slot": 0,
-            "target_id": 73,
-            "target_slot": 0,
-            "type": "LATENT"
-          },
-          {
-            "id": 106,
-            "origin_id": 72,
-            "origin_slot": 0,
-            "target_id": 73,
+            "target_id": 703,
             "target_slot": 1,
             "type": "VAE"
           },
           {
-            "id": 107,
-            "origin_id": 71,
+            "id": 990,
+            "origin_id": 701,
             "origin_slot": 0,
-            "target_id": 75,
+            "target_id": 705,
             "target_slot": 0,
             "type": "CLIP"
           },
           {
-            "id": 117,
-            "origin_id": 84,
+            "id": 991,
+            "origin_id": 712,
             "origin_slot": 0,
-            "target_id": 76,
+            "target_id": 706,
             "target_slot": 0,
             "type": "MODEL"
           },
           {
-            "id": 109,
-            "origin_id": 77,
+            "id": 992,
+            "origin_id": 707,
             "origin_slot": 0,
-            "target_id": 76,
+            "target_id": 706,
             "target_slot": 1,
             "type": "CONDITIONING"
           },
           {
-            "id": 110,
-            "origin_id": 75,
+            "id": 993,
+            "origin_id": 705,
             "origin_slot": 0,
-            "target_id": 76,
+            "target_id": 706,
             "target_slot": 2,
             "type": "CONDITIONING"
           },
           {
-            "id": 111,
-            "origin_id": 74,
+            "id": 994,
+            "origin_id": 704,
             "origin_slot": 0,
-            "target_id": 76,
+            "target_id": 706,
             "target_slot": 3,
             "type": "LATENT"
           },
           {
-            "id": 123,
-            "origin_id": 85,
+            "id": 995,
+            "origin_id": 713,
             "origin_slot": 0,
-            "target_id": 76,
+            "target_id": 706,
             "target_slot": 5,
             "type": "INT"
           },
           {
-            "id": 122,
-            "origin_id": 87,
+            "id": 996,
+            "origin_id": 715,
             "origin_slot": 0,
-            "target_id": 76,
+            "target_id": 706,
             "target_slot": 6,
             "type": "FLOAT"
           },
           {
-            "id": 112,
-            "origin_id": 71,
+            "id": 997,
+            "origin_id": 701,
             "origin_slot": 0,
-            "target_id": 77,
+            "target_id": 707,
             "target_slot": 0,
             "type": "CLIP"
           },
           {
-            "id": 114,
-            "origin_id": 78,
+            "id": 998,
+            "origin_id": 708,
             "origin_slot": 0,
-            "target_id": 83,
+            "target_id": 711,
             "target_slot": 0,
             "type": "MODEL"
           },
           {
-            "id": 116,
-            "origin_id": 78,
+            "id": 999,
+            "origin_id": 708,
             "origin_slot": 0,
-            "target_id": 84,
+            "target_id": 712,
             "target_slot": 0,
             "type": "MODEL"
           },
           {
-            "id": 115,
-            "origin_id": 83,
+            "id": 1000,
+            "origin_id": 711,
             "origin_slot": 0,
-            "target_id": 84,
+            "target_id": 712,
             "target_slot": 1,
             "type": "MODEL"
           },
           {
-            "id": 124,
-            "origin_id": 89,
+            "id": 1001,
+            "origin_id": 717,
             "origin_slot": 0,
-            "target_id": 84,
+            "target_id": 712,
             "target_slot": 2,
             "type": "BOOLEAN"
           },
           {
-            "id": 118,
-            "origin_id": 79,
+            "id": 1002,
+            "origin_id": 709,
             "origin_slot": 0,
-            "target_id": 85,
+            "target_id": 713,
             "target_slot": 0,
             "type": "INT"
           },
           {
-            "id": 119,
-            "origin_id": 81,
+            "id": 1003,
+            "origin_id": 710,
             "origin_slot": 0,
-            "target_id": 85,
+            "target_id": 713,
             "target_slot": 1,
             "type": "INT"
           },
           {
-            "id": 125,
-            "origin_id": 89,
+            "id": 1004,
+            "origin_id": 717,
             "origin_slot": 0,
-            "target_id": 85,
+            "target_id": 713,
             "target_slot": 2,
             "type": "BOOLEAN"
           },
           {
-            "id": 120,
-            "origin_id": 86,
+            "id": 1005,
+            "origin_id": 714,
             "origin_slot": 0,
-            "target_id": 87,
+            "target_id": 715,
             "target_slot": 0,
             "type": "FLOAT"
           },
           {
-            "id": 121,
-            "origin_id": 88,
+            "id": 1006,
+            "origin_id": 716,
             "origin_slot": 0,
-            "target_id": 87,
+            "target_id": 715,
             "target_slot": 1,
             "type": "FLOAT"
           },
           {
-            "id": 126,
-            "origin_id": 89,
+            "id": 1007,
+            "origin_id": 717,
             "origin_slot": 0,
-            "target_id": 87,
+            "target_id": 715,
             "target_slot": 2,
             "type": "BOOLEAN"
           },
           {
-            "id": 113,
-            "origin_id": 73,
-            "origin_slot": 0,
-            "target_id": -20,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
-            "id": 128,
+            "id": 1008,
             "origin_id": -10,
             "origin_slot": 0,
-            "target_id": 77,
+            "target_id": 707,
             "target_slot": 1,
             "type": "STRING"
           },
           {
-            "id": 129,
+            "id": 1009,
             "origin_id": -10,
             "origin_slot": 1,
-            "target_id": 75,
+            "target_id": 705,
             "target_slot": 1,
             "type": "STRING"
           },
           {
-            "id": 130,
+            "id": 1010,
             "origin_id": -10,
             "origin_slot": 2,
-            "target_id": 74,
+            "target_id": 704,
             "target_slot": 0,
             "type": "INT"
           },
           {
-            "id": 131,
+            "id": 1011,
             "origin_id": -10,
             "origin_slot": 3,
-            "target_id": 74,
+            "target_id": 704,
             "target_slot": 1,
             "type": "INT"
           },
           {
-            "id": 132,
+            "id": 1012,
             "origin_id": -10,
             "origin_slot": 4,
-            "target_id": 76,
+            "target_id": 706,
             "target_slot": 4,
             "type": "INT"
           },
           {
-            "id": 133,
+            "id": 1013,
             "origin_id": -10,
             "origin_slot": 5,
-            "target_id": 78,
+            "target_id": 708,
             "target_slot": 0,
             "type": "COMBO"
           },
           {
-            "id": 134,
+            "id": 1014,
             "origin_id": -10,
             "origin_slot": 6,
-            "target_id": 71,
+            "target_id": 701,
             "target_slot": 0,
             "type": "COMBO"
           },
           {
-            "id": 135,
+            "id": 1015,
             "origin_id": -10,
             "origin_slot": 7,
-            "target_id": 72,
+            "target_id": 702,
             "target_slot": 0,
             "type": "COMBO"
           },
           {
-            "id": 136,
+            "id": 1016,
             "origin_id": -10,
             "origin_slot": 8,
-            "target_id": 89,
+            "target_id": 717,
             "target_slot": 0,
             "type": "BOOLEAN"
           },
           {
-            "id": 137,
+            "id": 1017,
             "origin_id": -10,
             "origin_slot": 9,
-            "target_id": 83,
+            "target_id": 711,
             "target_slot": 1,
             "type": "COMBO"
+          },
+          {
+            "id": 1018,
+            "origin_id": 712,
+            "origin_slot": 0,
+            "target_id": 718,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 1019,
+            "origin_id": 707,
+            "origin_slot": 0,
+            "target_id": 718,
+            "target_slot": 1,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 1020,
+            "origin_id": 705,
+            "origin_slot": 0,
+            "target_id": 718,
+            "target_slot": 2,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 1021,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 718,
+            "target_slot": 4,
+            "type": "INT"
+          },
+          {
+            "id": 1022,
+            "origin_id": 713,
+            "origin_slot": 0,
+            "target_id": 718,
+            "target_slot": 5,
+            "type": "INT"
+          },
+          {
+            "id": 1023,
+            "origin_id": 715,
+            "origin_slot": 0,
+            "target_id": 718,
+            "target_slot": 6,
+            "type": "FLOAT"
+          },
+          {
+            "id": 1024,
+            "origin_id": 706,
+            "origin_slot": 0,
+            "target_id": 718,
+            "target_slot": 3,
+            "type": "LATENT"
+          },
+          {
+            "id": 1025,
+            "origin_id": 718,
+            "origin_slot": 0,
+            "target_id": 703,
+            "target_slot": 0,
+            "type": "LATENT"
+          },
+          {
+            "id": 1026,
+            "origin_id": 713,
+            "origin_slot": 0,
+            "target_id": 719,
+            "target_slot": 11,
+            "type": "INT"
+          },
+          {
+            "id": 1027,
+            "origin_id": 715,
+            "origin_slot": 0,
+            "target_id": 719,
+            "target_slot": 12,
+            "type": "FLOAT"
+          },
+          {
+            "id": 1028,
+            "origin_id": 713,
+            "origin_slot": 0,
+            "target_id": 720,
+            "target_slot": 11,
+            "type": "INT"
+          },
+          {
+            "id": 1029,
+            "origin_id": 715,
+            "origin_slot": 0,
+            "target_id": 720,
+            "target_slot": 12,
+            "type": "FLOAT"
+          },
+          {
+            "id": 1030,
+            "origin_id": 703,
+            "origin_slot": 0,
+            "target_id": 719,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 1031,
+            "origin_id": 712,
+            "origin_slot": 0,
+            "target_id": 719,
+            "target_slot": 1,
+            "type": "MODEL"
+          },
+          {
+            "id": 1032,
+            "origin_id": 701,
+            "origin_slot": 0,
+            "target_id": 719,
+            "target_slot": 2,
+            "type": "CLIP"
+          },
+          {
+            "id": 1033,
+            "origin_id": 702,
+            "origin_slot": 0,
+            "target_id": 719,
+            "target_slot": 3,
+            "type": "VAE"
+          },
+          {
+            "id": 1034,
+            "origin_id": 707,
+            "origin_slot": 0,
+            "target_id": 719,
+            "target_slot": 4,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 1035,
+            "origin_id": 705,
+            "origin_slot": 0,
+            "target_id": 719,
+            "target_slot": 5,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 1036,
+            "origin_id": 712,
+            "origin_slot": 0,
+            "target_id": 720,
+            "target_slot": 1,
+            "type": "MODEL"
+          },
+          {
+            "id": 1037,
+            "origin_id": 701,
+            "origin_slot": 0,
+            "target_id": 720,
+            "target_slot": 2,
+            "type": "CLIP"
+          },
+          {
+            "id": 1038,
+            "origin_id": 702,
+            "origin_slot": 0,
+            "target_id": 720,
+            "target_slot": 3,
+            "type": "VAE"
+          },
+          {
+            "id": 1039,
+            "origin_id": 707,
+            "origin_slot": 0,
+            "target_id": 720,
+            "target_slot": 4,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 1040,
+            "origin_id": 705,
+            "origin_slot": 0,
+            "target_id": 720,
+            "target_slot": 5,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 1041,
+            "origin_id": 721,
+            "origin_slot": 0,
+            "target_id": 719,
+            "target_slot": 6,
+            "type": "BBOX_DETECTOR"
+          },
+          {
+            "id": 1042,
+            "origin_id": 722,
+            "origin_slot": 0,
+            "target_id": 720,
+            "target_slot": 6,
+            "type": "BBOX_DETECTOR"
+          },
+          {
+            "id": 1043,
+            "origin_id": 723,
+            "origin_slot": 0,
+            "target_id": 719,
+            "target_slot": 7,
+            "type": "SAM_MODEL"
+          },
+          {
+            "id": 1044,
+            "origin_id": 723,
+            "origin_slot": 0,
+            "target_id": 720,
+            "target_slot": 7,
+            "type": "SAM_MODEL"
+          },
+          {
+            "id": 1045,
+            "origin_id": 719,
+            "origin_slot": 0,
+            "target_id": 720,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 1046,
+            "origin_id": 720,
+            "origin_slot": 0,
+            "target_id": 726,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 1047,
+            "origin_id": 724,
+            "origin_slot": 0,
+            "target_id": 726,
+            "target_slot": 1,
+            "type": "SEEDVR2_DIT"
+          },
+          {
+            "id": 1048,
+            "origin_id": 725,
+            "origin_slot": 0,
+            "target_id": 726,
+            "target_slot": 2,
+            "type": "SEEDVR2_VAE"
+          },
+          {
+            "id": 1049,
+            "origin_id": 726,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "IMAGE"
           }
         ],
         "extra": {}
