@@ -428,7 +428,7 @@
       },
       "widgets_values": [
         "sam_vit_b_01ec64.pth",
-        "AUTO"
+        "CPU"
       ],
       "color": "#223",
       "bgcolor": "#335"
@@ -1722,7 +1722,7 @@
       },
       "widgets_values": [
         "sam_vit_b_01ec64.pth",
-        "AUTO"
+        "CPU"
       ],
       "color": "#223",
       "bgcolor": "#335"
@@ -3016,7 +3016,7 @@
       },
       "widgets_values": [
         "sam_vit_b_01ec64.pth",
-        "AUTO"
+        "CPU"
       ],
       "color": "#223",
       "bgcolor": "#335"
@@ -8184,7 +8184,7 @@
             },
             "widgets_values": [
               "sam_vit_b_01ec64.pth",
-              "AUTO"
+              "CPU"
             ],
             "color": "#223",
             "bgcolor": "#335"
