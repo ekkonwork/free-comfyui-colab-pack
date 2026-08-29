@@ -2,7 +2,7 @@
   "id": "9ae6082b-c7f4-433c-9971-7a8f65a3ea65",
   "revision": 0,
   "last_node_id": 104,
-  "last_link_id": 163,
+  "last_link_id": 165,
   "nodes": [
     {
       "id": 35,
@@ -333,7 +333,7 @@
         "state": {
           "lastGroupId": 6,
           "lastNodeId": 104,
-          "lastLinkId": 163,
+          "lastLinkId": 165,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -444,7 +444,9 @@
             "type": "INT",
             "linkIds": [
               130,
-              139
+              139,
+              164,
+              165
             ],
             "pos": [
               -230.955078125,
@@ -1061,7 +1063,7 @@
             },
             "widgets_values": [
               677498465340151,
-              "randomize",
+              "fixed",
               30,
               4,
               "res_multistep",
@@ -1185,7 +1187,7 @@
             },
             "widgets_values": [
               677498465340151,
-              "randomize",
+              "fixed",
               30,
               4,
               "res_multistep",
@@ -1267,6 +1269,15 @@
                 "type": "SCHEDULER_FUNC",
                 "shape": 7,
                 "link": null
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 164
               }
             ],
             "outputs": [
@@ -1320,7 +1331,7 @@
               512,
               true,
               1024,
-              0,
+              677498465340151,
               "fixed",
               30,
               4,
@@ -1424,6 +1435,15 @@
                 "type": "SCHEDULER_FUNC",
                 "shape": 7,
                 "link": null
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 165
               }
             ],
             "outputs": [
@@ -1477,7 +1497,7 @@
               512,
               true,
               1024,
-              0,
+              677498465340151,
               "fixed",
               30,
               4,
@@ -2454,6 +2474,22 @@
             "target_id": -20,
             "target_slot": 0,
             "type": "IMAGE"
+          },
+          {
+            "id": 164,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 97,
+            "target_slot": 11,
+            "type": "INT"
+          },
+          {
+            "id": 165,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 98,
+            "target_slot": 11,
+            "type": "INT"
           }
         ],
         "extra": {
