@@ -255,6 +255,38 @@ def check_detail_sources(graph: dict[str, Any], face: dict[str, Any], hand: dict
     assert resolve_origin(graph, face, "sam_model_opt") == resolve_origin(graph, hand, "sam_model_opt"), f"{label}: face/hand SAM sources differ"
 
 
+def check_shared_seed_standard(
+    graph: dict[str, Any],
+    base: dict[str, Any],
+    refiner: dict[str, Any],
+    face: dict[str, Any],
+    hand: dict[str, Any],
+    label: str,
+) -> None:
+    source = resolve_origin(graph, base, "seed")
+    assert resolve_origin(graph, refiner, "seed") == source, f"{label}: refiner seed differs"
+    assert resolve_origin(graph, face, "seed") == source, f"{label}: face seed differs"
+    assert resolve_origin(graph, hand, "seed") == source, f"{label}: hand seed differs"
+
+
+def check_shared_seed_custom(
+    graph: dict[str, Any],
+    base: dict[str, Any],
+    refiner: dict[str, Any],
+    face: dict[str, Any],
+    hand: dict[str, Any],
+    label: str,
+) -> None:
+    by_id = node_map(graph)
+    base_noise = resolve_origin(graph, base, "noise")
+    assert resolve_origin(graph, refiner, "noise") == base_noise, f"{label}: refiner noise differs"
+    noise_node = by_id[base_noise[0]]
+    assert noise_node.get("type") == "RandomNoise", f"{label}: shared noise source is not RandomNoise"
+    source = resolve_origin(graph, noise_node, "noise_seed")
+    assert resolve_origin(graph, face, "seed") == source, f"{label}: face seed differs"
+    assert resolve_origin(graph, hand, "seed") == source, f"{label}: hand seed differs"
+
+
 def check_standard_ksampler_pipeline(
     graph: dict[str, Any],
     label: str,
@@ -272,6 +304,7 @@ def check_standard_ksampler_pipeline(
     assert tuple(hand.get("widgets_values", [])[5:9]) == preset, f"{label}: hand sampling mismatch"
     assert face.get("widgets_values", [None] * 10)[9] == 0.50, f"{label}: face denoise"
     assert hand.get("widgets_values", [None] * 10)[9] == 0.35, f"{label}: hand denoise"
+    check_shared_seed_standard(graph, base, refiner, face, hand, label)
     check_detail_sources(graph, face, hand, label)
     check_sam_and_detectors(graph, label, face, hand)
     check_seedvr(graph, label, up_id)
@@ -285,6 +318,7 @@ def check_anima_subgraph(graph: dict[str, Any], label: str) -> None:
     assert tuple(face["widgets_values"][7:9]) == ("euler", "simple")
     assert tuple(hand["widgets_values"][7:9]) == ("euler", "simple")
     assert refiner["widgets_values"][6] == 0.30 and face["widgets_values"][9] == 0.50 and hand["widgets_values"][9] == 0.35
+    check_shared_seed_standard(graph, base, refiner, face, hand, label)
     for name in ("steps", "cfg"):
         source = resolve_origin(graph, base, name)
         assert resolve_origin(graph, refiner, name) == source, f"{label}: refiner dynamic {name} differs"
@@ -316,6 +350,7 @@ def check_custom_chroma(graph: dict[str, Any], label: str) -> None:
         assert tuple(item["widgets_values"][5:9]) == (26, 3.8, "euler", "beta")
         assert item["inputs"][input_index(item, "scheduler_func_opt")].get("link") is not None
     assert face["widgets_values"][9] == 0.50 and hand["widgets_values"][9] == 0.35
+    check_shared_seed_custom(graph, base, refiner, face, hand, label)
     for name in ("noise", "guider", "sampler"):
         assert resolve_origin(graph, refiner, name) == resolve_origin(graph, base, name), f"{label}: refiner {name} mismatch"
     assert resolve_origin(graph, refiner, "sigmas")[0] == split["id"], f"{label}: refiner must use split beta sigmas"
@@ -339,6 +374,7 @@ def check_custom_srpo(graph: dict[str, Any], label: str) -> None:
     for item in (face, hand):
         assert tuple(item["widgets_values"][5:9]) == (50, 1, "euler", "normal")
     assert face["widgets_values"][9] == 0.50 and hand["widgets_values"][9] == 0.35
+    check_shared_seed_custom(graph, base, refiner, face, hand, label)
     for name in ("noise", "guider", "sampler"):
         assert resolve_origin(graph, refiner, name) == resolve_origin(graph, base, name), f"{label}: refiner {name} mismatch"
     assert resolve_origin(graph, refiner, "sigmas")[0] == split["id"], f"{label}: refiner must use split normal sigmas"
