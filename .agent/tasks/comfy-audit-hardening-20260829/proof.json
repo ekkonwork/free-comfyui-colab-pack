@@ -1,0 +1,70 @@
+{
+  "task_id": "comfy-audit-hardening-20260829",
+  "overall_verdict": "UNKNOWN",
+  "acceptance_criteria": [
+    {
+      "id": "AC1",
+      "status": "UNKNOWN",
+      "proof": [],
+      "reason": "Not verified."
+    },
+    {
+      "id": "AC2",
+      "status": "UNKNOWN",
+      "proof": [],
+      "reason": "Not verified."
+    },
+    {
+      "id": "AC3",
+      "status": "UNKNOWN",
+      "proof": [],
+      "reason": "Not verified."
+    },
+    {
+      "id": "AC4",
+      "status": "UNKNOWN",
+      "proof": [],
+      "reason": "Not verified."
+    },
+    {
+      "id": "AC5",
+      "status": "UNKNOWN",
+      "proof": [],
+      "reason": "Not verified."
+    },
+    {
+      "id": "AC6",
+      "status": "UNKNOWN",
+      "proof": [],
+      "reason": "Not verified."
+    },
+    {
+      "id": "AC7",
+      "status": "UNKNOWN",
+      "proof": [],
+      "reason": "Not verified."
+    },
+    {
+      "id": "AC8",
+      "status": "UNKNOWN",
+      "proof": [],
+      "reason": "Not verified."
+    },
+    {
+      "id": "AC9",
+      "status": "UNKNOWN",
+      "proof": [],
+      "reason": "Not verified."
+    },
+    {
+      "id": "AC10",
+      "status": "UNKNOWN",
+      "proof": [],
+      "reason": "Not verified."
+    }
+  ],
+  "changed_files": [],
+  "checks": [],
+  "problems": [],
+  "residual_risks": []
+}
