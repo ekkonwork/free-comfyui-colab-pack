@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Apply proven shared Colab runtime fixes without touching model presets."""
+"""Apply proven shared Colab runtime/dependency fixes without touching model presets."""
 
 from __future__ import annotations
 
@@ -63,6 +63,9 @@ def patch_source(source: str) -> tuple[str, set[str]]:
         if "ComfyUI-Impact-Subpack" not in source:
             additions += '    "ComfyUI-Impact-Subpack": "https://github.com/ltdrdata/ComfyUI-Impact-Subpack.git",\n'
             changes.add("impact-subpack")
+        if "ComfyUI-SeedVR2_VideoUpscaler.git" not in source:
+            additions += '    "seedvr2_videoupscaler": "https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler.git",\n'
+            changes.add("seedvr2-node")
         if additions:
             if anchor not in source:
                 raise RuntimeError("NODES cell has no ComfyUI-GGUF anchor")
@@ -71,6 +74,31 @@ def patch_source(source: str) -> tuple[str, set[str]]:
     if DOWNLOAD_OLD in source:
         source = source.replace(DOWNLOAD_OLD, DOWNLOAD_NEW)
         changes.add("download-validation")
+
+    if (
+        "face_yolov8m.pt" in source
+        and "hand_yolov8n.pt" in source
+        and "sam_vit_b_01ec64.pth" not in source
+    ):
+        source += """
+# SAM for Impact Face/Hand Detailer (explicit clean-Colab dependency).
+import os, subprocess, urllib.request
+SAM_DIR = '/content/ComfyUI/models/sams'
+SAM_FILE = 'sam_vit_b_01ec64.pth'
+SAM_PATH = os.path.join(SAM_DIR, SAM_FILE)
+os.makedirs(SAM_DIR, exist_ok=True)
+if not (os.path.exists(SAM_PATH) and os.path.getsize(SAM_PATH) > 0):
+    sam_url = 'https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth'
+    rc = subprocess.run(
+        ['aria2c', '--console-log-level=error', '-c', '-x', '8', '-s', '8', '-k', '1M',
+         sam_url, '-d', SAM_DIR, '-o', SAM_FILE],
+        check=False,
+    ).returncode
+    if rc != 0 or not (os.path.exists(SAM_PATH) and os.path.getsize(SAM_PATH) > 0):
+        urllib.request.urlretrieve(sam_url, SAM_PATH)
+print('SAM ready:', SAM_PATH)
+"""
+        changes.add("sam-vit-b")
 
     return source, changes
 
@@ -87,7 +115,8 @@ def main() -> None:
         for cell in notebook.get("cells", []):
             if cell.get("cell_type") != "code":
                 continue
-            source = "".join(cell.get("source", []))
+            raw_source = cell.get("source", "")
+            source = "".join(raw_source) if isinstance(raw_source, list) else str(raw_source)
             source, changes = patch_source(source)
             if changes:
                 cell["source"] = source.splitlines(keepends=True)
