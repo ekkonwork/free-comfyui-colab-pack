@@ -1,8 +1,8 @@
 {
   "id": "3107ea10-7994-4c54-b347-b27a8b767145",
   "revision": 0,
-  "last_node_id": 50,
-  "last_link_id": 145,
+  "last_node_id": 51,
+  "last_link_id": 148,
   "nodes": [
     {
       "id": 26,
@@ -146,7 +146,16 @@
       "flags": {},
       "order": 1,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": 146
+        }
+      ],
       "outputs": [
         {
           "name": "NOISE",
@@ -952,6 +961,14 @@
           "type": "SCHEDULER_FUNC",
           "shape": 7,
           "link": null
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 147
         }
       ],
       "outputs": [
@@ -1005,7 +1022,7 @@
         512,
         true,
         1024,
-        0,
+        1234,
         "fixed",
         50,
         1,
@@ -1109,6 +1126,14 @@
           "type": "SCHEDULER_FUNC",
           "shape": 7,
           "link": null
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 148
         }
       ],
       "outputs": [
@@ -1162,7 +1187,7 @@
         512,
         true,
         1024,
-        0,
+        1234,
         "fixed",
         50,
         1,
@@ -1731,6 +1756,42 @@
         "cpu",
         false
       ]
+    },
+    {
+      "id": 51,
+      "type": "PrimitiveInt",
+      "pos": [
+        140,
+        648
+      ],
+      "size": [
+        270,
+        90
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "localized_name": "INT",
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            146,
+            147,
+            148
+          ]
+        }
+      ],
+      "title": "Shared Seed — main / refiner / face / hand",
+      "properties": {
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        1234,
+        "fixed"
+      ]
     }
   ],
   "links": [
@@ -2085,6 +2146,30 @@
       9,
       0,
       "IMAGE"
+    ],
+    [
+      146,
+      51,
+      0,
+      25,
+      0,
+      "INT"
+    ],
+    [
+      147,
+      51,
+      0,
+      43,
+      11,
+      "INT"
+    ],
+    [
+      148,
+      51,
+      0,
+      44,
+      11,
+      "INT"
     ]
   ],
   "groups": [],
