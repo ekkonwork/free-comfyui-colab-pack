@@ -2,7 +2,7 @@
   "id": "91f6bbe2-ed41-4fd6-bac7-71d5b5864ecb",
   "revision": 0,
   "last_node_id": 272,
-  "last_link_id": 407,
+  "last_link_id": 409,
   "nodes": [
     {
       "id": 67,
@@ -219,7 +219,7 @@
         "state": {
           "lastGroupId": 7,
           "lastNodeId": 272,
-          "lastLinkId": 407,
+          "lastLinkId": 409,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -297,7 +297,9 @@
             "type": "INT",
             "linkIds": [
               371,
-              383
+              383,
+              408,
+              409
             ],
             "pos": [
               -948.255859375,
@@ -968,7 +970,7 @@
             },
             "widgets_values": [
               464857551335368,
-              "randomize",
+              "fixed",
               8,
               1,
               "euler",
@@ -1240,7 +1242,7 @@
             },
             "widgets_values": [
               464857551335368,
-              "randomize",
+              "fixed",
               8,
               1,
               "euler",
@@ -1322,6 +1324,15 @@
                 "type": "SCHEDULER_FUNC",
                 "shape": 7,
                 "link": null
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 408
               }
             ],
             "outputs": [
@@ -1375,7 +1386,7 @@
               512,
               true,
               1024,
-              0,
+              464857551335368,
               "fixed",
               8,
               1,
@@ -1479,6 +1490,15 @@
                 "type": "SCHEDULER_FUNC",
                 "shape": 7,
                 "link": null
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 409
               }
             ],
             "outputs": [
@@ -1532,7 +1552,7 @@
               512,
               true,
               1024,
-              0,
+              464857551335368,
               "fixed",
               8,
               1,
@@ -2559,6 +2579,22 @@
             "target_id": -20,
             "target_slot": 0,
             "type": "IMAGE"
+          },
+          {
+            "id": 408,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 265,
+            "target_slot": 11,
+            "type": "INT"
+          },
+          {
+            "id": 409,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 266,
+            "target_slot": 11,
+            "type": "INT"
           }
         ],
         "extra": {
