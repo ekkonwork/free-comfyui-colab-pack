@@ -1,7 +1,7 @@
 {
   "task_id": "comfy-audit-hardening-20260829",
   "overall_verdict": "PASS",
-  "validated_code_head": "4274dd52bfef1a70eb9586b808d0b40ba43406f9",
+  "validated_code_head": "679ac7881332adf93b6d499ac8716d0ac6dc77dc",
   "acceptance_criteria": [
     {
       "id": "AC1",
@@ -55,11 +55,11 @@
       "id": "AC6",
       "status": "PASS",
       "proof": [
-        "scripts/check_notebooks.py validates all 17 notebooks, including universal and both _paused notebooks.",
-        "Every notebook has unified ComfyUI+Cloudflare and ComfyUI+bore watchdogs with COMFY_RESTART_GRACE=25, COMFY_HUNG_GRACE=120 and Manager/external process detection.",
-        "Detail notebooks explicitly provision face_yolov8m.pt, hand_yolov8n.pt and sam_vit_b_01ec64.pth; workflow SAMLoader is CPU."
+        "GitHub Actions run 33369283650 emitted an individual OK line for all 17 notebooks, including universal and both _paused notebooks.",
+        "scripts/check_notebooks.py now enforces exact notebook inventory, Python-cell compilation, safe Run-all ordering, Manager-safe watchdogs, workflow installer ordering and pre-launch detail dependencies.",
+        "Detail notebooks explicitly provision face_yolov8m.pt, hand_yolov8n.pt and sam_vit_b_01ec64.pth; Klein/Edit explicitly contain none of those unused weights; universal provisions SeedVR2 + YOLO + SAM before launch."
       ],
-      "reason": "Clean-Colab dependencies and Manager-safe watchdog behavior are repository-wide guardrails."
+      "reason": "All 17 notebooks are individually validated for syntax, dependency availability and safe top-to-bottom execution order."
     },
     {
       "id": "AC7",
@@ -75,10 +75,11 @@
       "id": "AC8",
       "status": "PASS",
       "proof": [
-        "scripts/check_notebooks.py and scripts/check_workflows.py encode the audited architecture.",
-        "scripts/install_bundled_workflows.py uses Qwen 8-step LoRA names and one-flow Klein behavior.",
+        "scripts/check_notebooks.py enforces exact 17-notebook inventory, safe Run-all order and workflow-installer variable availability before use.",
+        "scripts/check_workflows.py enforces the audited sampling/SeedVR/SAM architecture.",
+        "scripts/install_bundled_workflows.py uses current Qwen 8-step names, one-flow Klein behavior, and correct standalone Z-Image variable names.",
         "scripts/apply_shared_runtime_fixes.py knows SeedVR2 node install and SAM provisioning.",
-        ".github/workflows/validate.yml runs helper compilation plus notebook and workflow validators."
+        ".github/workflows/validate.yml runs helper compilation, notebook validation, workflow validation and proof validation."
       ],
       "reason": "Future helper-script use is guarded against reintroducing the audited regressions."
     },
@@ -132,6 +133,20 @@
     "notebooks/_paused/wan22_14b_combo/comfy_wan22_14b_combo.ipynb"
   ],
   "checks": [
+    {
+      "name": "Per-notebook recheck",
+      "status": "PASS",
+      "run_id": 33369283650,
+      "head_sha": "679ac7881332adf93b6d499ac8716d0ac6dc77dc",
+      "details": [
+        "17/17 notebook files emitted individual OK lines in scripts/check_notebooks.py.",
+        "Run-all order validated: ComfyUI install -> model download -> workflow install -> detail dependencies -> launch.",
+        "Compare queue validated after launch and before blocking watchdog.",
+        "Klein and Qwen-Edit contain no unused YOLO/SAM downloads.",
+        "Standalone Z-Image Base/Turbo workflow installers reference z_fname, which is defined before use.",
+        "Universal installs SeedVR2 and provisions YOLO+SAM before launch."
+      ]
+    },
     {
       "name": "GitHub Actions static-validation",
       "status": "PASS",
