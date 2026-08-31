@@ -27,6 +27,17 @@ MODEL_NOTEBOOKS = {
 }
 DETAIL_EXCEPTIONS = {"flux2_klein9b_gguf", "qwen_image_edit_2511"}
 DETAIL_NOTEBOOKS = MODEL_NOTEBOOKS - DETAIL_EXCEPTIONS
+INSTALLER_REQUIRED_VARS = {
+    "chroma1_hd_gguf": {"chroma_fname", "flan_fname"},
+    "flux2_klein9b_gguf": {"base_fname", "distilled_fname", "q_fname", "vae_fname"},
+    "flux_srpo": {"srpo_fname", "t5_fname"},
+    "qwen_image_2512": {"img_fname", "vl_fname", "lora_fname"},
+    "qwen_image_edit_2511": {"edit_fname", "vl_fname", "lora_fname"},
+    "zimage_base": {"z_fname", "q_fname"},
+    "zimage_seedvr2": {"z_fname", "q_fname"},
+    "zimage_turbo": {"z_fname", "q_fname"},
+    "zimage_turbo_base": {"zt_fname", "zb_fname", "q_fname"},
+}
 EXPECTED_NOTEBOOKS = {
     "_paused/ltx2_gguf/comfy_ltx2_gguf.ipynb",
     "_paused/wan22_14b_combo/comfy_wan22_14b_combo.ipynb",
@@ -124,6 +135,11 @@ def check_notebook(path: Path) -> None:
             f"{key}: unsafe Run-all order: "
             f"{install=}, {model_download=}, {workflow_install=}, {launch=}"
         )
+        before_installer = "\n".join(texts[:workflow_install])
+        for variable in INSTALLER_REQUIRED_VARS.get(key, set()):
+            assert __import__("re").search(
+                rf"(^|\n)\s*{variable}\s*=", before_installer, __import__("re").MULTILINE
+            ), f"{key}: workflow installer variable {variable} is not defined before installer"
 
     if key in DETAIL_NOTEBOOKS:
         for name in ("face_yolov8m.pt", "hand_yolov8n.pt", "sam_vit_b_01ec64.pth"):
