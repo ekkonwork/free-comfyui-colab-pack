@@ -58,11 +58,11 @@ RUNTIME_REPLACEMENTS = {
             "globals().get('lora_fname', 'Qwen-Image-Edit-2511-Lightning-8steps-V1.0-bf16.safetensors')",
     },
     "zimage_base": {
-        "z-image-Q4_K_M.gguf": "zb_fname",
+        "z-image-Q4_K_M.gguf": "z_fname",
         "Qwen3-4B-Q4_K_M.gguf": "q_fname",
     },
     "zimage_turbo": {
-        "z-image-turbo-Q4_K_M.gguf": "zt_fname",
+        "z-image-turbo-Q4_K_M.gguf": "z_fname",
         "Qwen3-4B-Q4_K_M.gguf": "q_fname",
     },
     "zimage_seedvr2": {
