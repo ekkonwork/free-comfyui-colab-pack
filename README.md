@@ -92,20 +92,13 @@ See [workflow sources and adaptations](docs/WORKFLOW_SOURCES.md).
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/anima_illustrious_compare/comfy_anima_illustrious_compare.ipynb)
 - What: единый compare-ноутбук для 4 моделей — Anima Aesthetic v1.1 (diffusion model) + RouWei v0.8.0 epsilon + Nova Anime XL IL v19.0 + JANKU v7.77 — с 10 сложными промптами (gravity_workshop, mirror_train, ... museum_giant), seed 424242. Ставит единый Qwen VAE/text-enc + LLLite patch.
 - Models: `diffusion_models/anima/anima_aestheticV11.safetensors` + 3× `checkpoints/*.safetensors` (VAE baked in для SDXL), см. `compare/models.json` style manifest внутри ноутбука.
-- Workflows: встроенный `graph_for` (UNETLoader/CLIPLoader/VAELoader для anima, CheckpointLoaderSimple для SDXL) + queue 40 jobs.
-- Demo: см. галерею ниже (внешние превью с Civitai, с атрибуцией — не редистрибьюция).
+- Workflows: встроенный `graph_for` (UNETLoader/CLIPLoader/VAELoader for anima, CheckpointLoaderSimple for SDXL) + queue 40 jobs.
 
 ### RouWei v0.8.0 epsilon (Illustrious)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/rouwei_v080_epsilon/comfy_rouwei_v080_epsilon.ipynb)
 - What: SDXL checkpoint RouWei v0.8.0 epsilon — лучший prompt adherence среди anime SDXL на релиз, 50k+ артистов, без watermark, epsilon (CFG 7, 24 steps euler_ancestral/normal).
 - Model creators/sources: `Minthy/RouWei` (fine-tune Illustrious v0.1), Civitai `950531/1832460`.
 - Workflow: `workflows/rouwei_v080_epsilon/workflow.json` — checkpoint → base KSampler → second KSampler/refiner → FaceDetailer → Hand Detailer → SaveImage.
-- Previews (square HD 1024×1024, verified Face/Hand Detailer + Refiner — unique anime prompts with beautiful girl):
-
-| Preview 01 — Crystal Pavilion | Preview 02 — Enchanted Library |
-|---|---|
-| ![RouWei Preview 01](previews/rouwei_v080_epsilon/preview_01_1024.png) | ![RouWei Preview 02](previews/rouwei_v080_epsilon/preview_02_1024.png) |
-| *masterpiece, 1girl with long silver hair in crystal pavilion with floating shards, lace dress with ribbons, holding glowing orb, anime illustration* | *masterpiece, 1girl with dark purple twin tails and star hairpins, gothic lolita in enchanted library with floating books, holding antique key, anime illustration* |
 
 ### Nova Anime XL IL v19.0 (Illustrious)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/nova_anime_xl_il_v190/comfy_nova_anime_xl_il_v190.ipynb)
@@ -123,14 +116,13 @@ See [workflow sources and adaptations](docs/WORKFLOW_SOURCES.md).
 - `notebooks/_paused/ltx2_gguf/`
 - `notebooks/_paused/wan22_14b_combo/`
 
-These are kept in repo and can be returned to active catalog after validation.
-
 ## Repository Layout
 ```text
 free-comfyui-colab-pack/
   notebooks/<model>/comfy_<model>.ipynb
   workflows/<model>/workflow.json
   docs/
+  previews/<model>/
 ```
 
 ## Quick Start
@@ -145,8 +137,6 @@ For 1K+ images on free Colab, set `LOW_VRAM_STABLE = True` in the launch cell. T
 ## Support
 If these notebooks save you time, please support development:
 
-I spend a lot of time on open-source projects. Even a $1 donation helps and goes directly to GPU servers and food.
-
 [![Donate](docs/assets/Donate_Banner.webp)](https://boosty.to/ekkonwork/donate)
 [![Donate on Boosty](https://img.shields.io/badge/Donate-Boosty-F15F2C?style=for-the-badge)](https://boosty.to/ekkonwork/donate)
 
@@ -155,13 +145,6 @@ I spend a lot of time on open-source projects. Even a $1 donation helps and goes
 
 ![Telegram Wallet QR](docs/assets/telegram_wallet_qr.png)
 
-Wallet addresses:
-- TON: `UQAMPvqduXVWyax325-zqk81rTwNG1bRhCvXPyIs7eeIxEVp`
-- USDT (TON): `UQAMPvqduXVWyax325-zqk81rTwNG1bRhCvXPyIs7eeIxEVp`
-- Memo/Tag: check Wallet receive screen before sending.
-
-See full support info in `docs/SUPPORT.md`.
-
 ## Hire Me
 [![Hire Me](docs/assets/Hire_Me_banner.webp)](https://www.linkedin.com/in/mikhail-kuznetsov-14304433b)
 [![Hire Me on LinkedIn](https://img.shields.io/badge/Hire%20Me-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mikhail-kuznetsov-14304433b)
@@ -169,14 +152,22 @@ See full support info in `docs/SUPPORT.md`.
 - Email: `ekkonwork@gmail.com`
 - Telegram: `@Mikhail_ML_ComfyUI`
 
-## Notes
-- Respect model licenses and terms.
-- Cloudflare tunnels can still be unstable in Colab due to external network conditions.
-
 ## Preview Gallery (Square HD 1024x1024 — Face/Hand Detailer + Refiner)
 *Verified square HD previews — each 1024×1024, FaceDetailer `face_yolov8m.pt` + HandDetailer `hand_yolov8n.pt` + Refiner (self-refine denoise 0.3), unique complex prompts with beautiful girl.*
 
 | Notebook | Preview 01 | Preview 02 |
 |---|---|---|
 | RouWei v0.8.0 epsilon | ![RouWei 01](previews/rouwei_v080_epsilon/preview_01_1024.png) | ![RouWei 02](previews/rouwei_v080_epsilon/preview_02_1024.png) |
-
+| Anima + WAI-Anima | ![Anima 01](previews/anima/preview_01_1024.png) | ![Anima 02](previews/anima/preview_02_1024.png) |
+| Anima Illustrious Compare | ![Compare 01](previews/anima_illustrious_compare/preview_01_1024.png) | ![Compare 02](previews/anima_illustrious_compare/preview_02_1024.png) |
+| Chroma1 HD GGUF | ![Chroma 01](previews/chroma1_hd_gguf/preview_01_1024.png) | ![Chroma 02](previews/chroma1_hd_gguf/preview_02_1024.png) |
+| Flux2 Klein 9B GGUF | ![Klein 01](previews/flux2_klein9b_gguf/preview_01_1024.png) | ![Klein 02](previews/flux2_klein9b_gguf/preview_02_1024.png) |
+| Flux SRPO | ![SRPO 01](previews/flux_srpo/preview_01_1024.png) | ![SRPO 02](previews/flux_srpo/preview_02_1024.png) |
+| JANKU v7.77 | ![JANKU 01](previews/janku_v777/preview_01_1024.png) | ![JANKU 02](previews/janku_v777/preview_02_1024.png) |
+| Nova Anime XL IL v19.0 | ![Nova 01](previews/nova_anime_xl_il_v190/preview_01_1024.png) | ![Nova 02](previews/nova_anime_xl_il_v190/preview_02_1024.png) |
+| Qwen Image 2512 | ![Qwen2512 01](previews/qwen_image_2512/preview_01_1024.png) | ![Qwen2512 02](previews/qwen_image_2512/preview_02_1024.png) |
+| Qwen Image Edit 2511 | ![QwenEdit 01](previews/qwen_image_edit_2511/preview_01_1024.png) | ![QwenEdit 02](previews/qwen_image_edit_2511/preview_02_1024.png) |
+| Z-Image Base | ![ZBase 01](previews/zimage_base/preview_01_1024.png) | ![ZBase 02](previews/zimage_base/preview_02_1024.png) |
+| Z-Image SeedVR2 | ![ZSeed 01](previews/zimage_seedvr2/preview_01_1024.png) | ![ZSeed 02](previews/zimage_seedvr2/preview_02_1024.png) |
+| Z-Image Turbo | ![ZTurbo 01](previews/zimage_turbo/preview_01_1024.png) | ![ZTurbo 02](previews/zimage_turbo/preview_02_1024.png) |
+| Z-Image Turbo + Base | ![ZCombo 01](previews/zimage_turbo_base/preview_01_1024.png) | ![ZCombo 02](previews/zimage_turbo_base/preview_02_1024.png) |
