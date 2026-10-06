@@ -30,9 +30,9 @@ See [workflow sources and adaptations](docs/WORKFLOW_SOURCES.md).
 ### Flux SRPO
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ekkonwork/free-comfyui-colab-pack/blob/main/notebooks/flux_srpo/comfy_flux_srpo.ipynb)
 
-| Preview 01 (1024×1024) | Preview 02 (1024×1024) |
-|:---:|:---:|
-| ![Flux SRPO 01](previews/flux_srpo/preview_01_1024.png) | ![Flux SRPO 02](previews/flux_srpo/preview_02_1024.png) |
+| Preview (1024×1024) |
+|:---:|
+| ![Flux SRPO](previews/flux_srpo/preview_01_1024.png) |
 - What: FLUX-based SRPO GGUF text-to-image notebook using the Tencent SRPO workflow architecture.
 - Model creators/sources: FLUX.1 family by Black Forest Labs, SRPO model by Tencent Hunyuan (`tencent/SRPO`), GGUF conversion pack by `befox` (`srpo-Q2_K.gguf` 4.0G + `t5-v1_1-xxl-encoder-Q4_K_M.gguf` 2.9G).
 - Workflow: `workflows/flux_srpo/workflow.json` — official Tencent graph adapted to connected GGUF UNET + dual CLIP loaders. Notebook substitutes the selected quant filenames automatically.

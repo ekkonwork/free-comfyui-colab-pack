@@ -44,7 +44,10 @@ for header, folder, title in mapping:
     if line_end == -1:
         line_end = len(content)
     
-    table = f"\n\n| Preview 01 (1024×1024) | Preview 02 (1024×1024) |\n|:---:|:---:|\n| ![{title} 01](previews/{folder}/preview_01_1024.png) | ![{title} 02](previews/{folder}/preview_02_1024.png) |"
+    if folder == "flux_srpo":
+        table = f"\n\n| Preview (1024×1024) |\n|:---:|\n| ![{title}](previews/{folder}/preview_01_1024.png) |"
+    else:
+        table = f"\n\n| Preview 01 (1024×1024) | Preview 02 (1024×1024) |\n|:---:|:---:|\n| ![{title} 01](previews/{folder}/preview_01_1024.png) | ![{title} 02](previews/{folder}/preview_02_1024.png) |"
     
     # Check if table already inserted
     snippet_after = content[line_end:line_end+150]
